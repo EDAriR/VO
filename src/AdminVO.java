@@ -1,4 +1,5 @@
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by Java on 2017/6/8.
@@ -53,4 +54,5 @@ public class AdminVO implements Serializable {
     public void setAdm_mail(String adm_mail) {
         this.adm_mail = adm_mail;
     }
+
 }

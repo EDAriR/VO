@@ -2,25 +2,25 @@ import java.util.*;
 import java.sql.*;
 
 
-public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
+public class AdminJDBCDAO implements AdminDAO_interface {
     private static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
     private static final String URL = "jdbc:oracle:thin:@localhost:1522:xe";
-//    private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
+//  private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
     private static final String USER = "ba101g3";
     private static final String PASSWORD = "baby";
     // 新增資料
-    private static final String INSERT_STMT = "INSERT INTO product_classification (proc_no, proc_name) VALUES (product_classification_seq.NEXTVAL, ?)";
+    private static final String INSERT_STMT = "INSERT INTO Admin (adm_no, proc_name) VALUES (Admin_seq.NEXTVAL, ?)";
     // 查詢資料
-    private static final String GET_ALL_STMT = "SELECT proc_no , proc_name FROM product_classification";
-    private static final String GET_ONE_STMT = "SELECT proc_no, proc_name FROM product_classification where proc_no = ?";
+    private static final String GET_ALL_STMT = "SELECT adm_no , adm_name FROM Admin";
+    private static final String GET_ONE_STMT = "SELECT adm_no, adm_name FROM Admin where adm_no = ?";
     // 刪除資料
-    private static final String DELETE_PROC = "DELETE FROM product_classification where proc_no = ?";
+    private static final String DELETE_PROC = "DELETE FROM Admin where adm_no = ?";
     // 修改資料
-    private static final String UPDATE = "UPDATE product_classification set proc_name=? where proc_no = ?";
+    private static final String UPDATE = "UPDATE Admin set adm_name=? where adm_no = ?";
 
 
     @Override
-    public void insert(Admin_AuthorityVO Admin_AuthorityVO) {
+    public void insert(AdminVO AdminVO) {
         Connection con = null;
         PreparedStatement pstmt = null;
 
@@ -28,9 +28,9 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
 
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
-            String[] cols = {"proc_no"}; // 有使用sequence產生編號的話才要寫
+            String[] cols = {"adm_no"}; // 有使用sequence產生編號的話才要寫
             pstmt = con.prepareStatement(INSERT_STMT, cols); // 有使用sequence產生編號的話才要寫第二個參數
-            pstmt.setString(1, product_classificationVO.getProc_name());
+            pstmt.setString(1, AdminVO.getAdm_no());
 
             pstmt.executeUpdate();
 
@@ -64,7 +64,7 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
     }
 
     @Override
-    public void update(Admin_AuthorityVO Admin_AuthorityVO) {
+    public void update(AdminVO AdminVO) {
 
         Connection con = null;
         PreparedStatement pstmt = null;
@@ -75,8 +75,8 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
             con = DriverManager.getConnection(URL, USER, PASSWORD);
             pstmt = con.prepareStatement(UPDATE);
 
-            pstmt.setString(1, product_classificationVO.getProc_name());
-            pstmt.setString(2, product_classificationVO.getProc_no());
+            pstmt.setString(1, AdminVO.getAdm_no());
+            pstmt.setString(2, AdminVO.getAdm_no());
 
             pstmt.executeUpdate();
 
@@ -130,13 +130,13 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
 //			updateCount_PRODUCTs = pstmt.executeUpdate();
             // 再刪除商品類別(一)
             pstmt = con.prepareStatement(DELETE_PROC);
-            pstmt.setString(1, proc_no);
+            pstmt.setString(1, adm_no);
             pstmt.executeUpdate();
 
             // 2●設定於 pstm.executeUpdate()之後
             con.commit();
             con.setAutoCommit(true);
-            System.out.println("刪除商品類別編號" + proc_no + "時,共有商品" + updateCount_PRODUCTs
+            System.out.println("刪除商品類別編號" + adm_no + "時,共有商品" + updateCount_PRODUCTs
                     + "個同時被刪除");
 
             // Handle any DRIVER errors
@@ -176,9 +176,10 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
 
     }
 
-    public Admin_AuthorityVO findByPrimaryKey(String adm_no){
+    @Override
+    public AdminVO findByPrimaryKey(String adm_no){
 
-        Product_ClassificationVO product_classificationVO = null;
+        AdminVO adminVO = null;
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -189,14 +190,14 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
             con = DriverManager.getConnection(URL, USER, PASSWORD);
             pstmt = con.prepareStatement(GET_ONE_STMT);
 
-            pstmt.setString(1, proc_no);
+            pstmt.setString(1, adm_no);
 
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                product_classificationVO = new Product_ClassificationVO();
-                product_classificationVO.setProc_no(rs.getString("proc_no"));
-                product_classificationVO.setProc_name(rs.getString("proc_name"));
+                adminVO = new AdminVO();
+                adminVO.setAdm_no(rs.getString("adm_no"));
+                adminVO.setAdm_name(rs.getString("adm_name"));
             }
 
             // Handle any DRIVER errors
@@ -231,13 +232,14 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
                 }
             }
         }
-        return product_classificationVO;
+        return adminVO;
     }
 
-    public List<Admin_AuthorityVO> getAll(){
+    @Override
+    public List<AdminVO> getAll(){
 
-        List<Product_ClassificationVO> list = new ArrayList<Product_ClassificationVO>();
-        Product_ClassificationVO product_classificationVO = null;
+        List<AdminVO> list = new ArrayList<AdminVO>();
+        AdminVO product_classificationVO = null;
 
         Connection con = null;
         PreparedStatement pstmt = null;
@@ -251,9 +253,9 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                product_classificationVO = new Product_ClassificationVO();
-                product_classificationVO.setProc_no(rs.getString("proc_no"));
-                product_classificationVO.setProc_name(rs.getString("proc_name"));
+                product_classificationVO = new AdminVO();
+                product_classificationVO.setAdm_no(rs.getString("adm_no"));
+                product_classificationVO.setAdm_name(rs.getString("adm_name"));
                 list.add(product_classificationVO); // Store the row in the list
             }
 
@@ -293,34 +295,34 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
 
     public static void main(String[] args) {
 
-        Product_ClassificationJDBCDAO dao = new Product_ClassificationJDBCDAO();
+        AdminJDBCDAO dao = new AdminJDBCDAO();
         // 測試看看每個指令是否可以使用
         // 新增
-        Product_ClassificationVO product_classificationVO1 = new Product_ClassificationVO();
-        product_classificationVO1.setProc_name("財務部回來嚕");
-        dao.insert(product_classificationVO1);
+        AdminVO adminVO1 = new AdminVO();
+        adminVO1.setAdm_name("財務部回來嚕");
+        dao.insert(adminVO1);
 
         // 修改
-//		Product_ClassificationVO product_classificationVO2 = new Product_ClassificationVO();
-//		product_classificationVO2.setProc_no("2");
-//		product_classificationVO2.setProc_name("修改看看");
-//		dao.update(product_classificationVO2);
+        AdminVO adminVO2 = new AdminVO();
+        adminVO2.setAdm_no("2");
+        adminVO2.setAdm_name("修改看看");
+		dao.update(adminVO2);
 
         // 刪除
-//		dao.delete("1");
+		dao.delete("1");
 
         // 查詢
-//		Product_ClassificationVO product_classificationVO3 = dao.findByPrimaryKey("1");
-//		System.out.print(product_classificationVO3.getProc_no() + ",");
-//		System.out.println(product_classificationVO3.getProc_name());
-//		System.out.println("---------------------");
+        AdminVO adminVO3 = dao.findByPrimaryKey("1");
+		System.out.print(adminVO3.getAdm_no() + ",");
+		System.out.println(adminVO3.getAdm_name());
+		System.out.println("---------------------");
 
         // 查詢部門
-//		List<Product_ClassificationVO> list = dao.getAll();
-//		for (Product_ClassificationVO proc : list) {
-//			System.out.print(proc.getProc_no() + ",");
-//			System.out.print(proc.getProc_name());
-//			System.out.println();
+		List<AdminVO> list = dao.getAll();
+		for (AdminVO proc : list) {
+			System.out.print(proc.getAdm_no() + ",");
+			System.out.print(proc.getAdm_name());
+			System.out.println();
 //		}
 
     }

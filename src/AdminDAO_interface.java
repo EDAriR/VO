@@ -5,14 +5,14 @@ import java.util.List;
  */
 public interface AdminDAO_interface {
 
-    public void insert(Admin_AuthorityVO Admin_AuthorityVO);
+    public void insert(AdminVO AdminVO);
 
-    public void update(Admin_AuthorityVO Admin_AuthorityVO);
+    public void update(AdminVO AdminVO);
 
     public void delete(String adm_no);
 
-    public AdminDAO_interface findByPrimaryKey(String adm_no);
+    public AdminVO findByPrimaryKey(String adm_no);
 
-    public List<Admin_AuthorityVO> getAll();
+    public List<AdminVO> getAll();
 
 }
