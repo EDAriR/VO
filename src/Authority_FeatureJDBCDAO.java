@@ -9,7 +9,7 @@ public class Authority_FeatureJDBCDAO implements Authority_FeatureDAO_interface 
     private static final String USER = "ba101g3";
     private static final String PASSWORD = "baby";
     // 新增資料
-    private static final String INSERT_STMT = "INSERT INTO Authority_Feature (auth_no, auth_name) VALUES (Authority_Feature_no_seq.NEXTVAL, ?)";
+    private static final String INSERT_STMT = "INSERT INTO Authority_Feature (auth_no, auth_name) VALUES (auth_no_seq.NEXTVAL, ?)";
     // 查詢資料
     private static final String GET_ALL_STMT = "SELECT auth_no , auth_name FROM Authority_Feature";
     private static final String GET_ONE_STMT = "SELECT auth_no, auth_name FROM Authority_Feature where auth_no = ?";

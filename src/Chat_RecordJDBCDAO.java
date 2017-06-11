@@ -8,14 +8,14 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
 //    private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
     private static final String USER = "ba101g3";
     private static final String PASSWORD = "baby";
-    // ·s¼W¸ê®Æ
+    // æ–°å¢è³‡æ–™
     private static final String INSERT_STMT = "INSERT INTO product_classification (proc_no, proc_name) VALUES (product_classification_seq.NEXTVAL, ?)";
-    // ¬d¸ß¸ê®Æ
+    // æŸ¥è©¢è³‡æ–™
     private static final String GET_ALL_STMT = "SELECT proc_no , proc_name FROM product_classification";
     private static final String GET_ONE_STMT = "SELECT proc_no, proc_name FROM product_classification where proc_no = ?";
-    // §R°£¸ê®Æ
+    // åˆªé™¤è³‡æ–™
     private static final String DELETE_PROC = "DELETE FROM product_classification where proc_no = ?";
-    // ­×§ï¸ê®Æ
+    // ä¿®æ”¹è³‡æ–™
     private static final String UPDATE = "UPDATE product_classification set proc_name=? where proc_no = ?";
 
 
@@ -28,8 +28,8 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
 
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
-            String[] cols = {"proc_no"}; // ¦³¨Ï¥Îsequence²£¥Í½s¸¹ªº¸Ü¤~­n¼g
-            pstmt = con.prepareStatement(INSERT_STMT, cols); // ¦³¨Ï¥Îsequence²£¥Í½s¸¹ªº¸Ü¤~­n¼g²Ä¤G­Ó°Ñ¼Æ
+            String[] cols = {"proc_no"}; // æœ‰ä½¿ç”¨sequenceç”¢ç”Ÿç·¨è™Ÿçš„è©±æ‰è¦å¯«
+            pstmt = con.prepareStatement(INSERT_STMT, cols); // æœ‰ä½¿ç”¨sequenceç”¢ç”Ÿç·¨è™Ÿçš„è©±æ‰è¦å¯«ç¬¬äºŒå€‹åƒæ•¸
             pstmt.setString(1, product_classificationVO.getProc_name());
 
             pstmt.executeUpdate();
@@ -121,23 +121,23 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
 
-            // 1¡´³]©w©ó pstm.executeUpdate()¤§«e
+            // 1â—è¨­å®šæ–¼ pstm.executeUpdate()ä¹‹å‰
             con.setAutoCommit(false);
 
-            // ¥ı§R°£°Ó«~(¦h) --->©|¥¼«Øproduct¡A¦]¦¹¥ıµù¸Ñ
+            // å…ˆåˆªé™¤å•†å“(å¤š) --->å°šæœªå»ºproductï¼Œå› æ­¤å…ˆè¨»è§£
 //			pstmt = con.prepareStatement(DELETE_PRODUCTs);
 //			pstmt.setString(1, proc_no);
 //			updateCount_PRODUCTs = pstmt.executeUpdate();
-            // ¦A§R°£°Ó«~Ãş§O(¤@)
+            // å†åˆªé™¤å•†å“é¡åˆ¥(ä¸€)
             pstmt = con.prepareStatement(DELETE_PROC);
             pstmt.setString(1, proc_no);
             pstmt.executeUpdate();
 
-            // 2¡´³]©w©ó pstm.executeUpdate()¤§«á
+            // 2â—è¨­å®šæ–¼ pstm.executeUpdate()ä¹‹å¾Œ
             con.commit();
             con.setAutoCommit(true);
-            System.out.println("§R°£°Ó«~Ãş§O½s¸¹" + proc_no + "®É,¦@¦³°Ó«~" + updateCount_PRODUCTs
-                    + "­Ó¦P®É³Q§R°£");
+            System.out.println("åˆªé™¤å•†å“é¡åˆ¥ç·¨è™Ÿ" + proc_no + "æ™‚,å…±æœ‰å•†å“" + updateCount_PRODUCTs
+                    + "å€‹åŒæ™‚è¢«åˆªé™¤");
 
             // Handle any DRIVER errors
         } catch (ClassNotFoundException e) {
@@ -147,7 +147,7 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
         } catch (SQLException se) {
             if (con != null) {
                 try {
-                    // 3¡´³]©w©ó·í¦³exceptionµo¥Í®É¤§catch°Ï¶ô¤º
+                    // 3â—è¨­å®šæ–¼ç•¶æœ‰exceptionç™¼ç”Ÿæ™‚ä¹‹catchå€å¡Šå…§
                     con.rollback();
                 } catch (SQLException excep) {
                     throw new RuntimeException("rollback error occured. "
@@ -294,28 +294,28 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
     public static void main(String[] args) {
 
         Product_ClassificationJDBCDAO dao = new Product_ClassificationJDBCDAO();
-        // ´ú¸Õ¬İ¬İ¨C­Ó«ü¥O¬O§_¥i¥H¨Ï¥Î
-        // ·s¼W
+        // æ¸¬è©¦çœ‹çœ‹æ¯å€‹æŒ‡ä»¤æ˜¯å¦å¯ä»¥ä½¿ç”¨
+        // æ–°å¢
         Product_ClassificationVO product_classificationVO1 = new Product_ClassificationVO();
-        product_classificationVO1.setProc_name("°]°È³¡¦^¨ÓÂP");
+        product_classificationVO1.setProc_name("è²¡å‹™éƒ¨å›ä¾†åš•");
         dao.insert(product_classificationVO1);
 
-        // ­×§ï
+        // ä¿®æ”¹
 //		Product_ClassificationVO product_classificationVO2 = new Product_ClassificationVO();
 //		product_classificationVO2.setProc_no("2");
-//		product_classificationVO2.setProc_name("­×§ï¬İ¬İ");
+//		product_classificationVO2.setProc_name("ä¿®æ”¹çœ‹çœ‹");
 //		dao.update(product_classificationVO2);
 
-        // §R°£
+        // åˆªé™¤
 //		dao.delete("1");
 
-        // ¬d¸ß
+        // æŸ¥è©¢
 //		Product_ClassificationVO product_classificationVO3 = dao.findByPrimaryKey("1");
 //		System.out.print(product_classificationVO3.getProc_no() + ",");
 //		System.out.println(product_classificationVO3.getProc_name());
 //		System.out.println("---------------------");
 
-        // ¬d¸ß³¡ªù
+        // æŸ¥è©¢éƒ¨é–€
 //		List<Product_ClassificationVO> list = dao.getAll();
 //		for (Product_ClassificationVO proc : list) {
 //			System.out.print(proc.getProc_no() + ",");

@@ -2,7 +2,7 @@ import java.util.*;
 import java.sql.*;
 
 
-public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
+public class NewsJDBCDAO implements Admin_AuthorityDAO_interface {
     private static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
     private static final String URL = "jdbc:oracle:thin:@localhost:1522:xe";
 //    private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
