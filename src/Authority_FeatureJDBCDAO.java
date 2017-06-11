@@ -2,25 +2,25 @@ import java.util.*;
 import java.sql.*;
 
 
-public class Authority_FeatureJDBCDAO implements Admin_AuthorityDAO_interface {
+public class Authority_FeatureJDBCDAO implements Authority_FeatureDAO_interface {
     private static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
     private static final String URL = "jdbc:oracle:thin:@localhost:1522:xe";
 //    private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
     private static final String USER = "ba101g3";
     private static final String PASSWORD = "baby";
     // 新增資料
-    private static final String INSERT_STMT = "INSERT INTO Authority_Feature (proc_no, proc_name) VALUES (Authority_Feature_seq.NEXTVAL, ?)";
+    private static final String INSERT_STMT = "INSERT INTO Authority_Feature (auth_no, auth_name) VALUES (Authority_Feature_no_seq.NEXTVAL, ?)";
     // 查詢資料
-    private static final String GET_ALL_STMT = "SELECT proc_no , proc_name FROM product_classification";
-    private static final String GET_ONE_STMT = "SELECT proc_no, proc_name FROM product_classification where proc_no = ?";
+    private static final String GET_ALL_STMT = "SELECT auth_no , auth_name FROM Authority_Feature";
+    private static final String GET_ONE_STMT = "SELECT auth_no, auth_name FROM Authority_Feature where auth_no = ?";
     // 刪除資料
-    private static final String DELETE_PROC = "DELETE FROM product_classification where proc_no = ?";
+    private static final String DELETE_PROC = "DELETE FROM Authority_Feature where auth_no = ?";
     // 修改資料
-    private static final String UPDATE = "UPDATE product_classification set proc_name=? where proc_no = ?";
+    private static final String UPDATE = "UPDATE Authority_Feature set auth_name=? where auth_no = ?";
 
 
     @Override
-    public void insert(Admin_AuthorityVO Admin_AuthorityVO) {
+    public void insert(Authority_FeatureVO Authority_FeatureVO) {
         Connection con = null;
         PreparedStatement pstmt = null;
 
@@ -28,9 +28,9 @@ public class Authority_FeatureJDBCDAO implements Admin_AuthorityDAO_interface {
 
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
-            String[] cols = {"proc_no"}; // 有使用sequence產生編號的話才要寫
+            String[] cols = {"auth_no"}; // 有使用sequence產生編號的話才要寫
             pstmt = con.prepareStatement(INSERT_STMT, cols); // 有使用sequence產生編號的話才要寫第二個參數
-            pstmt.setString(1, product_classificationVO.getProc_name());
+            pstmt.setString(1, Admin_AuthorityVO.getAuth_no());
 
             pstmt.executeUpdate();
 
@@ -64,7 +64,7 @@ public class Authority_FeatureJDBCDAO implements Admin_AuthorityDAO_interface {
     }
 
     @Override
-    public void update(Admin_AuthorityVO Admin_AuthorityVO) {
+    public void update(Authority_FeatureVO Authority_FeatureVO) {
 
         Connection con = null;
         PreparedStatement pstmt = null;
@@ -75,8 +75,8 @@ public class Authority_FeatureJDBCDAO implements Admin_AuthorityDAO_interface {
             con = DriverManager.getConnection(URL, USER, PASSWORD);
             pstmt = con.prepareStatement(UPDATE);
 
-            pstmt.setString(1, product_classificationVO.getProc_name());
-            pstmt.setString(2, product_classificationVO.getProc_no());
+            pstmt.setString(1, Authority_FeatureVO.getAuth_name());
+            pstmt.setString(2, Authority_FeatureVO.getAuth_no());
 
             pstmt.executeUpdate();
 
@@ -109,7 +109,7 @@ public class Authority_FeatureJDBCDAO implements Admin_AuthorityDAO_interface {
     }
 
     @Override
-    public void delete(String adm_no){
+    public void delete(String auth_no){
 
         int updateCount_PRODUCTs = 0;
 
@@ -126,17 +126,17 @@ public class Authority_FeatureJDBCDAO implements Admin_AuthorityDAO_interface {
 
             // 先刪除商品(多) --->尚未建product，因此先註解
 //			pstmt = con.prepareStatement(DELETE_PRODUCTs);
-//			pstmt.setString(1, proc_no);
+//			pstmt.setString(1, auth_no);
 //			updateCount_PRODUCTs = pstmt.executeUpdate();
             // 再刪除商品類別(一)
             pstmt = con.prepareStatement(DELETE_PROC);
-            pstmt.setString(1, proc_no);
+            pstmt.setString(1, auth_no);
             pstmt.executeUpdate();
 
             // 2●設定於 pstm.executeUpdate()之後
             con.commit();
             con.setAutoCommit(true);
-            System.out.println("刪除商品類別編號" + proc_no + "時,共有商品" + updateCount_PRODUCTs
+            System.out.println("刪除商品類別編號" + auth_no + "時,共有商品" + updateCount_PRODUCTs
                     + "個同時被刪除");
 
             // Handle any DRIVER errors
@@ -176,9 +176,9 @@ public class Authority_FeatureJDBCDAO implements Admin_AuthorityDAO_interface {
 
     }
 
-    public Admin_AuthorityVO findByPrimaryKey(String adm_no){
+    public Authority_FeatureVO findByPrimaryKey(String auth_no){
 
-        Product_ClassificationVO product_classificationVO = null;
+        Authority_FeatureVO authority_featureVO = null;
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -189,14 +189,14 @@ public class Authority_FeatureJDBCDAO implements Admin_AuthorityDAO_interface {
             con = DriverManager.getConnection(URL, USER, PASSWORD);
             pstmt = con.prepareStatement(GET_ONE_STMT);
 
-            pstmt.setString(1, proc_no);
+            pstmt.setString(1, auth_no);
 
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                product_classificationVO = new Product_ClassificationVO();
-                product_classificationVO.setProc_no(rs.getString("proc_no"));
-                product_classificationVO.setProc_name(rs.getString("proc_name"));
+                authority_featureVO = new Authority_FeatureVO();
+                authority_featureVO.setAuth_no(rs.getString("auth_no"));
+                authority_featureVO.setAuth_name(rs.getString("auth_name"));
             }
 
             // Handle any DRIVER errors
@@ -231,13 +231,13 @@ public class Authority_FeatureJDBCDAO implements Admin_AuthorityDAO_interface {
                 }
             }
         }
-        return product_classificationVO;
+        return authority_featureVO;
     }
 
-    public List<Admin_AuthorityVO> getAll(){
+    public List<Authority_FeatureVO> getAll(){
 
-        List<Product_ClassificationVO> list = new ArrayList<Product_ClassificationVO>();
-        Product_ClassificationVO product_classificationVO = null;
+        List<Authority_FeatureVO> list = new ArrayList<Authority_FeatureVO>();
+        Authority_FeatureVO authority_FeatureVO = null;
 
         Connection con = null;
         PreparedStatement pstmt = null;
@@ -251,10 +251,10 @@ public class Authority_FeatureJDBCDAO implements Admin_AuthorityDAO_interface {
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                product_classificationVO = new Product_ClassificationVO();
-                product_classificationVO.setProc_no(rs.getString("proc_no"));
-                product_classificationVO.setProc_name(rs.getString("proc_name"));
-                list.add(product_classificationVO); // Store the row in the list
+                authority_FeatureVO = new Authority_FeatureVO();
+                authority_FeatureVO.setAuth_no(rs.getString("auth_no"));
+                authority_FeatureVO.setAuth_name(rs.getString("auth_name"));
+                list.add(authority_FeatureVO); // Store the row in the list
             }
 
             // Handle any DRIVER errors
@@ -293,33 +293,33 @@ public class Authority_FeatureJDBCDAO implements Admin_AuthorityDAO_interface {
 
     public static void main(String[] args) {
 
-        Product_ClassificationJDBCDAO dao = new Product_ClassificationJDBCDAO();
+        Authority_FeatureJDBCDAO dao = new Authority_FeatureJDBCDAO();
         // 測試看看每個指令是否可以使用
         // 新增
-        Product_ClassificationVO product_classificationVO1 = new Product_ClassificationVO();
-        product_classificationVO1.setProc_name("財務部回來嚕");
-        dao.insert(product_classificationVO1);
+        Authority_FeatureVO authority_FeatureVO1 = new Authority_FeatureVO();
+        authority_FeatureVO1.getAuth_name("財務部");
+        dao.insert(authority_FeatureVO1);
 
         // 修改
-//		Product_ClassificationVO product_classificationVO2 = new Product_ClassificationVO();
-//		product_classificationVO2.setProc_no("2");
-//		product_classificationVO2.setProc_name("修改看看");
-//		dao.update(product_classificationVO2);
+        Authority_FeatureVO authority_FeatureVO2 = new Authority_FeatureVO();
+        authority_FeatureVO2.setProc_no("2");
+        authority_FeatureVO2.getAuth_name("修改看看");
+		dao.update(authority_FeatureVO2);
 
         // 刪除
-//		dao.delete("1");
+		dao.delete("1");
 
         // 查詢
-//		Product_ClassificationVO product_classificationVO3 = dao.findByPrimaryKey("1");
-//		System.out.print(product_classificationVO3.getProc_no() + ",");
-//		System.out.println(product_classificationVO3.getProc_name());
-//		System.out.println("---------------------");
+        Authority_FeatureVO authority_FeatureVO3 = dao.findByPrimaryKey("1");
+		System.out.print(authority_FeatureVO3.getAuth_no() + ",");
+		System.out.println(authority_FeatureVO3.getAuth_name());
+		System.out.println("---------------------");
 
         // 查詢部門
-//		List<Product_ClassificationVO> list = dao.getAll();
-//		for (Product_ClassificationVO proc : list) {
-//			System.out.print(proc.getProc_no() + ",");
-//			System.out.print(proc.getProc_name());
+		List<Authority_FeatureVO> list = dao.getAll();
+		for (Authority_FeatureVO proc : list) {
+			System.out.print(proc.getAuth_no() + ",");
+			System.out.print(proc.getAuth_name());
 //			System.out.println();
 //		}
 
