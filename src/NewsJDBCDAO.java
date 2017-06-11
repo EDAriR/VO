@@ -35,7 +35,7 @@ public class NewsJDBCDAO implements NewsDAO_interface {
         	
             pstmt = con.prepareStatement(INSERT_STMT, cols); // 有使用sequence產生編號的話才要寫第二個參數
             
-            pstmt.setTimestamp(0, newsVO.getNew_date());
+            pstmt.setTimestamp(0, new Timestamp(System.currentTimeMillis()));
             pstmt.setString(1, newsVO.getNew_title());
             pstmt.setString(2, newsVO.getNew_cnt());
 
