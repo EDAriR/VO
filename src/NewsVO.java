@@ -1,49 +1,48 @@
 import java.io.Serializable;
-import java.sql.Date;
 import java.sql.Timestamp;
 
 /**
  * Created by Java on 2017/6/8.
  */
 public class NewsVO implements Serializable {
-    private String new_No;       //Not Null (PK)
-    private Timestamp new_Date;  //Not Null
-    private String new_Title;    //Not Null
-    private String new_Cnt;      //Not Null
+    private String new_no;       //Not Null (PK)
+    private Timestamp new_date;  //Not Null
+    private String new_title;    //Not Null
+    private String new_cnt;      //Not Null
 
-    public NewsVO(Integer new_No, Date new_Date, String new_Title, String new_Cnt) {
+    public NewsVO() {
         super();
     }
 
-    public String getNew_No() {
-        return new_No;
+    public String getNew_no() {
+        return new_no;
     }
 
-    public void setNew_No(String new_No) {
-        this.new_No = new_No;
+    public void setNew_no(String new_no) {
+        this.new_no = new_no;
     }
 
-    public Timestamp getNew_Date() {
-        return new_Date;
+    public Timestamp getNew_date() {
+        return new_date;
     }
 
-    public void setNew_Date(Timestamp new_Date) {
-        this.new_Date = new_Date;
+    public void setNew_date(Timestamp new_date) {
+        this.new_date = new_date;
     }
 
-    public String getNew_Title() {
-        return new_Title;
+    public String getNew_title() {
+        return new_title;
     }
 
-    public void setNew_Title(String new_Title) {
-        this.new_Title = new_Title;
+    public void setNew_title(String new_title) {
+        this.new_title = new_title;
     }
 
-    public String getNew_Cnt() {
-        return new_Cnt;
+    public String getNew_cnt() {
+        return new_cnt;
     }
 
-    public void setNew_Cnt(String new_Cnt) {
-        this.new_Cnt = new_Cnt;
+    public void setNew_cnt(String new_cnt) {
+        this.new_cnt = new_cnt;
     }
 }

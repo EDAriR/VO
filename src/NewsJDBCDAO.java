@@ -2,25 +2,27 @@ import java.util.*;
 import java.sql.*;
 
 
-public class NewsJDBCDAO implements Admin_AuthorityDAO_interface {
+public class NewsJDBCDAO implements NewsDAO_interface {
     private static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
     private static final String URL = "jdbc:oracle:thin:@localhost:1522:xe";
 //    private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
     private static final String USER = "ba101g3";
     private static final String PASSWORD = "baby";
     // 新增資料
-    private static final String INSERT_STMT = "INSERT INTO product_classification (proc_no, proc_name) VALUES (product_classification_seq.NEXTVAL, ?)";
+    private static final String INSERT_STMT = "INSERT INTO News (NEW_NO, NEW_DATE, NEW_TITLE, NEW_CNT) " 
+    		 + "VALUES ('n'||LPAD(to_char(NEW_NO_SEQ.nextval),4,'0'),"
+    		 + " CURRENT_TIMESTAMP, ?, ?)";
     // 查詢資料
-    private static final String GET_ALL_STMT = "SELECT proc_no , proc_name FROM product_classification";
-    private static final String GET_ONE_STMT = "SELECT proc_no, proc_name FROM product_classification where proc_no = ?";
+    private static final String GET_ALL_STMT = "SELECT new_no , new_title FROM News";
+    private static final String GET_ONE_STMT = "SELECT new_no, new_title FROM News where new_no = ?";
     // 刪除資料
-    private static final String DELETE_PROC = "DELETE FROM product_classification where proc_no = ?";
+    private static final String DELETE_NEWS = "DELETE FROM News where new_no = ?";
     // 修改資料
-    private static final String UPDATE = "UPDATE product_classification set proc_name=? where proc_no = ?";
+    private static final String UPDATE = "UPDATE News set new_title=? where new_no = ?";
 
 
     @Override
-    public void insert(Admin_AuthorityVO Admin_AuthorityVO) {
+    public void insert(NewsVO newsVO) {
         Connection con = null;
         PreparedStatement pstmt = null;
 
@@ -28,9 +30,14 @@ public class NewsJDBCDAO implements Admin_AuthorityDAO_interface {
 
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
-            String[] cols = {"proc_no"}; // 有使用sequence產生編號的話才要寫
+            String[] cols = {"new_no"}; // 有使用sequence產生編號的話才要寫
+            java.util.Date today = new java.util.Date();
+        	
             pstmt = con.prepareStatement(INSERT_STMT, cols); // 有使用sequence產生編號的話才要寫第二個參數
-            pstmt.setString(1, product_classificationVO.getProc_name());
+            
+            pstmt.setTimestamp(0, newsVO.getNew_date());
+            pstmt.setString(1, newsVO.getNew_title());
+            pstmt.setString(2, newsVO.getNew_cnt());
 
             pstmt.executeUpdate();
 
@@ -64,7 +71,7 @@ public class NewsJDBCDAO implements Admin_AuthorityDAO_interface {
     }
 
     @Override
-    public void update(Admin_AuthorityVO Admin_AuthorityVO) {
+    public void update(NewsVO newsVO) {
 
         Connection con = null;
         PreparedStatement pstmt = null;
@@ -75,8 +82,8 @@ public class NewsJDBCDAO implements Admin_AuthorityDAO_interface {
             con = DriverManager.getConnection(URL, USER, PASSWORD);
             pstmt = con.prepareStatement(UPDATE);
 
-            pstmt.setString(1, product_classificationVO.getProc_name());
-            pstmt.setString(2, product_classificationVO.getProc_no());
+            pstmt.setString(1, newsVO.getNew_title());
+            pstmt.setString(2, newsVO.getNew_no());
 
             pstmt.executeUpdate();
 
@@ -109,7 +116,7 @@ public class NewsJDBCDAO implements Admin_AuthorityDAO_interface {
     }
 
     @Override
-    public void delete(String adm_no){
+    public void delete(String new_no){
 
         int updateCount_PRODUCTs = 0;
 
@@ -126,17 +133,17 @@ public class NewsJDBCDAO implements Admin_AuthorityDAO_interface {
 
             // 先刪除商品(多) --->尚未建product，因此先註解
 //			pstmt = con.prepareStatement(DELETE_PRODUCTs);
-//			pstmt.setString(1, proc_no);
+//			pstmt.setString(1, new_no);
 //			updateCount_PRODUCTs = pstmt.executeUpdate();
             // 再刪除商品類別(一)
-            pstmt = con.prepareStatement(DELETE_PROC);
-            pstmt.setString(1, proc_no);
+            pstmt = con.prepareStatement(DELETE_NEWS);
+            pstmt.setString(1, new_no);
             pstmt.executeUpdate();
 
             // 2●設定於 pstm.executeUpdate()之後
             con.commit();
             con.setAutoCommit(true);
-            System.out.println("刪除商品類別編號" + proc_no + "時,共有商品" + updateCount_PRODUCTs
+            System.out.println("刪除商品類別編號" + new_no + "時,共有商品" + updateCount_PRODUCTs
                     + "個同時被刪除");
 
             // Handle any DRIVER errors
@@ -176,9 +183,9 @@ public class NewsJDBCDAO implements Admin_AuthorityDAO_interface {
 
     }
 
-    public Admin_AuthorityVO findByPrimaryKey(String adm_no){
+    public NewsVO findByPrimaryKey(String new_no){
 
-        Product_ClassificationVO product_classificationVO = null;
+        NewsVO newsVO = null;
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -189,14 +196,14 @@ public class NewsJDBCDAO implements Admin_AuthorityDAO_interface {
             con = DriverManager.getConnection(URL, USER, PASSWORD);
             pstmt = con.prepareStatement(GET_ONE_STMT);
 
-            pstmt.setString(1, proc_no);
+            pstmt.setString(1, new_no);
 
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                product_classificationVO = new Product_ClassificationVO();
-                product_classificationVO.setProc_no(rs.getString("proc_no"));
-                product_classificationVO.setProc_name(rs.getString("proc_name"));
+                newsVO = new NewsVO();
+                newsVO.setNew_no(rs.getString("new_no"));
+                newsVO.setNew_title(rs.getString("proc_name"));
             }
 
             // Handle any DRIVER errors
@@ -231,13 +238,13 @@ public class NewsJDBCDAO implements Admin_AuthorityDAO_interface {
                 }
             }
         }
-        return product_classificationVO;
+        return newsVO;
     }
 
-    public List<Admin_AuthorityVO> getAll(){
+    public List<NewsVO> getAll(){
 
-        List<Product_ClassificationVO> list = new ArrayList<Product_ClassificationVO>();
-        Product_ClassificationVO product_classificationVO = null;
+        List<NewsVO> list = new ArrayList<NewsVO>();
+        NewsVO newsVO = null;
 
         Connection con = null;
         PreparedStatement pstmt = null;
@@ -251,10 +258,10 @@ public class NewsJDBCDAO implements Admin_AuthorityDAO_interface {
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                product_classificationVO = new Product_ClassificationVO();
-                product_classificationVO.setProc_no(rs.getString("proc_no"));
-                product_classificationVO.setProc_name(rs.getString("proc_name"));
-                list.add(product_classificationVO); // Store the row in the list
+                newsVO = new NewsVO();
+                newsVO.setNew_no(rs.getString("new_no"));
+                newsVO.setNew_title(rs.getString("proc_name"));
+                list.add(newsVO); // Store the row in the list
             }
 
             // Handle any DRIVER errors
@@ -293,33 +300,35 @@ public class NewsJDBCDAO implements Admin_AuthorityDAO_interface {
 
     public static void main(String[] args) {
 
-        Product_ClassificationJDBCDAO dao = new Product_ClassificationJDBCDAO();
+        NewsJDBCDAO dao = new NewsJDBCDAO();
         // 測試看看每個指令是否可以使用
         // 新增
-        Product_ClassificationVO product_classificationVO1 = new Product_ClassificationVO();
-        product_classificationVO1.setProc_name("財務部回來嚕");
-        dao.insert(product_classificationVO1);
+        NewsVO newsVO1 = new NewsVO();
+//        newsVO1.setNew_date(new Timestamp(System.currentTimeMillis()));
+//        newsVO1.setNew_title("財務部回來嚕");
+//        newsVO1.setNew_cnt("財務部回來嚕");
+//        dao.insert(newsVO1);
 
         // 修改
-//		Product_ClassificationVO product_classificationVO2 = new Product_ClassificationVO();
-//		product_classificationVO2.setProc_no("2");
-//		product_classificationVO2.setProc_name("修改看看");
-//		dao.update(product_classificationVO2);
+        NewsVO newsVO2 = new NewsVO();
+        newsVO2.setNew_no("n0007");
+        newsVO2.setNew_title("修改看看");
+		dao.update(newsVO2);
 
         // 刪除
 //		dao.delete("1");
 
         // 查詢
-//		Product_ClassificationVO product_classificationVO3 = dao.findByPrimaryKey("1");
-//		System.out.print(product_classificationVO3.getProc_no() + ",");
-//		System.out.println(product_classificationVO3.getProc_name());
+//        NewsVO newsVO3 = dao.findByPrimaryKey("1");
+//		System.out.print(newsVO3.getNew_no() + ",");
+//		System.out.println(newsVO3.getNew_title());
 //		System.out.println("---------------------");
 
         // 查詢部門
-//		List<Product_ClassificationVO> list = dao.getAll();
-//		for (Product_ClassificationVO proc : list) {
-//			System.out.print(proc.getProc_no() + ",");
-//			System.out.print(proc.getProc_name());
+//		List<NewsVO> list = dao.getAll();
+//		for (NewsVO proc : list) {
+//			System.out.print(proc.getNew_no() + ",");
+//			System.out.print(proc.getNew_title());
 //			System.out.println();
 //		}
 
