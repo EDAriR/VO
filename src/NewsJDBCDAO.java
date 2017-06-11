@@ -183,6 +183,7 @@ public class NewsJDBCDAO implements NewsDAO_interface {
 
     }
 
+    @Override
     public NewsVO findByPrimaryKey(String new_no){
 
         NewsVO newsVO = null;
@@ -241,6 +242,7 @@ public class NewsJDBCDAO implements NewsDAO_interface {
         return newsVO;
     }
 
+    @Override
     public List<NewsVO> getAll(){
 
         List<NewsVO> list = new ArrayList<NewsVO>();

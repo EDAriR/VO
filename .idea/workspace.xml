@@ -4,8 +4,17 @@
     <list default="true" id="5781e1ff-6202-4dd6-a3da-854f7a9d8a80" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AdminJDBCDAO.java" afterPath="$PROJECT_DIR$/src/AdminJDBCDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Admin_AuthorityJDBCDAO.java" afterPath="$PROJECT_DIR$/src/Admin_AuthorityJDBCDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Authority_FeatureJDBCDAO.java" afterPath="$PROJECT_DIR$/src/Authority_FeatureJDBCDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Chat_FriendJDBCDAO.java" afterPath="$PROJECT_DIR$/src/Chat_FriendJDBCDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Chat_GroupJDBCDAO.java" afterPath="$PROJECT_DIR$/src/Chat_GroupJDBCDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Chat_Group_ItemJDBCDAO.java" afterPath="$PROJECT_DIR$/src/Chat_Group_ItemJDBCDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Chat_NotebookJDBCDAO.java" afterPath="$PROJECT_DIR$/src/Chat_NotebookJDBCDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Chat_NotebookVO.java" afterPath="$PROJECT_DIR$/src/Chat_NotebookVO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Chat_RecordJDBCDAO.java" afterPath="$PROJECT_DIR$/src/Chat_RecordJDBCDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/NewsJDBCDAO.java" afterPath="$PROJECT_DIR$/src/NewsJDBCDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/NewsVO.java" afterPath="$PROJECT_DIR$/src/NewsVO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/User_ReportJDBCDAO.java" afterPath="$PROJECT_DIR$/src/User_ReportJDBCDAO.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,54 +24,36 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_TABLE_DETAILS" value="true" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="NewsVO.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/NewsVO.java">
+      <file leaf-file-name="Admin_AuthorityJDBCDAO.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Admin_AuthorityJDBCDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+            <state relative-caret-position="957">
+              <caret line="293" column="43" lean-forward="false" selection-start-line="293" selection-start-column="43" selection-end-line="293" selection-end-column="43" />
               <folding>
-                <element signature="e#401#402#0" expanded="true" />
-                <element signature="e#430#431#0" expanded="true" />
-                <element signature="e#474#475#0" expanded="true" />
-                <element signature="e#510#511#0" expanded="true" />
-                <element signature="e#548#549#0" expanded="true" />
-                <element signature="e#579#580#0" expanded="true" />
-                <element signature="e#630#631#0" expanded="true" />
-                <element signature="e#670#671#0" expanded="true" />
-                <element signature="e#706#707#0" expanded="true" />
-                <element signature="e#738#739#0" expanded="true" />
-                <element signature="e#788#789#0" expanded="true" />
-                <element signature="e#830#831#0" expanded="true" />
-                <element signature="e#864#865#0" expanded="true" />
-                <element signature="e#894#895#0" expanded="true" />
-                <element signature="e#940#941#0" expanded="true" />
-                <element signature="e#978#979#0" expanded="true" />
+                <element signature="method#insert#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
+                <element signature="method#update#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
+                <element signature="method#delete#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
+                <element signature="method#findByPrimaryKey#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
+                <element signature="method#getAll#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
+                <element signature="e#7861#7880#0" expanded="true" />
+                <element signature="method#main#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
+                <marker date="1497207890738" expanded="true" signature="10478:10689" ph="//..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewsJDBCDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/NewsJDBCDAO.java">
+      <file leaf-file-name="Admin_AuthorityVO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Admin_AuthorityVO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="20" column="67" lean-forward="false" selection-start-line="20" selection-start-column="67" selection-end-line="20" selection-end-column="67" />
+            <state relative-caret-position="203">
+              <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="26" />
               <folding>
-                <marker date="1497167240708" expanded="true" signature="489:507" ph="INSERT INTO product_classification... " />
-                <marker date="1497167240708" expanded="true" signature="10082:10565" ph="//..." />
-                <marker date="1497167240708" expanded="true" signature="10082:10572" ph="{...}" />
+                <element signature="e#265#266#0" expanded="true" />
+                <element signature="e#288#289#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -77,14 +68,6 @@
         <option value="Interface" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>proc_no</find>
-      <find>getProc_no</find>
-      <find>proc_name</find>
-      <find>getProc_name</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -103,30 +86,30 @@
         <option value="$PROJECT_DIR$/src/Chat_FriendVO.java" />
         <option value="$PROJECT_DIR$/src/Chat_Group_ItemVO.java" />
         <option value="$PROJECT_DIR$/src/Chat_GroupVO.java" />
-        <option value="$PROJECT_DIR$/src/Chat_NotebookVO.java" />
         <option value="$PROJECT_DIR$/src/Chat_RecordVO.java" />
         <option value="$PROJECT_DIR$/src/Chat_FriendDAO_interface.java" />
         <option value="$PROJECT_DIR$/src/Chat_NotebookDAO_interface.java" />
         <option value="$PROJECT_DIR$/src/Chat_RecordDAO_interface.java" />
+        <option value="$PROJECT_DIR$/src/NewsVO.java" />
         <option value="$PROJECT_DIR$/src/NewsDAO_interface.java" />
         <option value="$PROJECT_DIR$/src/Admin_AuthorityDAO_interface.java" />
         <option value="$PROJECT_DIR$/src/Authority_FeatureDAO_interface.java" />
         <option value="$PROJECT_DIR$/src/Chat_Group_ItemDAO_interface.java" />
         <option value="$PROJECT_DIR$/src/Chat_GroupDAO_interface.java" />
-        <option value="$PROJECT_DIR$/src/Admin_AuthorityJDBCDAO.java" />
+        <option value="$PROJECT_DIR$/src/User_ReportDAO_interface.java" />
         <option value="$PROJECT_DIR$/src/AdminVO.java" />
         <option value="$PROJECT_DIR$/src/AdminDAO_interface.java" />
-        <option value="$PROJECT_DIR$/src/AdminJDBCDAO.java" />
-        <option value="$PROJECT_DIR$/src/Authority_FeatureJDBCDAO.java" />
-        <option value="$PROJECT_DIR$/src/User_ReportDAO_interface.java" />
-        <option value="$PROJECT_DIR$/src/User_ReportJDBCDAO.java" />
-        <option value="$PROJECT_DIR$/src/Chat_RecordJDBCDAO.java" />
-        <option value="$PROJECT_DIR$/src/Chat_NotebookJDBCDAO.java" />
-        <option value="$PROJECT_DIR$/src/Chat_GroupJDBCDAO.java" />
-        <option value="$PROJECT_DIR$/src/Chat_Group_ItemJDBCDAO.java" />
         <option value="$PROJECT_DIR$/src/Chat_FriendJDBCDAO.java" />
+        <option value="$PROJECT_DIR$/src/Chat_NotebookVO.java" />
+        <option value="$PROJECT_DIR$/src/Chat_Group_ItemJDBCDAO.java" />
+        <option value="$PROJECT_DIR$/src/Chat_NotebookJDBCDAO.java" />
+        <option value="$PROJECT_DIR$/src/Chat_RecordJDBCDAO.java" />
         <option value="$PROJECT_DIR$/src/NewsJDBCDAO.java" />
-        <option value="$PROJECT_DIR$/src/NewsVO.java" />
+        <option value="$PROJECT_DIR$/src/User_ReportJDBCDAO.java" />
+        <option value="$PROJECT_DIR$/src/Chat_GroupJDBCDAO.java" />
+        <option value="$PROJECT_DIR$/src/Authority_FeatureJDBCDAO.java" />
+        <option value="$PROJECT_DIR$/src/AdminJDBCDAO.java" />
+        <option value="$PROJECT_DIR$/src/Admin_AuthorityJDBCDAO.java" />
       </list>
     </option>
   </component>
@@ -139,8 +122,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1616" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -185,20 +168,162 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$ojdbc6$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\MEGA\專題\VO\src" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/encodings.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Authority_FeatureJDBCDAO.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Chat_RecordJDBCDAO.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/NewsJDBCDAO.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/NewsVO.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.classpath</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/sqldialects.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.project</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/AdminDAO_interface.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/AdminJDBCDAO.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/AdminVO.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Admin_AuthorityDAO_interface.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Admin_AuthorityJDBCDAO.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Admin_AuthorityVO.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Authority_FeatureDAO_interface.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Authority_FeatureJDBCDAO.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Authority_FeatureVO.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Chat_FriendDAO_interface.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Chat_FriendVO.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Chat_GroupDAO_interface.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Chat_GroupVO.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Chat_Group_ItemDAO_interface.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Chat_Group_ItemVO.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Chat_NotebookDAO_interface.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Chat_NotebookVO.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Chat_RecordDAO_interface.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Chat_RecordVO.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/NewsDAO_interface.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/NewsJDBCDAO.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/NewsVO.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/User_ReportDAO_interface.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/User_ReportVO.class</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -212,22 +337,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Authority_FeatureJDBCDAO">
-    <configuration default="false" name="Authority_FeatureJDBCDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="Authority_FeatureJDBCDAO" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="VO" />
-      <envs />
-      <method />
-    </configuration>
+  <component name="RunManager">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -313,134 +423,25 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Cold Fusion runner description" factoryName="Cold Fusion" custom_browser="" web_path="">
-      <method />
-    </configuration>
-    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="myFilePath" />
-      <option name="GLUE" />
-      <option name="myNameFilter" />
-      <option name="myGeneratedName" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
       <module name="" />
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
-      <option name="BCName" value="" />
-      <option name="IOSSimulatorSdkPath" value="" />
-      <option name="adlOptions" value="" />
-      <option name="airProgramParameters" value="" />
-      <option name="appDescriptorForEmulator" value="Android" />
-      <option name="debugTransport" value="USB" />
-      <option name="debuggerSdkRaw" value="BC SDK" />
-      <option name="emulator" value="NexusOne" />
-      <option name="emulatorAdlOptions" value="" />
-      <option name="fastPackaging" value="true" />
-      <option name="fullScreenHeight" value="0" />
-      <option name="fullScreenWidth" value="0" />
-      <option name="launchUrl" value="false" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="FlashPlayerDebugger.exe" />
-        </LauncherParameters>
-      </option>
-      <option name="mobileRunTarget" value="Emulator" />
-      <option name="moduleName" value="" />
-      <option name="overriddenMainClass" value="" />
-      <option name="overriddenOutputFileName" value="" />
-      <option name="overrideMainClass" value="false" />
-      <option name="runTrusted" value="true" />
-      <option name="screenDpi" value="0" />
-      <option name="screenHeight" value="0" />
-      <option name="screenWidth" value="0" />
-      <option name="url" value="http://" />
-      <option name="usbDebugPort" value="7936" />
-      <method />
-    </configuration>
-    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
-      <option name="BCName" value="" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="FlashPlayerDebugger.exe" />
-        </LauncherParameters>
-      </option>
-      <option name="moduleName" value="" />
-      <option name="trusted" value="true" />
+    <configuration default="true" type="BatchConfigurationType" factoryName="Batch">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
       <method />
     </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
@@ -457,14 +458,6 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <method />
-    </configuration>
-    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
-      <setting name="vmparams" value="" />
-      <setting name="cmdLine" value="run-app" />
-      <setting name="passParentEnv" value="true" />
-      <setting name="launchBrowser" value="true" />
-      <setting name="launchBrowserUrl" value="" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -509,22 +502,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
-      <node-interpreter value="project" />
-      <working-dir value="" />
-      <envs />
-      <scope-kind value="ALL" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
-      <config-file value="" />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
     <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -550,21 +527,12 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
-      <method />
-    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -595,43 +563,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run" />
-      <scripts />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <working-directory />
-      <pass-parent-env>true</pass-parent-env>
-      <envs />
-      <ui />
-      <extra-mocha-options />
-      <test-kind>DIRECTORY</test-kind>
-      <test-directory />
-      <recursive>false</recursive>
-      <method />
-    </configuration>
-    <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
-      <method />
-    </configuration>
-    <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
-      <method />
-    </configuration>
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Application.Authority_FeatureJDBCDAO" />
-    </list>
-    <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Application.Authority_FeatureJDBCDAO" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -646,50 +577,30 @@
       <workItem from="1496929055241" duration="1976000" />
       <workItem from="1497099610618" duration="1078000" />
       <workItem from="1497100976947" duration="3269000" />
-      <workItem from="1497152784516" duration="8199000" />
     </task>
-    <task id="LOCAL-00001" summary="Authority_FeatureJDBCDAOV1">
-      <created>1497154986006</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1497154986006</updated>
-    </task>
-    <task id="LOCAL-00002" summary="turn to Big5">
-      <created>1497156344673</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1497156344673</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14522000" />
+    <option name="totallyTimeSpent" value="6323000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19351351" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875144" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -700,7 +611,9 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -725,10 +638,10 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19351351" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875144" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
@@ -739,40 +652,26 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Authority_FeatureJDBCDAOV1" />
-    <MESSAGE value="turn to Big5" />
-    <option name="LAST_COMMIT_MESSAGE" value="turn to Big5" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Admin_AuthorityJDBCDAO.java</url>
-          <line>234</line>
-          <properties />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="7" />
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
-  </component>
-  <component name="antWorkspaceConfiguration">
-    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
-    <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/AdminVO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
+        <state relative-caret-position="145">
           <caret line="6" column="44" lean-forward="false" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AdminDAO_interface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
+        <state relative-caret-position="290">
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
@@ -780,40 +679,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Admin_AuthorityJDBCDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
+        <state relative-caret-position="319">
           <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1497152751825" expanded="true" signature="511:613" ph="INSERT INTO product_classification... " />
-            <marker date="1497152751825" expanded="true" signature="676:730" ph="SELECT proc_... product_classification" />
-            <marker date="1497152751825" expanded="true" signature="781:852" ph="SELECT proc_... product_classification" />
-            <marker date="1497152751825" expanded="true" signature="914:966" ph="DELETE FROM " />
-            <marker date="1497152751825" expanded="true" signature="1023:1086" ph="UPDATE produ... " />
+            <element signature="method#insert#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
+            <element signature="method#update#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
+            <element signature="method#delete#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
+            <element signature="method#findByPrimaryKey#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
+            <element signature="method#getAll#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
+            <element signature="e#7861#7880#0" expanded="true" />
+            <element signature="method#main#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
+            <marker date="1497207890738" expanded="true" signature="10478:10689" ph="//..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Authority_FeatureJDBCDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
+        <state relative-caret-position="522">
           <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
+            <element signature="method#insert#0;class#Authority_FeatureJDBCDAO#0" expanded="false" />
+            <element signature="method#update#0;class#Authority_FeatureJDBCDAO#0" expanded="false" />
+            <element signature="method#delete#0;class#Authority_FeatureJDBCDAO#0" expanded="false" />
             <element signature="method#findByPrimaryKey#0;class#Authority_FeatureJDBCDAO#0" expanded="false" />
             <element signature="method#getAll#0;class#Authority_FeatureJDBCDAO#0" expanded="false" />
-            <element signature="e#7936#7957#0" expanded="true" />
             <element signature="method#main#0;class#Authority_FeatureJDBCDAO#0" expanded="false" />
-            <marker date="1497155862815" expanded="true" signature="515:597" ph="INSERT INTO Authority_Feature... " />
-            <marker date="1497155862815" expanded="true" signature="660:709" ph="SELECT auth_... Authority_Feature" />
-            <marker date="1497155862815" expanded="true" signature="760:826" ph="SELECT auth_... Authority_Feature" />
-            <marker date="1497155862815" expanded="true" signature="888:935" ph="DELETE FROM " />
-            <marker date="1497155862815" expanded="true" signature="992:1050" ph="UPDATE Autho... " />
+            <marker date="1497207279090" expanded="true" signature="10825:10867" ph="//..." />
+            <marker date="1497207279090" expanded="true" signature="10825:10874" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Authority_FeatureVO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
+        <state relative-caret-position="145">
           <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="32" />
           <folding />
         </state>
@@ -821,16 +721,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AdminJDBCDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
+        <state relative-caret-position="116">
           <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="25" />
           <folding>
+            <element signature="method#insert#0;class#AdminJDBCDAO#0" expanded="false" />
             <element signature="method#update#0;class#AdminJDBCDAO#0" expanded="false" />
-            <element signature="e#7650#7659#0" expanded="true" />
-            <marker date="1497154501876" expanded="true" signature="489:556" ph="INSERT INTO Admin... " />
-            <marker date="1497154501876" expanded="true" signature="619:654" ph="SELECT adm_n... Admin" />
-            <marker date="1497154501876" expanded="true" signature="705:756" ph="SELECT adm_n... Admin" />
-            <marker date="1497154501876" expanded="true" signature="818:852" ph="DELETE FROM " />
-            <marker date="1497154501876" expanded="true" signature="909:953" ph="UPDATE Admin... " />
+            <element signature="method#delete#0;class#AdminJDBCDAO#0" expanded="false" />
+            <element signature="method#findByPrimaryKey#0;class#AdminJDBCDAO#0" expanded="false" />
+            <element signature="method#getAll#0;class#AdminJDBCDAO#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -839,7 +737,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
           <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="20" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -864,12 +764,14 @@
         <state relative-caret-position="1015">
           <caret line="118" column="8" lean-forward="false" selection-start-line="118" selection-start-column="8" selection-end-line="118" selection-end-column="8" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1497152751825" expanded="true" signature="511:613" ph="INSERT INTO product_classification... " />
-            <marker date="1497152751825" expanded="true" signature="676:730" ph="SELECT proc_... product_classification" />
-            <marker date="1497152751825" expanded="true" signature="781:852" ph="SELECT proc_... product_classification" />
-            <marker date="1497152751825" expanded="true" signature="914:966" ph="DELETE FROM " />
-            <marker date="1497152751825" expanded="true" signature="1023:1086" ph="UPDATE produ... " />
+            <element signature="method#insert#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
+            <element signature="method#update#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
+            <element signature="method#delete#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
+            <element signature="method#findByPrimaryKey#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
+            <element signature="method#getAll#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
+            <element signature="e#7861#7880#0" expanded="true" />
+            <element signature="method#main#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
+            <marker date="1497207890738" expanded="true" signature="10478:10689" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -878,7 +780,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -886,7 +790,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -970,7 +876,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Chat_Group_ItemDAO_interface.java">
+    <entry file="file://$PROJECT_DIR$/src/Authority_FeatureDAO_interface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
@@ -994,73 +900,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Chat_RecordDAO_interface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="13" column="54" lean-forward="false" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Chat_Group_ItemVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="7" column="25" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Chat_RecordVO.java">
+    <entry file="file://$PROJECT_DIR$/src/NewsDAO_interface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
-          <caret line="6" column="50" lean-forward="true" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="50" />
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NewsVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/User_ReportVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Chat_GroupVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="13" column="12" lean-forward="false" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Chat_FriendVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Chat_NotebookVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Admin_AuthorityVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1072,17 +926,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AdminVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="7" column="44" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AdminDAO_interface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
+        <state relative-caret-position="290">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
@@ -1090,210 +936,273 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Chat_FriendDAO_interface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="9" column="51" lean-forward="false" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Authority_FeatureDAO_interface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="5" column="47" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Authority_FeatureVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="26" column="28" lean-forward="false" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AdminJDBCDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="783">
-          <caret line="319" column="15" lean-forward="true" selection-start-line="319" selection-start-column="15" selection-end-line="319" selection-end-column="15" />
-          <folding>
-            <element signature="method#update#0;class#AdminJDBCDAO#0" expanded="false" />
-            <element signature="e#7650#7659#0" expanded="true" />
-            <marker date="1497154501876" expanded="true" signature="489:556" ph="INSERT INTO Admin... " />
-            <marker date="1497154501876" expanded="true" signature="619:654" ph="SELECT adm_n... Admin" />
-            <marker date="1497154501876" expanded="true" signature="705:756" ph="SELECT adm_n... Admin" />
-            <marker date="1497154501876" expanded="true" signature="818:852" ph="DELETE FROM " />
-            <marker date="1497154501876" expanded="true" signature="909:953" ph="UPDATE Admin... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/NewsDAO_interface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="13" column="28" lean-forward="true" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+        <state relative-caret-position="145">
+          <caret line="5" column="30" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/User_ReportDAO_interface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="13" column="58" lean-forward="false" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="58" />
+        <state relative-caret-position="143">
+          <caret line="5" column="41" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Authority_FeatureJDBCDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/Chat_RecordVO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="28" column="34" lean-forward="true" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+        <state relative-caret-position="319">
+          <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Chat_FriendVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/User_ReportVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="14" column="29" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Chat_NotebookVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="16" column="31" lean-forward="false" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
           <folding>
-            <element signature="method#findByPrimaryKey#0;class#Authority_FeatureJDBCDAO#0" expanded="false" />
-            <element signature="method#getAll#0;class#Authority_FeatureJDBCDAO#0" expanded="false" />
-            <element signature="e#7936#7957#0" expanded="true" />
-            <element signature="method#main#0;class#Authority_FeatureJDBCDAO#0" expanded="false" />
-            <marker date="1497155862815" expanded="true" signature="515:597" ph="INSERT INTO Authority_Feature... " />
-            <marker date="1497155862815" expanded="true" signature="660:709" ph="SELECT auth_... Authority_Feature" />
-            <marker date="1497155862815" expanded="true" signature="760:826" ph="SELECT auth_... Authority_Feature" />
-            <marker date="1497155862815" expanded="true" signature="888:935" ph="DELETE FROM " />
-            <marker date="1497155862815" expanded="true" signature="992:1050" ph="UPDATE Autho... " />
+            <element signature="e#431#432#0" expanded="true" />
+            <element signature="e#475#476#0" expanded="true" />
+            <element signature="e#511#512#0" expanded="true" />
+            <element signature="e#543#544#0" expanded="true" />
+            <element signature="e#571#572#0" expanded="true" />
+            <element signature="e#613#614#0" expanded="true" />
+            <element signature="e#647#648#0" expanded="true" />
+            <element signature="e#679#680#0" expanded="true" />
+            <element signature="e#707#708#0" expanded="true" />
+            <element signature="e#749#750#0" expanded="true" />
+            <element signature="e#783#784#0" expanded="true" />
+            <element signature="e#817#818#0" expanded="true" />
+            <element signature="e#847#848#0" expanded="true" />
+            <element signature="e#893#894#0" expanded="true" />
+            <element signature="e#931#932#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/User_ReportJDBCDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/Chat_RecordDAO_interface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="715">
-          <caret line="325" column="5" lean-forward="false" selection-start-line="325" selection-start-column="5" selection-end-line="325" selection-end-column="5" />
-          <folding>
-            <marker date="1497156195145" expanded="true" signature="511:613" ph="INSERT INTO product_classification... " />
-            <marker date="1497156195145" expanded="true" signature="676:730" ph="SELECT proc_... product_classification" />
-            <marker date="1497156195145" expanded="true" signature="781:852" ph="SELECT proc_... product_classification" />
-            <marker date="1497156195145" expanded="true" signature="914:966" ph="DELETE FROM " />
-            <marker date="1497156195145" expanded="true" signature="1023:1086" ph="UPDATE produ... " />
-          </folding>
+        <state relative-caret-position="143">
+          <caret line="5" column="41" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Chat_RecordJDBCDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/Chat_Group_ItemJDBCDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="325" column="5" lean-forward="false" selection-start-line="325" selection-start-column="5" selection-end-line="325" selection-end-column="5" />
+        <state relative-caret-position="-3805">
+          <caret line="180" column="0" lean-forward="true" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
           <folding>
-            <marker date="1497156328269" expanded="true" signature="511:613" ph="INSERT INTO product_classification... " />
-            <marker date="1497156328269" expanded="true" signature="676:730" ph="SELECT proc_... product_classification" />
-            <marker date="1497156328269" expanded="true" signature="781:852" ph="SELECT proc_... product_classification" />
-            <marker date="1497156328269" expanded="true" signature="914:966" ph="DELETE FROM " />
-            <marker date="1497156328269" expanded="true" signature="1023:1086" ph="UPDATE produ... " />
+            <element signature="method#insert#0;class#Chat_Group_ItemJDBCDAO#0" expanded="false" />
+            <element signature="method#update#0;class#Chat_Group_ItemJDBCDAO#0" expanded="false" />
+            <element signature="method#delete#0;class#Chat_Group_ItemJDBCDAO#0" expanded="false" />
+            <element signature="e#7877#7896#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Chat_NotebookJDBCDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1303">
-          <caret line="325" column="5" lean-forward="false" selection-start-line="325" selection-start-column="5" selection-end-line="325" selection-end-column="5" />
+        <state relative-caret-position="-458">
+          <caret line="237" column="13" lean-forward="false" selection-start-line="237" selection-start-column="13" selection-end-line="237" selection-end-column="13" />
           <folding>
-            <marker date="1497156244842" expanded="true" signature="511:613" ph="INSERT INTO product_classification... " />
-            <marker date="1497156244842" expanded="true" signature="676:730" ph="SELECT proc_... product_classification" />
-            <marker date="1497156244842" expanded="true" signature="781:852" ph="SELECT proc_... product_classification" />
-            <marker date="1497156244842" expanded="true" signature="914:966" ph="DELETE FROM " />
-            <marker date="1497156244842" expanded="true" signature="1023:1086" ph="UPDATE produ... " />
+            <element signature="method#insert#0;class#Chat_NotebookJDBCDAO#0" expanded="false" />
+            <element signature="method#update#0;class#Chat_NotebookJDBCDAO#0" expanded="false" />
+            <element signature="method#delete#0;class#Chat_NotebookJDBCDAO#0" expanded="false" />
+            <element signature="method#findByPrimaryKey#0;class#Chat_NotebookJDBCDAO#0" expanded="false" />
+            <element signature="method#getAll#0;class#Chat_NotebookJDBCDAO#0" expanded="false" />
+            <element signature="e#7840#7857#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Chat_GroupJDBCDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/Chat_RecordJDBCDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="715">
-          <caret line="325" column="5" lean-forward="false" selection-start-line="325" selection-start-column="5" selection-end-line="325" selection-end-column="5" />
+        <state relative-caret-position="342">
+          <caret line="237" column="13" lean-forward="false" selection-start-line="237" selection-start-column="13" selection-end-line="237" selection-end-column="13" />
           <folding>
-            <marker date="1497156266623" expanded="true" signature="511:613" ph="INSERT INTO product_classification... " />
-            <marker date="1497156266623" expanded="true" signature="676:730" ph="SELECT proc_... product_classification" />
-            <marker date="1497156266623" expanded="true" signature="781:852" ph="SELECT proc_... product_classification" />
-            <marker date="1497156266623" expanded="true" signature="914:966" ph="DELETE FROM " />
-            <marker date="1497156266623" expanded="true" signature="1023:1086" ph="UPDATE produ... " />
+            <element signature="method#insert#0;class#Chat_RecordJDBCDAO#0" expanded="false" />
+            <element signature="method#update#0;class#Chat_RecordJDBCDAO#0" expanded="false" />
+            <element signature="method#delete#0;class#Chat_RecordJDBCDAO#0" expanded="false" />
+            <element signature="method#findByPrimaryKey#0;class#Chat_RecordJDBCDAO#0" expanded="false" />
+            <element signature="method#getAll#0;class#Chat_RecordJDBCDAO#0" expanded="false" />
+            <element signature="e#7771#7786#0" expanded="true" />
+            <element signature="method#main#0;class#Chat_RecordJDBCDAO#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Chat_Group_ItemJDBCDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/User_ReportJDBCDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="715">
-          <caret line="325" column="5" lean-forward="false" selection-start-line="325" selection-start-column="5" selection-end-line="325" selection-end-column="5" />
+        <state relative-caret-position="812">
+          <caret line="117" column="14" lean-forward="true" selection-start-line="117" selection-start-column="14" selection-end-line="117" selection-end-column="14" />
           <folding>
-            <marker date="1497156291400" expanded="true" signature="511:613" ph="INSERT INTO product_classification... " />
-            <marker date="1497156291400" expanded="true" signature="676:730" ph="SELECT proc_... product_classification" />
-            <marker date="1497156291400" expanded="true" signature="781:852" ph="SELECT proc_... product_classification" />
-            <marker date="1497156291400" expanded="true" signature="914:966" ph="DELETE FROM " />
-            <marker date="1497156291400" expanded="true" signature="1023:1086" ph="UPDATE produ... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Chat_FriendJDBCDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="715">
-          <caret line="325" column="5" lean-forward="false" selection-start-line="325" selection-start-column="5" selection-end-line="325" selection-end-column="5" />
-          <folding>
-            <marker date="1497156312503" expanded="true" signature="511:613" ph="INSERT INTO product_classification... " />
-            <marker date="1497156312503" expanded="true" signature="676:730" ph="SELECT proc_... product_classification" />
-            <marker date="1497156312503" expanded="true" signature="781:852" ph="SELECT proc_... product_classification" />
-            <marker date="1497156312503" expanded="true" signature="914:966" ph="DELETE FROM " />
-            <marker date="1497156312503" expanded="true" signature="1023:1086" ph="UPDATE produ... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Admin_AuthorityJDBCDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="715">
-          <caret line="325" column="5" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="325" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1497152751825" expanded="true" signature="511:613" ph="INSERT INTO product_classification... " />
-            <marker date="1497152751825" expanded="true" signature="676:730" ph="SELECT proc_... product_classification" />
-            <marker date="1497152751825" expanded="true" signature="781:852" ph="SELECT proc_... product_classification" />
-            <marker date="1497152751825" expanded="true" signature="914:966" ph="DELETE FROM " />
-            <marker date="1497152751825" expanded="true" signature="1023:1086" ph="UPDATE produ... " />
+            <element signature="method#insert#0;class#User_ReportJDBCDAO#0" expanded="false" />
+            <element signature="method#update#0;class#User_ReportJDBCDAO#0" expanded="false" />
+            <element signature="method#delete#0;class#User_ReportJDBCDAO#0" expanded="false" />
+            <element signature="method#findByPrimaryKey#0;class#User_ReportJDBCDAO#0" expanded="false" />
+            <element signature="method#getAll#0;class#User_ReportJDBCDAO#0" expanded="false" />
+            <element signature="e#8180#8195#0" expanded="true" />
+            <element signature="method#main#0;class#User_ReportJDBCDAO#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/NewsJDBCDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="20" column="67" lean-forward="false" selection-start-line="20" selection-start-column="67" selection-end-line="20" selection-end-column="67" />
+        <state relative-caret-position="487">
+          <caret line="184" column="0" lean-forward="true" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
           <folding>
-            <marker date="1497167240708" expanded="true" signature="489:507" ph="INSERT INTO product_classification... " />
-            <marker date="1497167240708" expanded="true" signature="10082:10565" ph="//..." />
-            <marker date="1497167240708" expanded="true" signature="10082:10572" ph="{...}" />
+            <element signature="method#insert#0;class#NewsJDBCDAO#0" expanded="false" />
+            <element signature="method#update#0;class#NewsJDBCDAO#0" expanded="false" />
+            <element signature="method#delete#0;class#NewsJDBCDAO#0" expanded="false" />
+            <element signature="method#findByPrimaryKey#0;class#NewsJDBCDAO#0" expanded="false" />
+            <element signature="method#getAll#0;class#NewsJDBCDAO#0" expanded="false" />
+            <element signature="e#7942#7950#0" expanded="true" />
+            <element signature="method#main#0;class#NewsJDBCDAO#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/NewsVO.java">
+    <entry file="file://$PROJECT_DIR$/src/Chat_Group_ItemDAO_interface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        <state relative-caret-position="261">
+          <caret line="9" column="58" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Chat_Group_ItemVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="5" column="50" lean-forward="true" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Chat_GroupJDBCDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="21" column="50" lean-forward="false" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
           <folding>
-            <element signature="e#401#402#0" expanded="true" />
-            <element signature="e#430#431#0" expanded="true" />
-            <element signature="e#474#475#0" expanded="true" />
-            <element signature="e#510#511#0" expanded="true" />
-            <element signature="e#548#549#0" expanded="true" />
-            <element signature="e#579#580#0" expanded="true" />
-            <element signature="e#630#631#0" expanded="true" />
-            <element signature="e#670#671#0" expanded="true" />
-            <element signature="e#706#707#0" expanded="true" />
-            <element signature="e#738#739#0" expanded="true" />
-            <element signature="e#788#789#0" expanded="true" />
-            <element signature="e#830#831#0" expanded="true" />
-            <element signature="e#864#865#0" expanded="true" />
-            <element signature="e#894#895#0" expanded="true" />
-            <element signature="e#940#941#0" expanded="true" />
-            <element signature="e#978#979#0" expanded="true" />
+            <element signature="method#insert#0;class#Chat_GroupJDBCDAO#0" expanded="false" />
+            <element signature="method#update#0;class#Chat_GroupJDBCDAO#0" expanded="false" />
+            <element signature="method#delete#0;class#Chat_GroupJDBCDAO#0" expanded="false" />
+            <element signature="method#findByPrimaryKey#0;class#Chat_GroupJDBCDAO#0" expanded="false" />
+            <element signature="method#getAll#0;class#Chat_GroupJDBCDAO#0" expanded="false" />
+            <element signature="e#7753#7767#0" expanded="true" />
+            <element signature="method#main#0;class#Chat_GroupJDBCDAO#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Chat_GroupVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Chat_FriendJDBCDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2061">
+          <caret line="26" column="13" lean-forward="true" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+          <folding>
+            <element signature="e#7783#7798#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Authority_FeatureJDBCDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1044">
+          <caret line="328" column="0" lean-forward="true" selection-start-line="328" selection-start-column="0" selection-end-line="328" selection-end-column="0" />
+          <folding>
+            <element signature="method#insert#0;class#Authority_FeatureJDBCDAO#0" expanded="false" />
+            <element signature="method#update#0;class#Authority_FeatureJDBCDAO#0" expanded="false" />
+            <element signature="method#delete#0;class#Authority_FeatureJDBCDAO#0" expanded="false" />
+            <element signature="method#findByPrimaryKey#0;class#Authority_FeatureJDBCDAO#0" expanded="false" />
+            <element signature="method#getAll#0;class#Authority_FeatureJDBCDAO#0" expanded="false" />
+            <element signature="method#main#0;class#Authority_FeatureJDBCDAO#0" expanded="false" />
+            <marker date="1497207279090" expanded="true" signature="10825:10867" ph="//..." />
+            <marker date="1497207279090" expanded="true" signature="10825:10874" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Authority_FeatureVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AdminVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="10" column="27" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AdminJDBCDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1345">
+          <caret line="309" column="0" lean-forward="true" selection-start-line="309" selection-start-column="0" selection-end-line="309" selection-end-column="0" />
+          <folding>
+            <element signature="method#insert#0;class#AdminJDBCDAO#0" expanded="false" />
+            <element signature="method#update#0;class#AdminJDBCDAO#0" expanded="false" />
+            <element signature="method#delete#0;class#AdminJDBCDAO#0" expanded="false" />
+            <element signature="method#findByPrimaryKey#0;class#AdminJDBCDAO#0" expanded="false" />
+            <element signature="method#getAll#0;class#AdminJDBCDAO#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Admin_AuthorityVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="26" />
+          <folding>
+            <element signature="e#265#266#0" expanded="true" />
+            <element signature="e#288#289#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Admin_AuthorityJDBCDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="957">
+          <caret line="293" column="43" lean-forward="false" selection-start-line="293" selection-start-column="43" selection-end-line="293" selection-end-column="43" />
+          <folding>
+            <element signature="method#insert#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
+            <element signature="method#update#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
+            <element signature="method#delete#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
+            <element signature="method#findByPrimaryKey#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
+            <element signature="method#getAll#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
+            <element signature="e#7861#7880#0" expanded="true" />
+            <element signature="method#main#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
+            <marker date="1497207890738" expanded="true" signature="10478:10689" ph="//..." />
           </folding>
         </state>
       </provider>

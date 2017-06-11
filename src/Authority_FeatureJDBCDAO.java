@@ -20,7 +20,7 @@ public class Authority_FeatureJDBCDAO implements Authority_FeatureDAO_interface 
 
 
     @Override
-    public void insert(Authority_FeatureVO Authority_FeatureVO) {
+    public void insert(Authority_FeatureVO authority_FeatureVO) {
         Connection con = null;
         PreparedStatement pstmt = null;
 
@@ -30,7 +30,7 @@ public class Authority_FeatureJDBCDAO implements Authority_FeatureDAO_interface 
             con = DriverManager.getConnection(URL, USER, PASSWORD);
             String[] cols = {"auth_no"}; // 有使用sequence產生編號的話才要寫
             pstmt = con.prepareStatement(INSERT_STMT, cols); // 有使用sequence產生編號的話才要寫第二個參數
-            pstmt.setString(1, Admin_AuthorityVO.getAuth_no());
+            pstmt.setString(1, authority_FeatureVO.getAuth_no());
 
             pstmt.executeUpdate();
 
@@ -64,7 +64,7 @@ public class Authority_FeatureJDBCDAO implements Authority_FeatureDAO_interface 
     }
 
     @Override
-    public void update(Authority_FeatureVO Authority_FeatureVO) {
+    public void update(Authority_FeatureVO authority_FeatureVO) {
 
         Connection con = null;
         PreparedStatement pstmt = null;
@@ -75,8 +75,8 @@ public class Authority_FeatureJDBCDAO implements Authority_FeatureDAO_interface 
             con = DriverManager.getConnection(URL, USER, PASSWORD);
             pstmt = con.prepareStatement(UPDATE);
 
-            pstmt.setString(1, Authority_FeatureVO.getAuth_name());
-            pstmt.setString(2, Authority_FeatureVO.getAuth_no());
+            pstmt.setString(1, authority_FeatureVO.getAuth_name());
+            pstmt.setString(2, authority_FeatureVO.getAuth_no());
 
             pstmt.executeUpdate();
 
@@ -176,6 +176,7 @@ public class Authority_FeatureJDBCDAO implements Authority_FeatureDAO_interface 
 
     }
 
+    @Override
     public Authority_FeatureVO findByPrimaryKey(String auth_no){
 
         Authority_FeatureVO authority_featureVO = null;
@@ -234,6 +235,7 @@ public class Authority_FeatureJDBCDAO implements Authority_FeatureDAO_interface 
         return authority_featureVO;
     }
 
+    @Override
     public List<Authority_FeatureVO> getAll(){
 
         List<Authority_FeatureVO> list = new ArrayList<Authority_FeatureVO>();
@@ -297,32 +299,32 @@ public class Authority_FeatureJDBCDAO implements Authority_FeatureDAO_interface 
         // 測試看看每個指令是否可以使用
         // 新增
         Authority_FeatureVO authority_FeatureVO1 = new Authority_FeatureVO();
-        authority_FeatureVO1.getAuth_name("財務部");
+        authority_FeatureVO1.setAuth_name("財務部");
         dao.insert(authority_FeatureVO1);
 
         // 修改
         Authority_FeatureVO authority_FeatureVO2 = new Authority_FeatureVO();
-        authority_FeatureVO2.setProc_no("2");
-        authority_FeatureVO2.getAuth_name("修改看看");
+        authority_FeatureVO2.setAuth_no("2");
+        authority_FeatureVO2.setAuth_name("修改看看");
 		dao.update(authority_FeatureVO2);
 
         // 刪除
 		dao.delete("1");
 
         // 查詢
-        Authority_FeatureVO authority_FeatureVO3 = dao.findByPrimaryKey("1");
-		System.out.print(authority_FeatureVO3.getAuth_no() + ",");
-		System.out.println(authority_FeatureVO3.getAuth_name());
-		System.out.println("---------------------");
+//        Authority_FeatureVO authority_FeatureVO3 = dao.findByPrimaryKey("1");
+//		System.out.print(authority_FeatureVO3.getAuth_no() + ",");
+//		System.out.println(authority_FeatureVO3.getAuth_name());
+//		System.out.println("---------------------");
 
         // 查詢部門
-		List<Authority_FeatureVO> list = dao.getAll();
-		for (Authority_FeatureVO proc : list) {
-			System.out.print(proc.getAuth_no() + ",");
-			System.out.print(proc.getAuth_name());
+//		List<Authority_FeatureVO> list = dao.getAll();
+//		for (Authority_FeatureVO proc : list) {
+//			System.out.print(proc.getAuth_no() + ",");
+//			System.out.print(proc.getAuth_name());
 //			System.out.println();
 //		}
 
     }
-}
+
 }

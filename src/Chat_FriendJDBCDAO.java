@@ -2,25 +2,25 @@ import java.util.*;
 import java.sql.*;
 
 
-public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
+public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
     private static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
     private static final String URL = "jdbc:oracle:thin:@localhost:1522:xe";
-//    private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
+    //    private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
     private static final String USER = "ba101g3";
     private static final String PASSWORD = "baby";
-    // ·s¼W¸ê®Æ
-    private static final String INSERT_STMT = "INSERT INTO product_classification (proc_no, proc_name) VALUES (product_classification_seq.NEXTVAL, ?)";
-    // ¬d¸ß¸ê®Æ
-    private static final String GET_ALL_STMT = "SELECT proc_no , proc_name FROM product_classification";
-    private static final String GET_ONE_STMT = "SELECT proc_no, proc_name FROM product_classification where proc_no = ?";
-    // §R°£¸ê®Æ
-    private static final String DELETE_PROC = "DELETE FROM product_classification where proc_no = ?";
-    // ­×§ï¸ê®Æ
-    private static final String UPDATE = "UPDATE product_classification set proc_name=? where proc_no = ?";
+    // æ–°å¢è³‡æ–™
+    private static final String INSERT_STMT = "INSERT INTO Chat_Friend (cf_no, mem_no_o) VALUES (cf_no_seq.NEXTVAL, ?)";
+    // æŸ¥è©¢è³‡æ–™
+    private static final String GET_ALL_STMT = "SELECT cf_no , mem_no_o FROM Chat_Friend";
+    private static final String GET_ONE_STMT = "SELECT cf_no, mem_no_o FROM Chat_Friend where cf_no = ?";
+    // åˆªé™¤è³‡æ–™
+    private static final String DELETE_PROC = "DELETE FROM Chat_Friend where cf_no = ?";
+    // ä¿®æ”¹è³‡æ–™
+    private static final String UPDATE = "UPDATE Chat_Friend set mem_no_o=? where cf_no = ?";
 
 
     @Override
-    public void insert(Admin_AuthorityVO Admin_AuthorityVO) {
+    public void insert(Chat_FriendVO chat_FriendVO) {
         Connection con = null;
         PreparedStatement pstmt = null;
 
@@ -28,9 +28,9 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
 
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
-            String[] cols = {"proc_no"}; // ¦³¨Ï¥Îsequence²£¥Í½s¸¹ªº¸Ü¤~­n¼g
-            pstmt = con.prepareStatement(INSERT_STMT, cols); // ¦³¨Ï¥Îsequence²£¥Í½s¸¹ªº¸Ü¤~­n¼g²Ä¤G­Ó°Ñ¼Æ
-            pstmt.setString(1, product_classificationVO.getProc_name());
+            String[] cols = {"cf_no"}; // æœ‰ä½¿ç”¨sequenceç”¢ç”Ÿç·¨è™Ÿçš„è©±æ‰è¦å¯«
+            pstmt = con.prepareStatement(INSERT_STMT, cols); // æœ‰ä½¿ç”¨sequenceç”¢ç”Ÿç·¨è™Ÿçš„è©±æ‰è¦å¯«ç¬¬äºŒå€‹åƒæ•¸
+            pstmt.setString(1, chat_FriendVO.getCf_no());
 
             pstmt.executeUpdate();
 
@@ -64,7 +64,7 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
     }
 
     @Override
-    public void update(Admin_AuthorityVO Admin_AuthorityVO) {
+    public void update(Chat_FriendVO chat_FriendVO) {
 
         Connection con = null;
         PreparedStatement pstmt = null;
@@ -75,8 +75,8 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
             con = DriverManager.getConnection(URL, USER, PASSWORD);
             pstmt = con.prepareStatement(UPDATE);
 
-            pstmt.setString(1, product_classificationVO.getProc_name());
-            pstmt.setString(2, product_classificationVO.getProc_no());
+            pstmt.setString(1, chat_FriendVO.getCf_no());
+            pstmt.setString(2, chat_FriendVO.getCf_no());
 
             pstmt.executeUpdate();
 
@@ -109,7 +109,7 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
     }
 
     @Override
-    public void delete(String adm_no){
+    public void delete(String cf_no) {
 
         int updateCount_PRODUCTs = 0;
 
@@ -121,23 +121,23 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
 
-            // 1¡´³]©w©ó pstm.executeUpdate()¤§«e
+            // 1â—è¨­å®šæ–¼ pstm.executeUpdate()ä¹‹å‰
             con.setAutoCommit(false);
 
-            // ¥ı§R°£°Ó«~(¦h) --->©|¥¼«Øproduct¡A¦]¦¹¥ıµù¸Ñ
+            // å…ˆåˆªé™¤å•†å“(å¤š) --->å°šæœªå»ºproductï¼Œå› æ­¤å…ˆè¨»è§£
 //			pstmt = con.prepareStatement(DELETE_PRODUCTs);
-//			pstmt.setString(1, proc_no);
+//			pstmt.setString(1, cf_no);
 //			updateCount_PRODUCTs = pstmt.executeUpdate();
-            // ¦A§R°£°Ó«~Ãş§O(¤@)
+            // å†åˆªé™¤å•†å“é¡åˆ¥(ä¸€)
             pstmt = con.prepareStatement(DELETE_PROC);
-            pstmt.setString(1, proc_no);
+            pstmt.setString(1, cf_no);
             pstmt.executeUpdate();
 
-            // 2¡´³]©w©ó pstm.executeUpdate()¤§«á
+            // 2â—è¨­å®šæ–¼ pstm.executeUpdate()ä¹‹å¾Œ
             con.commit();
             con.setAutoCommit(true);
-            System.out.println("§R°£°Ó«~Ãş§O½s¸¹" + proc_no + "®É,¦@¦³°Ó«~" + updateCount_PRODUCTs
-                    + "­Ó¦P®É³Q§R°£");
+            System.out.println("åˆªé™¤å•†å“é¡åˆ¥ç·¨è™Ÿ" + cf_no + "æ™‚,å…±æœ‰å•†å“" + updateCount_PRODUCTs
+                    + "å€‹åŒæ™‚è¢«åˆªé™¤");
 
             // Handle any DRIVER errors
         } catch (ClassNotFoundException e) {
@@ -147,7 +147,7 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
         } catch (SQLException se) {
             if (con != null) {
                 try {
-                    // 3¡´³]©w©ó·í¦³exceptionµo¥Í®É¤§catch°Ï¶ô¤º
+                    // 3â—è¨­å®šæ–¼ç•¶æœ‰exceptionç™¼ç”Ÿæ™‚ä¹‹catchå€å¡Šå…§
                     con.rollback();
                 } catch (SQLException excep) {
                     throw new RuntimeException("rollback error occured. "
@@ -176,9 +176,10 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
 
     }
 
-    public Admin_AuthorityVO findByPrimaryKey(String adm_no){
+    @Override
+    public Chat_FriendVO findByPrimaryKey(String cf_no) {
 
-        Product_ClassificationVO product_classificationVO = null;
+        Chat_FriendVO chat_FriendVO = null;
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -189,14 +190,14 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
             con = DriverManager.getConnection(URL, USER, PASSWORD);
             pstmt = con.prepareStatement(GET_ONE_STMT);
 
-            pstmt.setString(1, proc_no);
+            pstmt.setString(1, cf_no);
 
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                product_classificationVO = new Product_ClassificationVO();
-                product_classificationVO.setProc_no(rs.getString("proc_no"));
-                product_classificationVO.setProc_name(rs.getString("proc_name"));
+                chat_FriendVO = new Chat_FriendVO();
+                chat_FriendVO.setCf_no(rs.getString("cf_no"));
+                chat_FriendVO.setMem_no_o(rs.getString("mem_no_o"));
             }
 
             // Handle any DRIVER errors
@@ -231,13 +232,14 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
                 }
             }
         }
-        return product_classificationVO;
+        return chat_FriendVO;
     }
 
-    public List<Admin_AuthorityVO> getAll(){
+    @Override
+    public List<Chat_FriendVO> getAll() {
 
-        List<Product_ClassificationVO> list = new ArrayList<Product_ClassificationVO>();
-        Product_ClassificationVO product_classificationVO = null;
+        List<Chat_FriendVO> list = new ArrayList<Chat_FriendVO>();
+        Chat_FriendVO chat_FriendVO = null;
 
         Connection con = null;
         PreparedStatement pstmt = null;
@@ -251,10 +253,10 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                product_classificationVO = new Product_ClassificationVO();
-                product_classificationVO.setProc_no(rs.getString("proc_no"));
-                product_classificationVO.setProc_name(rs.getString("proc_name"));
-                list.add(product_classificationVO); // Store the row in the list
+                chat_FriendVO = new Chat_FriendVO();
+                chat_FriendVO.setCf_no(rs.getString("cf_no"));
+                chat_FriendVO.setMem_no_o(rs.getString("mem_no_o"));
+                list.add(chat_FriendVO); // Store the row in the list
             }
 
             // Handle any DRIVER errors
@@ -293,35 +295,34 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
 
     public static void main(String[] args) {
 
-        Product_ClassificationJDBCDAO dao = new Product_ClassificationJDBCDAO();
-        // ´ú¸Õ¬İ¬İ¨C­Ó«ü¥O¬O§_¥i¥H¨Ï¥Î
-        // ·s¼W
-        Product_ClassificationVO product_classificationVO1 = new Product_ClassificationVO();
-        product_classificationVO1.setProc_name("°]°È³¡¦^¨ÓÂP");
-        dao.insert(product_classificationVO1);
+        Chat_FriendJDBCDAO dao = new Chat_FriendJDBCDAO();
+        // æ¸¬è©¦çœ‹çœ‹æ¯å€‹æŒ‡ä»¤æ˜¯å¦å¯ä»¥ä½¿ç”¨
+        // æ–°å¢
+        Chat_FriendVO chat_FriendVO1 = new Chat_FriendVO();
+        chat_FriendVO1.setMem_no_o("è²¡å‹™éƒ¨å›ä¾†åš•");
+        dao.insert(chat_FriendVO1);
 
-        // ­×§ï
-//		Product_ClassificationVO product_classificationVO2 = new Product_ClassificationVO();
-//		product_classificationVO2.setProc_no("2");
-//		product_classificationVO2.setProc_name("­×§ï¬İ¬İ");
-//		dao.update(product_classificationVO2);
+        // ä¿®æ”¹
+        Chat_FriendVO chat_FriendVO2 = new Chat_FriendVO();
+        chat_FriendVO2.setCf_no("2");
+        chat_FriendVO2.setMem_no_o("ä¿®æ”¹çœ‹çœ‹");
+        dao.update(chat_FriendVO2);
 
-        // §R°£
-//		dao.delete("1");
+        // åˆªé™¤
+        dao.delete("1");
 
-        // ¬d¸ß
-//		Product_ClassificationVO product_classificationVO3 = dao.findByPrimaryKey("1");
-//		System.out.print(product_classificationVO3.getProc_no() + ",");
-//		System.out.println(product_classificationVO3.getProc_name());
-//		System.out.println("---------------------");
+        // æŸ¥è©¢
+        Chat_FriendVO chat_FriendVO3 = dao.findByPrimaryKey("1");
+        System.out.print(chat_FriendVO3.getCf_no() + ",");
+        System.out.println(chat_FriendVO3.getMem_no_o());
+        System.out.println("---------------------");
 
-        // ¬d¸ß³¡ªù
-//		List<Product_ClassificationVO> list = dao.getAll();
-//		for (Product_ClassificationVO proc : list) {
-//			System.out.print(proc.getProc_no() + ",");
-//			System.out.print(proc.getProc_name());
-//			System.out.println();
-//		}
-
+        // æŸ¥è©¢éƒ¨é–€
+        List<Chat_FriendVO> list = dao.getAll();
+        for (Chat_FriendVO proc : list) {
+            System.out.print(proc.getCf_no() + ",");
+            System.out.print(proc.getMem_no_o());
+            System.out.println();
+        }
     }
 }

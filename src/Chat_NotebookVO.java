@@ -8,7 +8,7 @@ public class Chat_NotebookVO implements Serializable {
     private String cf_no;     //	(FK)
     private String cg_no;     //	(FK)
     private String cnb_cnt;   //
-    private byte[] cnb_pic;   //
+//    private byte[] cnb_pic;   //
 
     public Chat_NotebookVO() {
         super();
@@ -44,13 +44,5 @@ public class Chat_NotebookVO implements Serializable {
 
     public void setCnb_cnt(String cnb_cnt) {
         this.cnb_cnt = cnb_cnt;
-    }
-
-    public byte[] getCnb_pic() {
-        return cnb_pic;
-    }
-
-    public void setCnb_pic(byte[] cnb_pic) {
-        this.cnb_pic = cnb_pic;
     }
 }

@@ -7,7 +7,8 @@
     <file url="file://$PROJECT_DIR$/src/Chat_GroupJDBCDAO.java" charset="x-windows-950" />
     <file url="file://$PROJECT_DIR$/src/Chat_Group_ItemJDBCDAO.java" charset="x-windows-950" />
     <file url="file://$PROJECT_DIR$/src/Chat_NotebookJDBCDAO.java" charset="x-windows-950" />
-    <file url="file://$PROJECT_DIR$/src/NewsJDBCDAO.java" charset="Big5" />
+    <file url="file://$PROJECT_DIR$/src/Chat_RecordJDBCDAO.java" charset="x-windows-950" />
+    <file url="file://$PROJECT_DIR$/src/NewsJDBCDAO.java" charset="x-windows-950" />
     <file url="file://$PROJECT_DIR$/src/User_ReportJDBCDAO.java" charset="x-windows-950" />
   </component>
 </project>
