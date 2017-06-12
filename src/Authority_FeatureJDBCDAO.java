@@ -3,19 +3,19 @@ import java.sql.*;
 
 
 public class Authority_FeatureJDBCDAO implements Authority_FeatureDAO_interface {
-    private static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
+	private static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
     private static final String URL = "jdbc:oracle:thin:@localhost:1522:xe";
 //    private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
     private static final String USER = "ba101g3";
     private static final String PASSWORD = "baby";
-    // æ–°å¢è³‡æ–™
-    private static final String INSERT_STMT = "INSERT INTO Authority_Feature (auth_no, auth_name) VALUES (auth_no_seq.NEXTVAL, ?)";
-    // æŸ¥è©¢è³‡æ–™
+    // ·s¼W¸ê®Æ
+    private static final String INSERT_STMT = "INSERT INTO Authority_Feature (auth_no, auth_name) VALUES ('an'||LPAD(to_char(AUTH_NO_SEQ.nextval),1,'0'), ?)";
+    // ¬d¸ß¸ê®Æ
     private static final String GET_ALL_STMT = "SELECT auth_no , auth_name FROM Authority_Feature";
     private static final String GET_ONE_STMT = "SELECT auth_no, auth_name FROM Authority_Feature where auth_no = ?";
-    // åˆªé™¤è³‡æ–™
+    // §R°£¸ê®Æ
     private static final String DELETE_PROC = "DELETE FROM Authority_Feature where auth_no = ?";
-    // ä¿®æ”¹è³‡æ–™
+    // ­×§ï¸ê®Æ
     private static final String UPDATE = "UPDATE Authority_Feature set auth_name=? where auth_no = ?";
 
 
@@ -28,9 +28,10 @@ public class Authority_FeatureJDBCDAO implements Authority_FeatureDAO_interface 
 
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
-            String[] cols = {"auth_no"}; // æœ‰ä½¿ç”¨sequenceç”¢ç”Ÿç·¨è™Ÿçš„è©±æ‰è¦å¯«
-            pstmt = con.prepareStatement(INSERT_STMT, cols); // æœ‰ä½¿ç”¨sequenceç”¢ç”Ÿç·¨è™Ÿçš„è©±æ‰è¦å¯«ç¬¬äºŒå€‹åƒæ•¸
+            String[] cols = {"auth_no"}; // ¦³¨Ï¥Îsequence²£¥Í½s¸¹ªº¸Ü¤~­n¼g
+            pstmt = con.prepareStatement(INSERT_STMT, cols); // ¦³¨Ï¥Îsequence²£¥Í½s¸¹ªº¸Ü¤~­n¼g²Ä¤G­Ó°Ñ¼Æ
             pstmt.setString(1, authority_FeatureVO.getAuth_no());
+            pstmt.setString(1, authority_FeatureVO.getAuth_name());
 
             pstmt.executeUpdate();
 
@@ -121,23 +122,23 @@ public class Authority_FeatureJDBCDAO implements Authority_FeatureDAO_interface 
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
 
-            // 1â—è¨­å®šæ–¼ pstm.executeUpdate()ä¹‹å‰
+            // 1¡´³]©w©ó pstm.executeUpdate()¤§«e
             con.setAutoCommit(false);
 
-            // å…ˆåˆªé™¤å•†å“(å¤š) --->å°šæœªå»ºproductï¼Œå› æ­¤å…ˆè¨»è§£
+            // ¥ı§R°£°Ó«~(¦h) --->©|¥¼«Øproduct¡A¦]¦¹¥ıµù¸Ñ
 //			pstmt = con.prepareStatement(DELETE_PRODUCTs);
 //			pstmt.setString(1, auth_no);
 //			updateCount_PRODUCTs = pstmt.executeUpdate();
-            // å†åˆªé™¤å•†å“é¡åˆ¥(ä¸€)
+            // ¦A§R°£°Ó«~Ãş§O(¤@)
             pstmt = con.prepareStatement(DELETE_PROC);
             pstmt.setString(1, auth_no);
             pstmt.executeUpdate();
 
-            // 2â—è¨­å®šæ–¼ pstm.executeUpdate()ä¹‹å¾Œ
+            // 2¡´³]©w©ó pstm.executeUpdate()¤§«á
             con.commit();
             con.setAutoCommit(true);
-            System.out.println("åˆªé™¤å•†å“é¡åˆ¥ç·¨è™Ÿ" + auth_no + "æ™‚,å…±æœ‰å•†å“" + updateCount_PRODUCTs
-                    + "å€‹åŒæ™‚è¢«åˆªé™¤");
+            System.out.println("§R°£°Ó«~Ãş§O½s¸¹" + auth_no + "®É,¦@¦³°Ó«~" + updateCount_PRODUCTs
+                    + "­Ó¦P®É³Q§R°£");
 
             // Handle any DRIVER errors
         } catch (ClassNotFoundException e) {
@@ -147,7 +148,7 @@ public class Authority_FeatureJDBCDAO implements Authority_FeatureDAO_interface 
         } catch (SQLException se) {
             if (con != null) {
                 try {
-                    // 3â—è¨­å®šæ–¼ç•¶æœ‰exceptionç™¼ç”Ÿæ™‚ä¹‹catchå€å¡Šå…§
+                    // 3¡´³]©w©ó·í¦³exceptionµo¥Í®É¤§catch°Ï¶ô¤º
                     con.rollback();
                 } catch (SQLException excep) {
                     throw new RuntimeException("rollback error occured. "
@@ -258,13 +259,13 @@ public class Authority_FeatureJDBCDAO implements Authority_FeatureDAO_interface 
                 authority_FeatureVO.setAuth_name(rs.getString("auth_name"));
                 list.add(authority_FeatureVO); // Store the row in the list
             }
-
+        
             // Handle any DRIVER errors
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException("Couldn't load database DRIVER. "
-                    + e.getMessage());
+//        } catch (ClassNotFoundException e) {
+//            throw new RuntimeException("Couldn't load database DRIVER. "
+//                    + e.getMessage());
             // Handle any SQL errors
-        } catch (SQLException se) {
+        } catch (Exception se) {
             throw new RuntimeException("A database error occured. "
                     + se.getMessage());
         } finally {
@@ -296,28 +297,28 @@ public class Authority_FeatureJDBCDAO implements Authority_FeatureDAO_interface 
     public static void main(String[] args) {
 
         Authority_FeatureJDBCDAO dao = new Authority_FeatureJDBCDAO();
-        // æ¸¬è©¦çœ‹çœ‹æ¯å€‹æŒ‡ä»¤æ˜¯å¦å¯ä»¥ä½¿ç”¨
-        // æ–°å¢
+        // ´ú¸Õ¬İ¬İ¨C­Ó«ü¥O¬O§_¥i¥H¨Ï¥Î
+        // ·s¼W
         Authority_FeatureVO authority_FeatureVO1 = new Authority_FeatureVO();
-        authority_FeatureVO1.setAuth_name("è²¡å‹™éƒ¨");
+        authority_FeatureVO1.setAuth_name("Q_Q");
         dao.insert(authority_FeatureVO1);
 
-        // ä¿®æ”¹
-        Authority_FeatureVO authority_FeatureVO2 = new Authority_FeatureVO();
-        authority_FeatureVO2.setAuth_no("2");
-        authority_FeatureVO2.setAuth_name("ä¿®æ”¹çœ‹çœ‹");
-		dao.update(authority_FeatureVO2);
+        // ­×§ï
+//        Authority_FeatureVO authority_FeatureVO2 = new Authority_FeatureVO();
+//        authority_FeatureVO2.setAuth_no("1");
+//        authority_FeatureVO2.setAuth_name("hi");
+//		dao.update(authority_FeatureVO2);
 
-        // åˆªé™¤
-		dao.delete("1");
+        // §R°£
+//		dao.delete("1");
 
-        // æŸ¥è©¢
-//        Authority_FeatureVO authority_FeatureVO3 = dao.findByPrimaryKey("1");
+        // ¬d¸ß
+//        Authority_FeatureVO authority_FeatureVO3 = dao.findByPrimaryKey("an1");
 //		System.out.print(authority_FeatureVO3.getAuth_no() + ",");
 //		System.out.println(authority_FeatureVO3.getAuth_name());
 //		System.out.println("---------------------");
 
-        // æŸ¥è©¢éƒ¨é–€
+        // ¬d¸ß³¡ªù
 //		List<Authority_FeatureVO> list = dao.getAll();
 //		for (Authority_FeatureVO proc : list) {
 //			System.out.print(proc.getAuth_no() + ",");

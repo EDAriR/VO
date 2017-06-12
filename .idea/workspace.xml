@@ -2,19 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5781e1ff-6202-4dd6-a3da-854f7a9d8a80" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/AdminJDBCDAO.class" afterPath="$PROJECT_DIR$/bin/AdminJDBCDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/Admin_AuthorityJDBCDAO.class" afterPath="$PROJECT_DIR$/bin/Admin_AuthorityJDBCDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/Authority_FeatureJDBCDAO.class" afterPath="$PROJECT_DIR$/bin/Authority_FeatureJDBCDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/Chat_NotebookVO.class" afterPath="$PROJECT_DIR$/bin/Chat_NotebookVO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/NewsJDBCDAO.class" afterPath="$PROJECT_DIR$/bin/NewsJDBCDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.classpath" afterPath="$PROJECT_DIR$/.classpath" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AdminJDBCDAO.java" afterPath="$PROJECT_DIR$/src/AdminJDBCDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Admin_AuthorityJDBCDAO.java" afterPath="$PROJECT_DIR$/src/Admin_AuthorityJDBCDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Authority_FeatureJDBCDAO.java" afterPath="$PROJECT_DIR$/src/Authority_FeatureJDBCDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Chat_FriendJDBCDAO.java" afterPath="$PROJECT_DIR$/src/Chat_FriendJDBCDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Chat_GroupJDBCDAO.java" afterPath="$PROJECT_DIR$/src/Chat_GroupJDBCDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Chat_Group_ItemJDBCDAO.java" afterPath="$PROJECT_DIR$/src/Chat_Group_ItemJDBCDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Chat_NotebookJDBCDAO.java" afterPath="$PROJECT_DIR$/src/Chat_NotebookJDBCDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Chat_NotebookVO.java" afterPath="$PROJECT_DIR$/src/Chat_NotebookVO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Chat_RecordJDBCDAO.java" afterPath="$PROJECT_DIR$/src/Chat_RecordJDBCDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/NewsJDBCDAO.java" afterPath="$PROJECT_DIR$/src/NewsJDBCDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/User_ReportJDBCDAO.java" afterPath="$PROJECT_DIR$/src/User_ReportJDBCDAO.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,20 +26,56 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="Admin_AuthorityJDBCDAO.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Admin_AuthorityJDBCDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Admin_AuthorityJDBCDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="957">
-              <caret line="293" column="43" lean-forward="false" selection-start-line="293" selection-start-column="43" selection-end-line="293" selection-end-column="43" />
+            <state relative-caret-position="-420">
+              <caret line="39" column="38" lean-forward="true" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
               <folding>
-                <element signature="method#insert#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
-                <element signature="method#update#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
-                <element signature="method#delete#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
-                <element signature="method#findByPrimaryKey#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
-                <element signature="method#getAll#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
-                <element signature="e#7861#7880#0" expanded="true" />
-                <element signature="method#main#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
-                <marker date="1497207890738" expanded="true" signature="10478:10689" ph="//..." />
+                <marker date="1497242438885" expanded="true" signature="511:587" ph="INSERT INTO Admin_Authority... " />
+                <marker date="1497242438885" expanded="true" signature="650:694" ph="SELECT adm_n... Admin_Authority" />
+                <marker date="1497242438885" expanded="true" signature="745:805" ph="SELECT adm_n... Admin_Authority" />
+                <marker date="1497242438885" expanded="true" signature="867:911" ph="DELETE FROM " />
+                <marker date="1497242438885" expanded="true" signature="968:1023" ph="UPDATE Admin... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Authority_FeatureDAO_interface.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Authority_FeatureDAO_interface.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Authority_FeatureJDBCDAO.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Authority_FeatureJDBCDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="559">
+              <caret line="321" column="12" lean-forward="true" selection-start-line="321" selection-start-column="12" selection-end-line="321" selection-end-column="12" />
+              <folding>
+                <element signature="e#8058#8079#0" expanded="true" />
+                <marker date="1497262560003" expanded="true" signature="512:621" ph="INSERT INTO Authority_Feature... " />
+                <marker date="1497262560003" expanded="true" signature="684:733" ph="SELECT auth_... Authority_Feature" />
+                <marker date="1497262560003" expanded="true" signature="784:850" ph="SELECT auth_... Authority_Feature" />
+                <marker date="1497262560003" expanded="true" signature="912:959" ph="DELETE FROM " />
+                <marker date="1497262560003" expanded="true" signature="1016:1074" ph="UPDATE Autho... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminJDBCDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AdminJDBCDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8820">
+              <caret line="316" column="0" lean-forward="false" selection-start-line="316" selection-start-column="0" selection-end-line="316" selection-end-column="0" />
+              <folding>
+                <marker date="1497264362085" expanded="true" signature="10744:10753" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -49,7 +84,7 @@
       <file leaf-file-name="Admin_AuthorityVO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Admin_AuthorityVO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
+            <state relative-caret-position="196">
               <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="26" />
               <folding>
                 <element signature="e#265#266#0" expanded="true" />
@@ -107,9 +142,9 @@
         <option value="$PROJECT_DIR$/src/NewsJDBCDAO.java" />
         <option value="$PROJECT_DIR$/src/User_ReportJDBCDAO.java" />
         <option value="$PROJECT_DIR$/src/Chat_GroupJDBCDAO.java" />
-        <option value="$PROJECT_DIR$/src/Authority_FeatureJDBCDAO.java" />
         <option value="$PROJECT_DIR$/src/AdminJDBCDAO.java" />
         <option value="$PROJECT_DIR$/src/Admin_AuthorityJDBCDAO.java" />
+        <option value="$PROJECT_DIR$/src/Authority_FeatureJDBCDAO.java" />
       </list>
     </option>
   </component>
@@ -122,8 +157,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1616" />
-    <option name="height" value="876" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -140,6 +175,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -168,9 +206,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -182,148 +217,6 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\MEGA\專題\VO\src" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/encodings.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Authority_FeatureJDBCDAO.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Chat_RecordJDBCDAO.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/NewsJDBCDAO.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/NewsVO.java</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.classpath</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/sqldialects.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.project</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/AdminDAO_interface.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/AdminJDBCDAO.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/AdminVO.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Admin_AuthorityDAO_interface.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Admin_AuthorityJDBCDAO.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Admin_AuthorityVO.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Authority_FeatureDAO_interface.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Authority_FeatureJDBCDAO.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Authority_FeatureVO.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Chat_FriendDAO_interface.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Chat_FriendVO.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Chat_GroupDAO_interface.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Chat_GroupVO.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Chat_Group_ItemDAO_interface.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Chat_Group_ItemVO.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Chat_NotebookDAO_interface.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Chat_NotebookVO.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Chat_RecordDAO_interface.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/Chat_RecordVO.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/NewsDAO_interface.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/NewsJDBCDAO.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/NewsVO.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/User_ReportDAO_interface.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/bin/User_ReportVO.class</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -421,27 +314,6 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="INTERPRETER_PATH" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="BatchConfigurationType" factoryName="Batch">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <module name="" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
       <method />
     </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
@@ -577,14 +449,17 @@
       <workItem from="1496929055241" duration="1976000" />
       <workItem from="1497099610618" duration="1078000" />
       <workItem from="1497100976947" duration="3269000" />
+      <workItem from="1497229880640" duration="190000" />
+      <workItem from="1497244836410" duration="2407000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6323000" />
+    <option name="totallyTimeSpent" value="8920000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -594,24 +469,24 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19675675" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -663,9 +538,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
           <caret line="6" column="44" lean-forward="false" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -673,7 +546,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -682,14 +554,11 @@
         <state relative-caret-position="319">
           <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
           <folding>
-            <element signature="method#insert#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
-            <element signature="method#update#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
-            <element signature="method#delete#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
-            <element signature="method#findByPrimaryKey#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
-            <element signature="method#getAll#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
-            <element signature="e#7861#7880#0" expanded="true" />
-            <element signature="method#main#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
-            <marker date="1497207890738" expanded="true" signature="10478:10689" ph="//..." />
+            <marker date="1497242438885" expanded="true" signature="511:587" ph="INSERT INTO Admin_Authority... " />
+            <marker date="1497242438885" expanded="true" signature="650:694" ph="SELECT adm_n... Admin_Authority" />
+            <marker date="1497242438885" expanded="true" signature="745:805" ph="SELECT adm_n... Admin_Authority" />
+            <marker date="1497242438885" expanded="true" signature="867:911" ph="DELETE FROM " />
+            <marker date="1497242438885" expanded="true" signature="968:1023" ph="UPDATE Admin... " />
           </folding>
         </state>
       </provider>
@@ -698,16 +567,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
           <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="method#insert#0;class#Authority_FeatureJDBCDAO#0" expanded="false" />
-            <element signature="method#update#0;class#Authority_FeatureJDBCDAO#0" expanded="false" />
-            <element signature="method#delete#0;class#Authority_FeatureJDBCDAO#0" expanded="false" />
-            <element signature="method#findByPrimaryKey#0;class#Authority_FeatureJDBCDAO#0" expanded="false" />
-            <element signature="method#getAll#0;class#Authority_FeatureJDBCDAO#0" expanded="false" />
-            <element signature="method#main#0;class#Authority_FeatureJDBCDAO#0" expanded="false" />
-            <marker date="1497207279090" expanded="true" signature="10825:10867" ph="//..." />
-            <marker date="1497207279090" expanded="true" signature="10825:10874" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -715,7 +574,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
           <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -724,11 +582,7 @@
         <state relative-caret-position="116">
           <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="25" />
           <folding>
-            <element signature="method#insert#0;class#AdminJDBCDAO#0" expanded="false" />
-            <element signature="method#update#0;class#AdminJDBCDAO#0" expanded="false" />
-            <element signature="method#delete#0;class#AdminJDBCDAO#0" expanded="false" />
-            <element signature="method#findByPrimaryKey#0;class#AdminJDBCDAO#0" expanded="false" />
-            <element signature="method#getAll#0;class#AdminJDBCDAO#0" expanded="false" />
+            <marker date="1497264362085" expanded="true" signature="10744:10753" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -737,9 +591,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
           <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -747,7 +599,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
           <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -755,7 +606,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
           <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="15" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -764,14 +614,11 @@
         <state relative-caret-position="1015">
           <caret line="118" column="8" lean-forward="false" selection-start-line="118" selection-start-column="8" selection-end-line="118" selection-end-column="8" />
           <folding>
-            <element signature="method#insert#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
-            <element signature="method#update#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
-            <element signature="method#delete#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
-            <element signature="method#findByPrimaryKey#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
-            <element signature="method#getAll#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
-            <element signature="e#7861#7880#0" expanded="true" />
-            <element signature="method#main#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
-            <marker date="1497207890738" expanded="true" signature="10478:10689" ph="//..." />
+            <marker date="1497242438885" expanded="true" signature="511:587" ph="INSERT INTO Admin_Authority... " />
+            <marker date="1497242438885" expanded="true" signature="650:694" ph="SELECT adm_n... Admin_Authority" />
+            <marker date="1497242438885" expanded="true" signature="745:805" ph="SELECT adm_n... Admin_Authority" />
+            <marker date="1497242438885" expanded="true" signature="867:911" ph="DELETE FROM " />
+            <marker date="1497242438885" expanded="true" signature="968:1023" ph="UPDATE Admin... " />
           </folding>
         </state>
       </provider>
@@ -780,9 +627,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -790,9 +635,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -800,7 +643,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -808,9 +650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -818,7 +657,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="9" column="29" lean-forward="false" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -826,9 +664,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="4" column="31" lean-forward="true" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -836,7 +671,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="26" column="31" lean-forward="false" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -844,9 +678,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -854,9 +685,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="560">
           <caret line="21" column="33" lean-forward="true" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -864,7 +692,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="896">
           <caret line="52" column="27" lean-forward="false" selection-start-line="52" selection-start-column="27" selection-end-line="52" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -872,15 +699,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="25" column="29" lean-forward="false" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Authority_FeatureDAO_interface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#265#266#0" expanded="true" />
+            <element signature="e#288#289#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -888,7 +710,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -896,7 +717,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
           <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -904,7 +724,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -912,9 +731,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -922,7 +738,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="337">
           <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -930,7 +745,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -938,7 +752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
           <caret line="5" column="30" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -946,7 +759,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
           <caret line="5" column="41" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -954,7 +766,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
           <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -962,7 +773,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
           <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -970,7 +780,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
           <caret line="14" column="29" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -978,23 +787,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
           <caret line="16" column="31" lean-forward="false" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-          <folding>
-            <element signature="e#431#432#0" expanded="true" />
-            <element signature="e#475#476#0" expanded="true" />
-            <element signature="e#511#512#0" expanded="true" />
-            <element signature="e#543#544#0" expanded="true" />
-            <element signature="e#571#572#0" expanded="true" />
-            <element signature="e#613#614#0" expanded="true" />
-            <element signature="e#647#648#0" expanded="true" />
-            <element signature="e#679#680#0" expanded="true" />
-            <element signature="e#707#708#0" expanded="true" />
-            <element signature="e#749#750#0" expanded="true" />
-            <element signature="e#783#784#0" expanded="true" />
-            <element signature="e#817#818#0" expanded="true" />
-            <element signature="e#847#848#0" expanded="true" />
-            <element signature="e#893#894#0" expanded="true" />
-            <element signature="e#931#932#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1002,7 +794,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
           <caret line="5" column="41" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1010,12 +801,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3805">
           <caret line="180" column="0" lean-forward="true" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
-          <folding>
-            <element signature="method#insert#0;class#Chat_Group_ItemJDBCDAO#0" expanded="false" />
-            <element signature="method#update#0;class#Chat_Group_ItemJDBCDAO#0" expanded="false" />
-            <element signature="method#delete#0;class#Chat_Group_ItemJDBCDAO#0" expanded="false" />
-            <element signature="e#7877#7896#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1023,14 +808,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-458">
           <caret line="237" column="13" lean-forward="false" selection-start-line="237" selection-start-column="13" selection-end-line="237" selection-end-column="13" />
-          <folding>
-            <element signature="method#insert#0;class#Chat_NotebookJDBCDAO#0" expanded="false" />
-            <element signature="method#update#0;class#Chat_NotebookJDBCDAO#0" expanded="false" />
-            <element signature="method#delete#0;class#Chat_NotebookJDBCDAO#0" expanded="false" />
-            <element signature="method#findByPrimaryKey#0;class#Chat_NotebookJDBCDAO#0" expanded="false" />
-            <element signature="method#getAll#0;class#Chat_NotebookJDBCDAO#0" expanded="false" />
-            <element signature="e#7840#7857#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1038,15 +815,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="237" column="13" lean-forward="false" selection-start-line="237" selection-start-column="13" selection-end-line="237" selection-end-column="13" />
-          <folding>
-            <element signature="method#insert#0;class#Chat_RecordJDBCDAO#0" expanded="false" />
-            <element signature="method#update#0;class#Chat_RecordJDBCDAO#0" expanded="false" />
-            <element signature="method#delete#0;class#Chat_RecordJDBCDAO#0" expanded="false" />
-            <element signature="method#findByPrimaryKey#0;class#Chat_RecordJDBCDAO#0" expanded="false" />
-            <element signature="method#getAll#0;class#Chat_RecordJDBCDAO#0" expanded="false" />
-            <element signature="e#7771#7786#0" expanded="true" />
-            <element signature="method#main#0;class#Chat_RecordJDBCDAO#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1054,15 +822,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="812">
           <caret line="117" column="14" lean-forward="true" selection-start-line="117" selection-start-column="14" selection-end-line="117" selection-end-column="14" />
-          <folding>
-            <element signature="method#insert#0;class#User_ReportJDBCDAO#0" expanded="false" />
-            <element signature="method#update#0;class#User_ReportJDBCDAO#0" expanded="false" />
-            <element signature="method#delete#0;class#User_ReportJDBCDAO#0" expanded="false" />
-            <element signature="method#findByPrimaryKey#0;class#User_ReportJDBCDAO#0" expanded="false" />
-            <element signature="method#getAll#0;class#User_ReportJDBCDAO#0" expanded="false" />
-            <element signature="e#8180#8195#0" expanded="true" />
-            <element signature="method#main#0;class#User_ReportJDBCDAO#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1070,15 +829,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="487">
           <caret line="184" column="0" lean-forward="true" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
-          <folding>
-            <element signature="method#insert#0;class#NewsJDBCDAO#0" expanded="false" />
-            <element signature="method#update#0;class#NewsJDBCDAO#0" expanded="false" />
-            <element signature="method#delete#0;class#NewsJDBCDAO#0" expanded="false" />
-            <element signature="method#findByPrimaryKey#0;class#NewsJDBCDAO#0" expanded="false" />
-            <element signature="method#getAll#0;class#NewsJDBCDAO#0" expanded="false" />
-            <element signature="e#7942#7950#0" expanded="true" />
-            <element signature="method#main#0;class#NewsJDBCDAO#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1086,7 +836,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
           <caret line="9" column="58" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1094,7 +843,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="5" column="50" lean-forward="true" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1102,15 +850,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="580">
           <caret line="21" column="50" lean-forward="false" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
-          <folding>
-            <element signature="method#insert#0;class#Chat_GroupJDBCDAO#0" expanded="false" />
-            <element signature="method#update#0;class#Chat_GroupJDBCDAO#0" expanded="false" />
-            <element signature="method#delete#0;class#Chat_GroupJDBCDAO#0" expanded="false" />
-            <element signature="method#findByPrimaryKey#0;class#Chat_GroupJDBCDAO#0" expanded="false" />
-            <element signature="method#getAll#0;class#Chat_GroupJDBCDAO#0" expanded="false" />
-            <element signature="e#7753#7767#0" expanded="true" />
-            <element signature="method#main#0;class#Chat_GroupJDBCDAO#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1118,7 +857,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="29">
           <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1126,26 +864,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2061">
           <caret line="26" column="13" lean-forward="true" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-          <folding>
-            <element signature="e#7783#7798#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Authority_FeatureJDBCDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1044">
-          <caret line="328" column="0" lean-forward="true" selection-start-line="328" selection-start-column="0" selection-end-line="328" selection-end-column="0" />
-          <folding>
-            <element signature="method#insert#0;class#Authority_FeatureJDBCDAO#0" expanded="false" />
-            <element signature="method#update#0;class#Authority_FeatureJDBCDAO#0" expanded="false" />
-            <element signature="method#delete#0;class#Authority_FeatureJDBCDAO#0" expanded="false" />
-            <element signature="method#findByPrimaryKey#0;class#Authority_FeatureJDBCDAO#0" expanded="false" />
-            <element signature="method#getAll#0;class#Authority_FeatureJDBCDAO#0" expanded="false" />
-            <element signature="method#main#0;class#Authority_FeatureJDBCDAO#0" expanded="false" />
-            <marker date="1497207279090" expanded="true" signature="10825:10867" ph="//..." />
-            <marker date="1497207279090" expanded="true" signature="10825:10874" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1153,7 +871,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
           <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1165,23 +882,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AdminJDBCDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1345">
-          <caret line="309" column="0" lean-forward="true" selection-start-line="309" selection-start-column="0" selection-end-line="309" selection-end-column="0" />
-          <folding>
-            <element signature="method#insert#0;class#AdminJDBCDAO#0" expanded="false" />
-            <element signature="method#update#0;class#AdminJDBCDAO#0" expanded="false" />
-            <element signature="method#delete#0;class#AdminJDBCDAO#0" expanded="false" />
-            <element signature="method#findByPrimaryKey#0;class#AdminJDBCDAO#0" expanded="false" />
-            <element signature="method#getAll#0;class#AdminJDBCDAO#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Admin_AuthorityVO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
+        <state relative-caret-position="196">
           <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="26" />
           <folding>
             <element signature="e#265#266#0" expanded="true" />
@@ -1190,19 +893,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/AdminJDBCDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8820">
+          <caret line="316" column="0" lean-forward="false" selection-start-line="316" selection-start-column="0" selection-end-line="316" selection-end-column="0" />
+          <folding>
+            <marker date="1497264362085" expanded="true" signature="10744:10753" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Admin_AuthorityJDBCDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="957">
-          <caret line="293" column="43" lean-forward="false" selection-start-line="293" selection-start-column="43" selection-end-line="293" selection-end-column="43" />
+        <state relative-caret-position="-420">
+          <caret line="39" column="38" lean-forward="true" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
           <folding>
-            <element signature="method#insert#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
-            <element signature="method#update#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
-            <element signature="method#delete#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
-            <element signature="method#findByPrimaryKey#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
-            <element signature="method#getAll#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
-            <element signature="e#7861#7880#0" expanded="true" />
-            <element signature="method#main#0;class#Admin_AuthorityJDBCDAO#0" expanded="false" />
-            <marker date="1497207890738" expanded="true" signature="10478:10689" ph="//..." />
+            <marker date="1497242438885" expanded="true" signature="511:587" ph="INSERT INTO Admin_Authority... " />
+            <marker date="1497242438885" expanded="true" signature="650:694" ph="SELECT adm_n... Admin_Authority" />
+            <marker date="1497242438885" expanded="true" signature="745:805" ph="SELECT adm_n... Admin_Authority" />
+            <marker date="1497242438885" expanded="true" signature="867:911" ph="DELETE FROM " />
+            <marker date="1497242438885" expanded="true" signature="968:1023" ph="UPDATE Admin... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Authority_FeatureDAO_interface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Authority_FeatureJDBCDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="559">
+          <caret line="321" column="12" lean-forward="true" selection-start-line="321" selection-start-column="12" selection-end-line="321" selection-end-column="12" />
+          <folding>
+            <element signature="e#8058#8079#0" expanded="true" />
+            <marker date="1497262560003" expanded="true" signature="512:621" ph="INSERT INTO Authority_Feature... " />
+            <marker date="1497262560003" expanded="true" signature="684:733" ph="SELECT auth_... Authority_Feature" />
+            <marker date="1497262560003" expanded="true" signature="784:850" ph="SELECT auth_... Authority_Feature" />
+            <marker date="1497262560003" expanded="true" signature="912:959" ph="DELETE FROM " />
+            <marker date="1497262560003" expanded="true" signature="1016:1074" ph="UPDATE Autho... " />
           </folding>
         </state>
       </provider>

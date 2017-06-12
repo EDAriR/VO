@@ -35,7 +35,7 @@ public class NewsJDBCDAO implements NewsDAO_interface {
         	
             pstmt = con.prepareStatement(INSERT_STMT, cols); // 有使用sequence產生編號的話才要寫第二個參數
             
-            pstmt.setTimestamp(0, new Timestamp(System.currentTimeMillis()));
+           
             pstmt.setString(1, newsVO.getNew_title());
             pstmt.setString(2, newsVO.getNew_cnt());
 
@@ -204,7 +204,7 @@ public class NewsJDBCDAO implements NewsDAO_interface {
             while (rs.next()) {
                 newsVO = new NewsVO();
                 newsVO.setNew_no(rs.getString("new_no"));
-                newsVO.setNew_title(rs.getString("proc_name"));
+                newsVO.setNew_title(rs.getString("new_title"));
             }
 
             // Handle any DRIVER errors
@@ -262,7 +262,7 @@ public class NewsJDBCDAO implements NewsDAO_interface {
             while (rs.next()) {
                 newsVO = new NewsVO();
                 newsVO.setNew_no(rs.getString("new_no"));
-                newsVO.setNew_title(rs.getString("proc_name"));
+                newsVO.setNew_title(rs.getString("new_title"));
                 list.add(newsVO); // Store the row in the list
             }
 
@@ -306,22 +306,24 @@ public class NewsJDBCDAO implements NewsDAO_interface {
         // 測試看看每個指令是否可以使用
         // 新增
         NewsVO newsVO1 = new NewsVO();
-//        newsVO1.setNew_date(new Timestamp(System.currentTimeMillis()));
-//        newsVO1.setNew_title("財務部回來嚕");
-//        newsVO1.setNew_cnt("財務部回來嚕");
-//        dao.insert(newsVO1);
+        newsVO1.setNew_date(new Timestamp(System.currentTimeMillis()));
+        newsVO1.setNew_title("我們來不及長大的寶寶部回來嚕");
+        newsVO1.setNew_cnt("財務部回來嚕");
+        dao.insert(newsVO1);
+        System.out.print("insert success");
+        
 
         // 修改
-        NewsVO newsVO2 = new NewsVO();
-        newsVO2.setNew_no("n0007");
-        newsVO2.setNew_title("修改看看");
-		dao.update(newsVO2);
+//        NewsVO newsVO2 = new NewsVO();
+//        newsVO2.setNew_no("n0021");
+//        newsVO2.setNew_title("修改看看");
+//		dao.update(newsVO2);
 
         // 刪除
 //		dao.delete("1");
 
         // 查詢
-//        NewsVO newsVO3 = dao.findByPrimaryKey("1");
+//        NewsVO newsVO3 = dao.findByPrimaryKey("n0021");
 //		System.out.print(newsVO3.getNew_no() + ",");
 //		System.out.println(newsVO3.getNew_title());
 //		System.out.println("---------------------");

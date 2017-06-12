@@ -28,7 +28,7 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
 
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
-            String[] cols = {"proc_no"}; // 有使用sequence產生編號的話才要寫
+            String[] cols = {"adm_no"}; // 有使用sequence產生編號的話才要寫
             pstmt = con.prepareStatement(INSERT_STMT, cols); // 有使用sequence產生編號的話才要寫第二個參數
             pstmt.setString(1, admin_AuthorityVO.getAdm_no());
 
@@ -296,9 +296,9 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
         Admin_AuthorityJDBCDAO dao = new Admin_AuthorityJDBCDAO();
         // 測試看看每個指令是否可以使用
         // 新增
-        Admin_AuthorityVO admin_AuthorityVO1 = new Admin_AuthorityVO();
-        admin_AuthorityVO1.setAuth_no("財務部回來嚕");
-        dao.insert(admin_AuthorityVO1);
+//        Admin_AuthorityVO admin_AuthorityVO1 = new Admin_AuthorityVO();
+//        admin_AuthorityVO1.setAuth_no("財務部回來嚕");
+//        dao.insert(admin_AuthorityVO1);
 
         // 修改
 //		Admin_AuthorityVO admin_AuthorityVO2 = new Admin_AuthorityVO();
@@ -316,11 +316,11 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
 //		System.out.println("---------------------");
 
 //         查詢部門
-//		List<Admin_AuthorityVO> list = dao.getAll();
-//		for (Admin_AuthorityVO proc : list) {
-//			System.out.print(proc.getAdm_no() + ",");
-//			System.out.print(proc.getAuth_no());
-//			System.out.println();
+		List<Admin_AuthorityVO> list = dao.getAll();
+		for (Admin_AuthorityVO proc : list) {
+			System.out.print(proc.getAdm_no() + ",");
+			System.out.print(proc.getAuth_no());
+			System.out.println();
 		}
 
     }

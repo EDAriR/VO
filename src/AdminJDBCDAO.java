@@ -3,13 +3,13 @@ import java.sql.*;
 
 
 public class AdminJDBCDAO implements AdminDAO_interface {
-    private static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
+	private static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
     private static final String URL = "jdbc:oracle:thin:@localhost:1522:xe";
     //  private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
     private static final String USER = "ba101g3";
     private static final String PASSWORD = "baby";
     // 新增資料
-    private static final String INSERT_STMT = "INSERT INTO Admin (adm_no, adm_name) VALUES (adm_no_seq.NEXTVAL, ?)";
+    private static final String INSERT_STMT = "INSERT INTO Admin (adm_no, adm_acct,adm_pwd, adm_name, adm_mail) VALUES ('ad'||LPAD(to_char(ADM_NO_SEQ.nextval),3,'0'), ?, ?, ?, ?)";
     // 查詢資料
     private static final String GET_ALL_STMT = "SELECT adm_no , adm_name FROM Admin";
     private static final String GET_ONE_STMT = "SELECT adm_no, adm_name FROM Admin where adm_no = ?";
@@ -30,16 +30,20 @@ public class AdminJDBCDAO implements AdminDAO_interface {
             con = DriverManager.getConnection(URL, USER, PASSWORD);
             String[] cols = {"adm_no"}; // 有使用sequence產生編號的話才要寫
             pstmt = con.prepareStatement(INSERT_STMT, cols); // 有使用sequence產生編號的話才要寫第二個參數
-            pstmt.setString(1, adminVO.getAdm_no());
+           // pstmt.setString(1, adminVO.getAdm_no());
+            pstmt.setString(1, adminVO.getAdm_acct());
+            pstmt.setString(2, adminVO.getAdm_pwd());
+            pstmt.setString(3, adminVO.getAdm_name());
+            pstmt.setString(4, adminVO.getAdm_mail());
 
             pstmt.executeUpdate();
 
             // Handle any DRIVER errors
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException("Couldn't load database DRIVER. "
-                    + e.getMessage());
-            // Handle any SQL errors
-        } catch (SQLException se) {
+//        } catch (ClassNotFoundException e) {
+//            throw new RuntimeException("Couldn't load database DRIVER. "
+//                    + e.getMessage());
+//            // Handle any SQL errors
+        } catch (Exception se) {
             throw new RuntimeException("A database error occured. "
                     + se.getMessage());
             // Clean up JDBC resources
@@ -299,12 +303,15 @@ public class AdminJDBCDAO implements AdminDAO_interface {
         // 測試看看每個指令是否可以使用
         // 新增
         AdminVO adminVO1 = new AdminVO();
-        adminVO1.setAdm_name("財務部回來嚕");
+        adminVO1.setAdm_acct("adtestacct1");
+        adminVO1.setAdm_pwd("adtestpwd1");
+        adminVO1.setAdm_name("adtestname1");
+        adminVO1.setAdm_mail("adtestmail1");        
         dao.insert(adminVO1);
 
         // 修改
 //        AdminVO adminVO2 = new AdminVO();
-//        adminVO2.setAdm_no("2");
+//        adminVO2.setAdm_no("ad0004");
 //        adminVO2.setAdm_name("修改看看");
 //        dao.update(adminVO2);
 
@@ -312,7 +319,7 @@ public class AdminJDBCDAO implements AdminDAO_interface {
 //        dao.delete("1");
 
         // 查詢
-//        AdminVO adminVO3 = dao.findByPrimaryKey("1");
+//        AdminVO adminVO3 = dao.findByPrimaryKey("ad0004");
 //        System.out.print(adminVO3.getAdm_no() + ",");
 //        System.out.println(adminVO3.getAdm_name());
 //        System.out.println("---------------------");
@@ -323,7 +330,7 @@ public class AdminJDBCDAO implements AdminDAO_interface {
 //            System.out.print(proc.getAdm_no() + ",");
 //            System.out.print(proc.getAdm_name());
 //            System.out.println();
-        }
+//        }
 
     }
 }
