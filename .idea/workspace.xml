@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5781e1ff-6202-4dd6-a3da-854f7a9d8a80" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AdminJDBCDAO.java" afterPath="$PROJECT_DIR$/src/AdminJDBCDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Chat_FriendJDBCDAO.java" afterPath="$PROJECT_DIR$/src/Chat_FriendJDBCDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Chat_Group_ItemJDBCDAO.java" afterPath="$PROJECT_DIR$/src/Chat_Group_ItemJDBCDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Chat_RecordJDBCDAO.java" afterPath="$PROJECT_DIR$/src/Chat_RecordJDBCDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/User_ReportJDBCDAO.java" afterPath="$PROJECT_DIR$/src/User_ReportJDBCDAO.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,8 +21,8 @@
       <file leaf-file-name="Admin_AuthorityJDBCDAO.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Admin_AuthorityJDBCDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="232">
+              <caret line="9" column="50" lean-forward="true" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -601,6 +596,14 @@
       <workItem from="1497244836410" duration="2408000" />
       <workItem from="1497328473898" duration="1826000" />
     </task>
+    <task id="LOCAL-00001" summary="commit from intellij">
+      <created>1497372145207</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1497372145207</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -666,6 +669,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit from intellij" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit from intellij" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1062,8 +1069,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Admin_AuthorityJDBCDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="232">
+          <caret line="9" column="50" lean-forward="true" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
           <folding />
         </state>
       </provider>
