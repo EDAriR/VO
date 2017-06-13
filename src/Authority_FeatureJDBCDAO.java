@@ -30,7 +30,7 @@ public class Authority_FeatureJDBCDAO implements Authority_FeatureDAO_interface 
             con = DriverManager.getConnection(URL, USER, PASSWORD);
             String[] cols = {"auth_no"}; // 有使用sequence產生編號的話才要寫
             pstmt = con.prepareStatement(INSERT_STMT, cols); // 有使用sequence產生編號的話才要寫第二個參數
-            pstmt.setString(1, authority_FeatureVO.getAuth_no());
+            
             pstmt.setString(1, authority_FeatureVO.getAuth_name());
 
             pstmt.executeUpdate();
@@ -137,7 +137,7 @@ public class Authority_FeatureJDBCDAO implements Authority_FeatureDAO_interface 
             // 2●設定於 pstm.executeUpdate()之後
             con.commit();
             con.setAutoCommit(true);
-            System.out.println("刪除商品類別編號" + auth_no + "時,共有商品" + updateCount_PRODUCTs
+            System.out.println("刪除權限功能編號" + auth_no + "時,共有權限功能" + updateCount_PRODUCTs
                     + "個同時被刪除");
 
             // Handle any DRIVER errors
@@ -299,9 +299,9 @@ public class Authority_FeatureJDBCDAO implements Authority_FeatureDAO_interface 
         Authority_FeatureJDBCDAO dao = new Authority_FeatureJDBCDAO();
         // 測試看看每個指令是否可以使用
         // 新增
-        Authority_FeatureVO authority_FeatureVO1 = new Authority_FeatureVO();
-        authority_FeatureVO1.setAuth_name("Q_Q");
-        dao.insert(authority_FeatureVO1);
+//        Authority_FeatureVO authority_FeatureVO1 = new Authority_FeatureVO();
+//        authority_FeatureVO1.setAuth_name("T^Q");
+//        dao.insert(authority_FeatureVO1);
 
         // 修改
 //        Authority_FeatureVO authority_FeatureVO2 = new Authority_FeatureVO();
@@ -310,7 +310,7 @@ public class Authority_FeatureJDBCDAO implements Authority_FeatureDAO_interface 
 //		dao.update(authority_FeatureVO2);
 
         // 刪除
-//		dao.delete("1");
+		dao.delete("an2");
 
         // 查詢
 //        Authority_FeatureVO authority_FeatureVO3 = dao.findByPrimaryKey("an1");

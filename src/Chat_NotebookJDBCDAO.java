@@ -9,14 +9,14 @@ public class Chat_NotebookJDBCDAO implements Chat_NotebookDAO_interface {
     private static final String USER = "ba101g3";
     private static final String PASSWORD = "baby";
     // 新增資料
-    private static final String INSERT_STMT = "INSERT INTO Chat_Notebook (cnb_no, cnb_cnt) VALUES (cnb_no_seq.NEXTVAL, ?)";
+    private static final String INSERT_STMT = "INSERT INTO Chat_Notebook (cnb_no, cnb_cnt) VALUES ('cnb'||LPAD(to_char(cnb_no_seq.NEXTVAL),3,'0'), ?)";
     // 查詢資料
     private static final String GET_ALL_STMT = "SELECT cnb_no , cnb_cnt FROM Chat_Notebook";
     private static final String GET_ONE_STMT = "SELECT cnb_no, cnb_cnt FROM Chat_Notebook where cnb_no = ?";
     // 刪除資料
     private static final String DELETE_PROC = "DELETE FROM Chat_Notebook where cnb_no = ?";
     // 修改資料
-    private static final String UPDATE = "UPDATE Chat_Notebook set proc_name=? where cnb_no = ?";
+    private static final String UPDATE = "UPDATE Chat_Notebook set Cnb_CNT=? where cnb_no = ?";
 
 
     @Override
@@ -30,7 +30,7 @@ public class Chat_NotebookJDBCDAO implements Chat_NotebookDAO_interface {
             con = DriverManager.getConnection(URL, USER, PASSWORD);
             String[] cols = {"cnb_no"}; // 有使用sequence產生編號的話才要寫
             pstmt = con.prepareStatement(INSERT_STMT, cols); // 有使用sequence產生編號的話才要寫第二個參數
-            pstmt.setString(1, chat_NotebookVO.getCnb_no());
+            pstmt.setString(1, chat_NotebookVO.getCnb_cnt());
 
             pstmt.executeUpdate();
 
@@ -77,6 +77,9 @@ public class Chat_NotebookJDBCDAO implements Chat_NotebookDAO_interface {
 
             pstmt.setString(1, chat_NotebookVO.getCnb_cnt());
             pstmt.setString(2, chat_NotebookVO.getCnb_no());
+           
+            System.out.println(chat_NotebookVO.getCnb_cnt());
+            System.out.println(chat_NotebookVO.getCnb_no());
 
             pstmt.executeUpdate();
 
@@ -298,23 +301,27 @@ public class Chat_NotebookJDBCDAO implements Chat_NotebookDAO_interface {
         Chat_NotebookJDBCDAO dao = new Chat_NotebookJDBCDAO();
         // 測試看看每個指令是否可以使用
         // 新增
-        Chat_NotebookVO chat_NotebookVO1 = new Chat_NotebookVO();
-        chat_NotebookVO1.setCnb_cnt("財務部回來嚕");
-        dao.insert(chat_NotebookVO1);
+//        Chat_NotebookVO chat_NotebookVO1 = new Chat_NotebookVO();
+//        chat_NotebookVO1.setCnb_cnt("ghdrggrtshdegfmjh,.,bcbftgeartyytjfky");
+//        dao.insert(chat_NotebookVO1);
+//        System.out.println("新增完成");
 
         // 修改
-//		Chat_NotebookVO chat_NotebookVO2 = new Chat_NotebookVO();
-//		chat_NotebookVO2.setProc_no("2");
-//		chat_NotebookVO2.setProc_name("修改看看");
-//		dao.update(chat_NotebookVO2);
+		Chat_NotebookVO chat_NotebookVO2 = new Chat_NotebookVO();
+		chat_NotebookVO2.setCnb_no("cnb003");
+		chat_NotebookVO2.setCnb_cnt("--------");
+		System.out.println("修改完成");
+		dao.update(chat_NotebookVO2);
+		System.out.println("修改完成--");
 
         // 刪除
-//		dao.delete("1");
+//		dao.delete("cnb003");
+//		System.out.println("刪除完成");
 
         // 查詢
-//		Chat_NotebookVO chat_NotebookVO3 = dao.findByPrimaryKey("1");
-//		System.out.print(chat_NotebookVO3.getProc_no() + ",");
-//		System.out.println(chat_NotebookVO3.getProc_name());
+//		Chat_NotebookVO chat_NotebookVO3 = dao.findByPrimaryKey("cnb003");
+//		System.out.print(chat_NotebookVO3.getCnb_no() + ",");
+//		System.out.println(chat_NotebookVO3.getCnb_cnt());
 //		System.out.println("---------------------");
 
         // 查詢部門

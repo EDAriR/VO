@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5781e1ff-6202-4dd6-a3da-854f7a9d8a80" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/AdminJDBCDAO.class" afterPath="$PROJECT_DIR$/bin/AdminJDBCDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/Admin_AuthorityJDBCDAO.class" afterPath="$PROJECT_DIR$/bin/Admin_AuthorityJDBCDAO.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/Authority_FeatureJDBCDAO.class" afterPath="$PROJECT_DIR$/bin/Authority_FeatureJDBCDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/Chat_NotebookVO.class" afterPath="$PROJECT_DIR$/bin/Chat_NotebookVO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/NewsJDBCDAO.class" afterPath="$PROJECT_DIR$/bin/NewsJDBCDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.classpath" afterPath="$PROJECT_DIR$/.classpath" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/Chat_NotebookJDBCDAO.class" afterPath="$PROJECT_DIR$/bin/Chat_NotebookJDBCDAO.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AdminJDBCDAO.java" afterPath="$PROJECT_DIR$/src/AdminJDBCDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Admin_AuthorityJDBCDAO.java" afterPath="$PROJECT_DIR$/src/Admin_AuthorityJDBCDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Authority_FeatureJDBCDAO.java" afterPath="$PROJECT_DIR$/src/Authority_FeatureJDBCDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/NewsJDBCDAO.java" afterPath="$PROJECT_DIR$/src/NewsJDBCDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Chat_NotebookJDBCDAO.java" afterPath="$PROJECT_DIR$/src/Chat_NotebookJDBCDAO.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,9 +22,10 @@
       <file leaf-file-name="Admin_AuthorityJDBCDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Admin_AuthorityJDBCDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-420">
-              <caret line="39" column="38" lean-forward="true" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
+            <state relative-caret-position="1064">
+              <caret line="39" column="38" lean-forward="false" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
               <folding>
+                <element signature="imports" expanded="false" />
                 <marker date="1497242438885" expanded="true" signature="511:587" ph="INSERT INTO Admin_Authority... " />
                 <marker date="1497242438885" expanded="true" signature="650:694" ph="SELECT adm_n... Admin_Authority" />
                 <marker date="1497242438885" expanded="true" signature="745:805" ph="SELECT adm_n... Admin_Authority" />
@@ -55,15 +49,15 @@
       <file leaf-file-name="Authority_FeatureJDBCDAO.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Authority_FeatureJDBCDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="559">
-              <caret line="321" column="12" lean-forward="true" selection-start-line="321" selection-start-column="12" selection-end-line="321" selection-end-column="12" />
+            <state relative-caret-position="358">
+              <caret line="258" column="9" lean-forward="true" selection-start-line="258" selection-start-column="9" selection-end-line="258" selection-end-column="9" />
               <folding>
-                <element signature="e#8058#8079#0" expanded="true" />
-                <marker date="1497262560003" expanded="true" signature="512:621" ph="INSERT INTO Authority_Feature... " />
-                <marker date="1497262560003" expanded="true" signature="684:733" ph="SELECT auth_... Authority_Feature" />
-                <marker date="1497262560003" expanded="true" signature="784:850" ph="SELECT auth_... Authority_Feature" />
-                <marker date="1497262560003" expanded="true" signature="912:959" ph="DELETE FROM " />
-                <marker date="1497262560003" expanded="true" signature="1016:1074" ph="UPDATE Autho... " />
+                <element signature="e#8007#8028#0" expanded="true" />
+                <marker date="1497329248303" expanded="true" signature="512:621" ph="INSERT INTO Authority_Feature... " />
+                <marker date="1497329248303" expanded="true" signature="684:733" ph="SELECT auth_... Authority_Feature" />
+                <marker date="1497329248303" expanded="true" signature="784:850" ph="SELECT auth_... Authority_Feature" />
+                <marker date="1497329248303" expanded="true" signature="912:959" ph="DELETE FROM " />
+                <marker date="1497329248303" expanded="true" signature="1016:1074" ph="UPDATE Autho... " />
               </folding>
             </state>
           </provider>
@@ -75,6 +69,7 @@
             <state relative-caret-position="8820">
               <caret line="316" column="0" lean-forward="false" selection-start-line="316" selection-start-column="0" selection-end-line="316" selection-end-column="0" />
               <folding>
+                <element signature="imports" expanded="false" />
                 <marker date="1497264362085" expanded="true" signature="10744:10753" ph="{...}" />
               </folding>
             </state>
@@ -87,8 +82,14 @@
             <state relative-caret-position="196">
               <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="26" />
               <folding>
-                <element signature="e#265#266#0" expanded="true" />
-                <element signature="e#288#289#0" expanded="true" />
+                <element signature="e#321#322#0" expanded="false" />
+                <element signature="e#350#351#0" expanded="false" />
+                <element signature="e#394#395#0" expanded="false" />
+                <element signature="e#430#431#0" expanded="false" />
+                <element signature="e#464#465#0" expanded="false" />
+                <element signature="e#494#495#0" expanded="false" />
+                <element signature="e#540#541#0" expanded="false" />
+                <element signature="e#578#579#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -175,9 +176,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -206,6 +206,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -450,12 +451,13 @@
       <workItem from="1497099610618" duration="1078000" />
       <workItem from="1497100976947" duration="3269000" />
       <workItem from="1497229880640" duration="190000" />
-      <workItem from="1497244836410" duration="2407000" />
+      <workItem from="1497244836410" duration="2408000" />
+      <workItem from="1497328473898" duration="1826000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8920000" />
+    <option name="totallyTimeSpent" value="10747000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -475,7 +477,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19675675" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -554,6 +556,7 @@
         <state relative-caret-position="319">
           <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
           <folding>
+            <element signature="imports" expanded="false" />
             <marker date="1497242438885" expanded="true" signature="511:587" ph="INSERT INTO Admin_Authority... " />
             <marker date="1497242438885" expanded="true" signature="650:694" ph="SELECT adm_n... Admin_Authority" />
             <marker date="1497242438885" expanded="true" signature="745:805" ph="SELECT adm_n... Admin_Authority" />
@@ -582,6 +585,7 @@
         <state relative-caret-position="116">
           <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="25" />
           <folding>
+            <element signature="imports" expanded="false" />
             <marker date="1497264362085" expanded="true" signature="10744:10753" ph="{...}" />
           </folding>
         </state>
@@ -614,6 +618,7 @@
         <state relative-caret-position="1015">
           <caret line="118" column="8" lean-forward="false" selection-start-line="118" selection-start-column="8" selection-end-line="118" selection-end-column="8" />
           <folding>
+            <element signature="imports" expanded="false" />
             <marker date="1497242438885" expanded="true" signature="511:587" ph="INSERT INTO Admin_Authority... " />
             <marker date="1497242438885" expanded="true" signature="650:694" ph="SELECT adm_n... Admin_Authority" />
             <marker date="1497242438885" expanded="true" signature="745:805" ph="SELECT adm_n... Admin_Authority" />
@@ -700,8 +705,14 @@
         <state relative-caret-position="476">
           <caret line="25" column="29" lean-forward="false" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
           <folding>
-            <element signature="e#265#266#0" expanded="true" />
-            <element signature="e#288#289#0" expanded="true" />
+            <element signature="e#321#322#0" expanded="false" />
+            <element signature="e#350#351#0" expanded="false" />
+            <element signature="e#394#395#0" expanded="false" />
+            <element signature="e#430#431#0" expanded="false" />
+            <element signature="e#464#465#0" expanded="false" />
+            <element signature="e#494#495#0" expanded="false" />
+            <element signature="e#540#541#0" expanded="false" />
+            <element signature="e#578#579#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -887,8 +898,14 @@
         <state relative-caret-position="196">
           <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="26" />
           <folding>
-            <element signature="e#265#266#0" expanded="true" />
-            <element signature="e#288#289#0" expanded="true" />
+            <element signature="e#321#322#0" expanded="false" />
+            <element signature="e#350#351#0" expanded="false" />
+            <element signature="e#394#395#0" expanded="false" />
+            <element signature="e#430#431#0" expanded="false" />
+            <element signature="e#464#465#0" expanded="false" />
+            <element signature="e#494#495#0" expanded="false" />
+            <element signature="e#540#541#0" expanded="false" />
+            <element signature="e#578#579#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -898,6 +915,7 @@
         <state relative-caret-position="8820">
           <caret line="316" column="0" lean-forward="false" selection-start-line="316" selection-start-column="0" selection-end-line="316" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="false" />
             <marker date="1497264362085" expanded="true" signature="10744:10753" ph="{...}" />
           </folding>
         </state>
@@ -905,9 +923,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Admin_AuthorityJDBCDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-420">
-          <caret line="39" column="38" lean-forward="true" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
+        <state relative-caret-position="1064">
+          <caret line="39" column="38" lean-forward="false" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
           <folding>
+            <element signature="imports" expanded="false" />
             <marker date="1497242438885" expanded="true" signature="511:587" ph="INSERT INTO Admin_Authority... " />
             <marker date="1497242438885" expanded="true" signature="650:694" ph="SELECT adm_n... Admin_Authority" />
             <marker date="1497242438885" expanded="true" signature="745:805" ph="SELECT adm_n... Admin_Authority" />
@@ -927,15 +946,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Authority_FeatureJDBCDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="321" column="12" lean-forward="true" selection-start-line="321" selection-start-column="12" selection-end-line="321" selection-end-column="12" />
+        <state relative-caret-position="358">
+          <caret line="258" column="9" lean-forward="true" selection-start-line="258" selection-start-column="9" selection-end-line="258" selection-end-column="9" />
           <folding>
-            <element signature="e#8058#8079#0" expanded="true" />
-            <marker date="1497262560003" expanded="true" signature="512:621" ph="INSERT INTO Authority_Feature... " />
-            <marker date="1497262560003" expanded="true" signature="684:733" ph="SELECT auth_... Authority_Feature" />
-            <marker date="1497262560003" expanded="true" signature="784:850" ph="SELECT auth_... Authority_Feature" />
-            <marker date="1497262560003" expanded="true" signature="912:959" ph="DELETE FROM " />
-            <marker date="1497262560003" expanded="true" signature="1016:1074" ph="UPDATE Autho... " />
+            <element signature="e#8007#8028#0" expanded="true" />
+            <marker date="1497329248303" expanded="true" signature="512:621" ph="INSERT INTO Authority_Feature... " />
+            <marker date="1497329248303" expanded="true" signature="684:733" ph="SELECT auth_... Authority_Feature" />
+            <marker date="1497329248303" expanded="true" signature="784:850" ph="SELECT auth_... Authority_Feature" />
+            <marker date="1497329248303" expanded="true" signature="912:959" ph="DELETE FROM " />
+            <marker date="1497329248303" expanded="true" signature="1016:1074" ph="UPDATE Autho... " />
           </folding>
         </state>
       </provider>
