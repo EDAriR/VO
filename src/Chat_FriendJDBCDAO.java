@@ -8,15 +8,15 @@ public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
     //    private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
     private static final String USER = "ba101g3";
     private static final String PASSWORD = "baby";
-    // æ–°å¢è³‡æ–™
-    private static final String INSERT_STMT = "INSERT INTO Chat_Friend (cf_no, mem_no_o) VALUES (cf_no_seq.NEXTVAL, ?)";
-    // æŸ¥è©¢è³‡æ–™
-    private static final String GET_ALL_STMT = "SELECT cf_no , mem_no_o FROM Chat_Friend";
-    private static final String GET_ONE_STMT = "SELECT cf_no, mem_no_o FROM Chat_Friend where cf_no = ?";
-    // åˆªé™¤è³‡æ–™
+    // ·s¼W¸ê®Æ
+    private static final String INSERT_STMT = "INSERT INTO Chat_Friend (CF_NO, MEM_NO_S, MEM_NO_O, CF_IS_DEL) VALUES (cf_no_seq.NEXTVAL, ?)";
+    // ¬d¸ß¸ê®Æ
+    private static final String GET_ALL_STMT = "SELECT CF_NO, MEM_NO_S, MEM_NO_O, CF_IS_DEL FROM Chat_Friend";
+    private static final String GET_ONE_STMT = "SELECT CF_NO, MEM_NO_S, MEM_NO_O, CF_IS_DEL FROM Chat_Friend where cf_no = ?";
+    // §R°£¸ê®Æ
     private static final String DELETE_PROC = "DELETE FROM Chat_Friend where cf_no = ?";
-    // ä¿®æ”¹è³‡æ–™
-    private static final String UPDATE = "UPDATE Chat_Friend set mem_no_o=? where cf_no = ?";
+    // ­×§ï¸ê®Æ
+    private static final String UPDATE = "UPDATE Chat_Friend set cf_is_del=? where cf_no = ?";
 
 
     @Override
@@ -28,8 +28,8 @@ public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
 
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
-            String[] cols = {"cf_no"}; // æœ‰ä½¿ç”¨sequenceç”¢ç”Ÿç·¨è™Ÿçš„è©±æ‰è¦å¯«
-            pstmt = con.prepareStatement(INSERT_STMT, cols); // æœ‰ä½¿ç”¨sequenceç”¢ç”Ÿç·¨è™Ÿçš„è©±æ‰è¦å¯«ç¬¬äºŒå€‹åƒæ•¸
+            String[] cols = {"cf_no"}; // ¦³¨Ï¥Îsequence²£¥Í½s¸¹ªº¸Ü¤~­n¼g
+            pstmt = con.prepareStatement(INSERT_STMT, cols); // ¦³¨Ï¥Îsequence²£¥Í½s¸¹ªº¸Ü¤~­n¼g²Ä¤G­Ó°Ñ¼Æ
             pstmt.setString(1, chat_FriendVO.getCf_no());
 
             pstmt.executeUpdate();
@@ -121,23 +121,23 @@ public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
 
-            // 1â—è¨­å®šæ–¼ pstm.executeUpdate()ä¹‹å‰
+            // 1¡´³]©w©ó pstm.executeUpdate()¤§«e
             con.setAutoCommit(false);
 
-            // å…ˆåˆªé™¤å•†å“(å¤š) --->å°šæœªå»ºproductï¼Œå› æ­¤å…ˆè¨»è§£
+            // ¥ı§R°£°Ó«~(¦h) --->©|¥¼«Øproduct¡A¦]¦¹¥ıµù¸Ñ
 //			pstmt = con.prepareStatement(DELETE_PRODUCTs);
 //			pstmt.setString(1, cf_no);
 //			updateCount_PRODUCTs = pstmt.executeUpdate();
-            // å†åˆªé™¤å•†å“é¡åˆ¥(ä¸€)
+            // ¦A§R°£°Ó«~Ãş§O(¤@)
             pstmt = con.prepareStatement(DELETE_PROC);
             pstmt.setString(1, cf_no);
             pstmt.executeUpdate();
 
-            // 2â—è¨­å®šæ–¼ pstm.executeUpdate()ä¹‹å¾Œ
+            // 2¡´³]©w©ó pstm.executeUpdate()¤§«á
             con.commit();
             con.setAutoCommit(true);
-            System.out.println("åˆªé™¤å•†å“é¡åˆ¥ç·¨è™Ÿ" + cf_no + "æ™‚,å…±æœ‰å•†å“" + updateCount_PRODUCTs
-                    + "å€‹åŒæ™‚è¢«åˆªé™¤");
+            System.out.println("§R°£°Ó«~Ãş§O½s¸¹" + cf_no + "®É,¦@¦³°Ó«~" + updateCount_PRODUCTs
+                    + "­Ó¦P®É³Q§R°£");
 
             // Handle any DRIVER errors
         } catch (ClassNotFoundException e) {
@@ -147,7 +147,7 @@ public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
         } catch (SQLException se) {
             if (con != null) {
                 try {
-                    // 3â—è¨­å®šæ–¼ç•¶æœ‰exceptionç™¼ç”Ÿæ™‚ä¹‹catchå€å¡Šå…§
+                    // 3¡´³]©w©ó·í¦³exceptionµo¥Í®É¤§catch°Ï¶ô¤º
                     con.rollback();
                 } catch (SQLException excep) {
                     throw new RuntimeException("rollback error occured. "
@@ -296,28 +296,28 @@ public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
     public static void main(String[] args) {
 
         Chat_FriendJDBCDAO dao = new Chat_FriendJDBCDAO();
-        // æ¸¬è©¦çœ‹çœ‹æ¯å€‹æŒ‡ä»¤æ˜¯å¦å¯ä»¥ä½¿ç”¨
-        // æ–°å¢
+        // ´ú¸Õ¬İ¬İ¨C­Ó«ü¥O¬O§_¥i¥H¨Ï¥Î
+        // ·s¼W
         Chat_FriendVO chat_FriendVO1 = new Chat_FriendVO();
-        chat_FriendVO1.setMem_no_o("è²¡å‹™éƒ¨å›ä¾†åš•");
+        chat_FriendVO1.setMem_no_o("°]°È³¡¦^¨ÓÂP");
         dao.insert(chat_FriendVO1);
 
-        // ä¿®æ”¹
+        // ­×§ï
         Chat_FriendVO chat_FriendVO2 = new Chat_FriendVO();
         chat_FriendVO2.setCf_no("2");
-        chat_FriendVO2.setMem_no_o("ä¿®æ”¹çœ‹çœ‹");
+        chat_FriendVO2.setMem_no_o("­×§ï¬İ¬İ");
         dao.update(chat_FriendVO2);
 
-        // åˆªé™¤
+        // §R°£
         dao.delete("1");
 
-        // æŸ¥è©¢
+        // ¬d¸ß
         Chat_FriendVO chat_FriendVO3 = dao.findByPrimaryKey("1");
         System.out.print(chat_FriendVO3.getCf_no() + ",");
         System.out.println(chat_FriendVO3.getMem_no_o());
         System.out.println("---------------------");
 
-        // æŸ¥è©¢éƒ¨é–€
+        // ¬d¸ß³¡ªù
         List<Chat_FriendVO> list = dao.getAll();
         for (Chat_FriendVO proc : list) {
             System.out.print(proc.getCf_no() + ",");

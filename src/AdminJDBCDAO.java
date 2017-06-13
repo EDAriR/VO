@@ -9,7 +9,8 @@ public class AdminJDBCDAO implements AdminDAO_interface {
     private static final String USER = "ba101g3";
     private static final String PASSWORD = "baby";
     // 新增資料
-    private static final String INSERT_STMT = "INSERT INTO Admin (adm_no, adm_acct,adm_pwd, adm_name, adm_mail) VALUES ('ad'||LPAD(to_char(ADM_NO_SEQ.nextval),3,'0'), ?, ?, ?, ?)";
+    private static final String INSERT_STMT = "INSERT INTO Admin (adm_no, adm_acct,adm_pwd, adm_name, adm_mail) " +
+            "VALUES ('ad'||LPAD(to_char(ADM_NO_SEQ.nextval),3,'0'), ?, ?, ?, ?)";
     // 查詢資料
     private static final String GET_ALL_STMT = "SELECT adm_no , adm_name FROM Admin";
     private static final String GET_ONE_STMT = "SELECT adm_no, adm_name FROM Admin where adm_no = ?";

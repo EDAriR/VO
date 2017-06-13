@@ -9,14 +9,16 @@ public class Chat_RecordJDBCDAO implements Chat_RecordDAO_interface {
     private static final String USER = "ba101g3";
     private static final String PASSWORD = "baby";
     // 新增資料
-    private static final String INSERT_STMT = "INSERT INTO Chat_Record (cr_no, cr_cnt) VALUES (cr_no_seq.NEXTVAL, ?)";
+    private static final String INSERT_STMT = "INSERT INTO Chat_Record " +
+            "(cr_no, CR_DATE, CF_NO, CG_NO, cr_cnt) " +
+            "VALUES ('cr'||LPAD(to_char(ADM_NO_SEQ.nextval),4,'0'), CURRENT_TIMESTAMP, ?, ?, ?)";
     // 查詢資料
-    private static final String GET_ALL_STMT = "SELECT cr_no , cr_cnt FROM Chat_Record";
-    private static final String GET_ONE_STMT = "SELECT cr_no, cr_cnt FROM Chat_Record where cr_no = ?";
+    private static final String GET_ALL_STMT = "SELECT cr_no, CR_DATE, cr_cnt FROM Chat_Record";
+    private static final String GET_ONE_STMT = "SELECT cr_no, CR_DATE, cr_cnt FROM Chat_Record where cr_no = ?";
     // 刪除資料
     private static final String DELETE_PROC = "DELETE FROM Chat_Record where cr_no = ?";
     // 修改資料
-    private static final String UPDATE = "UPDATE Chat_Record set proc_name=? where cr_no = ?";
+    private static final String UPDATE = "UPDATE Chat_Record set cr_cnt=? where cr_no = ?";
 
 
     @Override
@@ -304,8 +306,8 @@ public class Chat_RecordJDBCDAO implements Chat_RecordDAO_interface {
 
         // 修改
 //		Chat_RecordVO chat_RecordVO2 = new Chat_RecordVO();
-//		chat_RecordVO2.setProc_no("2");
-//		chat_RecordVO2.setProc_name("修改看看");
+//		chat_RecordVO2.setCr_no("2");
+//		chat_RecordVO2.setCr_cnt("修改看看");
 //		dao.update(chat_RecordVO2);
 
         // 刪除
@@ -313,8 +315,8 @@ public class Chat_RecordJDBCDAO implements Chat_RecordDAO_interface {
 
         // 查詢
 //		Chat_RecordVO chat_RecordVO3 = dao.findByPrimaryKey("1");
-//		System.out.print(chat_RecordVO3.getProc_no() + ",");
-//		System.out.println(chat_RecordVO3.getProc_name());
+//		System.out.print(chat_RecordVO3.getCr_no() + ",");
+//		System.out.println(chat_RecordVO3.getCr_cnt());
 //		System.out.println("---------------------");
 
         // 查詢部門

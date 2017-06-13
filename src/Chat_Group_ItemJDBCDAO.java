@@ -28,8 +28,8 @@ public class Chat_Group_ItemJDBCDAO implements Chat_Group_ItemDAO_interface {
 
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
-            String[] cols = {"proc_no"}; // 有使用sequence產生編號的話才要寫
-            pstmt = con.prepareStatement(INSERT_STMT, cols); // 有使用sequence產生編號的話才要寫第二個參數
+//            String[] cols = {"proc_no"}; // 有使用sequence產生編號的話才要寫
+//            pstmt = con.prepareStatement(INSERT_STMT, cols); // 有使用sequence產生編號的話才要寫第二個參數
             pstmt.setString(1, chat_Group_ItemVO.getCg_no());
 
             pstmt.executeUpdate();

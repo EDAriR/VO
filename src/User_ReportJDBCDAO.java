@@ -5,19 +5,21 @@ import java.sql.*;
 public class User_ReportJDBCDAO implements User_ReportDAO_interface {
     private static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
     private static final String URL = "jdbc:oracle:thin:@localhost:1522:xe";
-//    private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
+    //    private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
     private static final String USER = "ba101g3";
     private static final String PASSWORD = "baby";
-    // æ–°å¢è³‡æ–™
-    private static final String INSERT_STMT = "INSERT INTO User_Report (mem_no_ed, mem_no_ing, NEW_TITLE, NEW_CNT,mem_no_ing," +
-            " urpt_cnt, urpt_date, urpt_rsn, urpt_is_cert, urpt_unrsn)";
-    // æŸ¥è©¢è³‡æ–™
-    private static final String GET_ALL_STMT = "SELECT mem_no_ed , new_title FROM User_Report";
-    private static final String GET_ONE_STMT = "SELECT mem_no_ed, new_title FROM User_Report where mem_no_ed = ? and mem_no_ing =?";
-    // åˆªé™¤è³‡æ–™
+    // ·s¼W¸ê®Æ
+    private static final String INSERT_STMT = "INSERT INTO User_Report " +
+            "(MEM_NO_ED, MEM_NO_ING, URPT_CNT, URPT_DATE, URPT_RSN, URPT_IS_CERT, URPT_UNRSN) " +
+            "VALUES (?, ?, CURRENT_TIMESTAMP, ?, ?, ?, ?)";
+    // ¬d¸ß¸ê®Æ
+    private static final String GET_ALL_STMT = "SELECT mem_no_ed, URPT_CNT, URPT_RSN, URPT_IS_CERT FROM User_Report";
+    private static final String GET_ONE_STMT = "SELECT mem_no_ed, URPT_CNT, URPT_RSN, URPT_IS_CERT " +
+            "FROM User_Report where mem_no_ed = ?";
+    // §R°£¸ê®Æ
     private static final String DELETE_NEWS = "DELETE FROM User_Report where mem_no_ed = ? and mem_no_ing =?";
-    // ä¿®æ”¹è³‡æ–™
-    private static final String UPDATE = "UPDATE User_Report set new_title=? where mem_no_ed = ? and mem_no_ing =?";
+    // ­×§ï¸ê®Æ
+    private static final String UPDATE = "UPDATE User_Report set URPT_IS_CERT=? where mem_no_ed = ? and mem_no_ing =?";
 
 
     @Override
@@ -29,14 +31,17 @@ public class User_ReportJDBCDAO implements User_ReportDAO_interface {
 
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
-//            String[] cols = {"new_no"}; // æœ‰ä½¿ç”¨sequenceç”¢ç”Ÿç·¨è™Ÿçš„è©±æ‰è¦å¯«
+//            String[] cols = {"new_no"}; // ¦³¨Ï¥Îsequence²£¥Í½s¸¹ªº¸Ü¤~­n¼g
             java.util.Date today = new java.util.Date();
 
-//            pstmt = con.prepareStatement(INSERT_STMT, cols); // æœ‰ä½¿ç”¨sequenceç”¢ç”Ÿç·¨è™Ÿçš„è©±æ‰è¦å¯«ç¬¬äºŒå€‹åƒæ•¸
+//            pstmt = con.prepareStatement(INSERT_STMT, cols); // ¦³¨Ï¥Îsequence²£¥Í½s¸¹ªº¸Ü¤~­n¼g²Ä¤G­Ó°Ñ¼Æ
 
             pstmt.setTimestamp(0, new Timestamp(System.currentTimeMillis()));
             pstmt.setString(1, user_ReportVO.getMem_no_ed());
             pstmt.setString(2, user_ReportVO.getUrpt_cnt());
+            pstmt.setString(4, user_ReportVO.getUrpt_rsn());
+            pstmt.setString(5, user_ReportVO.getUrpt_is_cert());
+            pstmt.setString(6, user_ReportVO.getUrpt_unrsn());
 
             pstmt.executeUpdate();
 
@@ -115,7 +120,7 @@ public class User_ReportJDBCDAO implements User_ReportDAO_interface {
     }
 
     @Override
-    public void delete(String mem_no_ed){
+    public void delete(String mem_no_ed) {
 
         int updateCount_PRODUCTs = 0;
 
@@ -127,23 +132,23 @@ public class User_ReportJDBCDAO implements User_ReportDAO_interface {
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
 
-            // 1â—è¨­å®šæ–¼ pstm.executeUpdate()ä¹‹å‰
+            // 1¡´³]©w©ó pstm.executeUpdate()¤§«e
             con.setAutoCommit(false);
 
-            // å…ˆåˆªé™¤å•†å“(å¤š) --->å°šæœªå»ºproductï¼Œå› æ­¤å…ˆè¨»è§£
+            // ¥ı§R°£°Ó«~(¦h) --->©|¥¼«Øproduct¡A¦]¦¹¥ıµù¸Ñ
 //			pstmt = con.prepareStatement(DELETE_PRODUCTs);
 //			pstmt.setString(1, mem_no_ed);
 //			updateCount_PRODUCTs = pstmt.executeUpdate();
-            // å†åˆªé™¤å•†å“é¡åˆ¥(ä¸€)
+            // ¦A§R°£°Ó«~Ãş§O(¤@)
             pstmt = con.prepareStatement(DELETE_NEWS);
             pstmt.setString(1, mem_no_ed);
             pstmt.executeUpdate();
 
-            // 2â—è¨­å®šæ–¼ pstm.executeUpdate()ä¹‹å¾Œ
+            // 2¡´³]©w©ó pstm.executeUpdate()¤§«á
             con.commit();
             con.setAutoCommit(true);
-            System.out.println("åˆªé™¤å•†å“é¡åˆ¥ç·¨è™Ÿ" + mem_no_ed + "æ™‚,å…±æœ‰å•†å“" + updateCount_PRODUCTs
-                    + "å€‹åŒæ™‚è¢«åˆªé™¤");
+            System.out.println("§R°£°Ó«~Ãş§O½s¸¹" + mem_no_ed + "®É,¦@¦³°Ó«~" + updateCount_PRODUCTs
+                    + "­Ó¦P®É³Q§R°£");
 
             // Handle any DRIVER errors
         } catch (ClassNotFoundException e) {
@@ -153,7 +158,7 @@ public class User_ReportJDBCDAO implements User_ReportDAO_interface {
         } catch (SQLException se) {
             if (con != null) {
                 try {
-                    // 3â—è¨­å®šæ–¼ç•¶æœ‰exceptionç™¼ç”Ÿæ™‚ä¹‹catchå€å¡Šå…§
+                    // 3¡´³]©w©ó·í¦³exceptionµo¥Í®É¤§catch°Ï¶ô¤º
                     con.rollback();
                 } catch (SQLException excep) {
                     throw new RuntimeException("rollback error occured. "
@@ -183,7 +188,7 @@ public class User_ReportJDBCDAO implements User_ReportDAO_interface {
     }
 
     @Override
-    public User_ReportVO findByPrimaryKey(String mem_no_ed){
+    public User_ReportVO findByPrimaryKey(String mem_no_ed) {
 
         User_ReportVO user_ReportVO = null;
         Connection con = null;
@@ -242,7 +247,7 @@ public class User_ReportJDBCDAO implements User_ReportDAO_interface {
     }
 
     @Override
-    public List<User_ReportVO> getAll(){
+    public List<User_ReportVO> getAll() {
 
         List<User_ReportVO> list = new ArrayList<User_ReportVO>();
         User_ReportVO user_ReportVO = null;
@@ -303,36 +308,36 @@ public class User_ReportJDBCDAO implements User_ReportDAO_interface {
     public static void main(String[] args) {
 
         User_ReportJDBCDAO dao = new User_ReportJDBCDAO();
-        // æ¸¬è©¦çœ‹çœ‹æ¯å€‹æŒ‡ä»¤æ˜¯å¦å¯ä»¥ä½¿ç”¨
-        // æ–°å¢
-        NewsVO user_ReportVO1 = new NewsVO();
-//        user_ReportVO1.setNew_date(new Timestamp(System.currentTimeMillis()));
-//        user_ReportVO1.setNew_title("è²¡å‹™éƒ¨å›ä¾†åš•");
-//        user_ReportVO1.setNew_cnt("è²¡å‹™éƒ¨å›ä¾†åš•");
-//        dao.insert(newsVO1);
+        // ´ú¸Õ¬İ¬İ¨C­Ó«ü¥O¬O§_¥i¥H¨Ï¥Î
+        // ·s¼W
+        User_ReportVO user_ReportVO1 = new User_ReportVO();
+        user_ReportVO1.setUrpt_cnt("");
+        user_ReportVO1.setUrpt_rsn("°]°È³¡¦^¨ÓÂP");
+        user_ReportVO1.setUrpt_is_cert("1");
+        user_ReportVO1.setUrpt_unrsn("°]°È³¡¦^¨ÓÂP");
+        dao.insert(user_ReportVO1);
 
-        // ä¿®æ”¹
+        // ­×§ï
         User_ReportVO user_ReportVO2 = new User_ReportVO();
         user_ReportVO2.setMem_no_ing("n0007");
-        user_ReportVO2.setUrpt_cnt("ä¿®æ”¹çœ‹çœ‹");
+        user_ReportVO2.setUrpt_cnt("­×§ï¬İ¬İ");
         dao.update(user_ReportVO2);
 
-        // åˆªé™¤
+        // §R°£
 //		dao.delete("1");
 
-        // æŸ¥è©¢
+        // ¬d¸ß
 //        User_ReportVO user_ReportVO3 = dao.findByPrimaryKey("1");
-//		System.out.print(user_ReportVO3.getNew_no() + ",");
-//		System.out.println(user_ReportVO3.getNew_title());
-//		System.out.println("---------------------");
+//        System.out.print(user_ReportVO3.getMem_no_ed() + ",");
+//        System.out.println(user_ReportVO3.getUrpt_is_cert());
+//        System.out.println("---------------------");
 
-        // æŸ¥è©¢éƒ¨é–€
-//		List<User_ReportVO> list = dao.getAll();
-//		for (User_ReportVO proc : list) {
-//			System.out.print(proc.getNew_no() + ",");
-//			System.out.print(proc.getNew_title());
-//			System.out.println();
-//		}
+        // ¬d¸ß³¡ªù
+//        List<User_ReportVO> list = dao.getAll();
+//        for (User_ReportVO proc : list) {
+//            System.out.print(proc.getMem_no_ing() + ",");
+//            System.out.print(proc.getUrpt_cnt());
+//            System.out.println();
 
+        }
     }
-}
