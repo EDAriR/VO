@@ -9,5 +9,4 @@ public interface Chat_FriendDAO_interface {
     public void delete(String cf_no);
     public Chat_FriendVO findByPrimaryKey(String cf_no);
     public List<Chat_FriendVO> getAll();
-
 }

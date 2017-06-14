@@ -28,12 +28,11 @@ public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
 
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
-            String[] cols = {"cf_no"}; // 有使用sequence產生編號的話才要寫
-            pstmt = con.prepareStatement(INSERT_STMT, cols); // 有使用sequence產生編號的話才要寫第二個參數
+            String[] cf = {"cf_no"}; // 有使用sequence產生編號的話才要寫
+            pstmt = con.prepareStatement(INSERT_STMT, cf); // 有使用sequence產生編號的話才要寫第二個參數
             pstmt.setString(1, chat_FriendVO.getMem_no_s());
             pstmt.setString(2, chat_FriendVO.getMem_no_o());
             pstmt.setString(3, chat_FriendVO.getCf_is_del());
-
             pstmt.executeUpdate();
 
             // Handle any DRIVER errors
@@ -78,7 +77,6 @@ public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
             pstmt = con.prepareStatement(UPDATE);
             pstmt.setString(1, chat_FriendVO.getCf_is_del());
             pstmt.setString(2, chat_FriendVO.getCf_no());
-
             pstmt.executeUpdate();
 
             // Handle any DRIVER errors
@@ -112,8 +110,6 @@ public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
     @Override
     public void delete(String cf_no) {
 
-        int updateCount_PRODUCTs = 0;
-
         Connection con = null;
         PreparedStatement pstmt = null;
 
@@ -122,23 +118,17 @@ public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
 
-            // 1●設定於 pstm.executeUpdate()之前
+            // 1 設定於 pstm.executeUpdate()之前
             con.setAutoCommit(false);
 
-            // 先刪除商品(多) --->尚未建product，因此先註解
-//			pstmt = con.prepareStatement(DELETE_PRODUCTs);
-//			pstmt.setString(1, cf_no);
-//			updateCount_PRODUCTs = pstmt.executeUpdate();
-            // 再刪除商品類別(一)
             pstmt = con.prepareStatement(DELETE_PROC);
             pstmt.setString(1, cf_no);
             pstmt.executeUpdate();
 
-            // 2●設定於 pstm.executeUpdate()之後
+            // 2 設定於 pstm.executeUpdate()之後
             con.commit();
             con.setAutoCommit(true);
-            System.out.println("刪除商品類別編號" + cf_no + "時,共有商品" + updateCount_PRODUCTs
-                    + "個同時被刪除");
+            System.out.println("Delete Chat Friend :" + cf_no);
 
             // Handle any DRIVER errors
         } catch (ClassNotFoundException e) {
@@ -148,7 +138,7 @@ public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
         } catch (SQLException se) {
             if (con != null) {
                 try {
-                    // 3●設定於當有exception發生時之catch區塊內
+                    // 3 設定於當有exception發生時之catch區塊內
                     con.rollback();
                 } catch (SQLException excep) {
                     throw new RuntimeException("rollback error occured. "
@@ -173,8 +163,6 @@ public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
                 }
             }
         }
-
-
     }
 
     @Override
@@ -241,7 +229,6 @@ public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
 
         List<Chat_FriendVO> list = new ArrayList<Chat_FriendVO>();
         Chat_FriendVO chat_FriendVO = null;
-
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -326,9 +313,9 @@ public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
 
         // 查詢部門
         List<Chat_FriendVO> list = dao.getAll();
-        for (Chat_FriendVO proc : list) {
-            System.out.print(proc.getCf_no() + ",");
-            System.out.print(proc.getMem_no_o());
+        for (Chat_FriendVO cf : list) {
+            System.out.print(cf.getCf_no() + ",");
+            System.out.print(cf.getMem_no_o());
             System.out.println();
         }
     }

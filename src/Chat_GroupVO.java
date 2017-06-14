@@ -8,13 +8,13 @@ public class Chat_GroupVO implements Serializable {
     private String cg_no;       //	Not Null (PK)
     private String cg_name;     //	Not Null
     private Date cg_year;       //	Not Null
-    private String cg_is_aa;    //	"Not Null0ï¼šå¦1ï¼šæ˜¯"
-    private String cg_is_ar;    //	"Not Null0ï¼šå¦1ï¼šæ˜¯"
-    private String cg_is_ab;    //	"Not Null0ï¼šå¦1ï¼šæ˜¯"
-    private String cg_is_ac;    //	"Not Null0ï¼šå¦1ï¼šæ˜¯"
-    private String cg_is_sf;    //	"Not Null1ï¼šæ˜¯"
-    private String cg_is_ad;    //	"Not Null0ï¼šå¦1ï¼šæ˜¯"
-    private String baby_rd;    //	"Not Null0ï¼šå¦1ï¼šæ˜¯"
+    private String cg_is_aa;    //	"Not Null 0¡G§_ 1¡G¬O"
+    private String cg_is_ar;    //	"Not Null 0¡G§_ 1¡G¬O"
+    private String cg_is_ab;    //	"Not Null 0¡G§_ 1¡G¬O"
+    private String cg_is_ac;    //	"Not Null 0¡G§_ 1¡G¬O"
+    private String cg_is_sf;    //	"Not Null 0¡G§_ 1¡G¬O"
+    private String cg_is_ad;    //	"Not Null 0¡G§_ 1¡G¬O"
+    private String baby_rd;     //	"Not Null 0¡G§_ 1¡G¬O"
 
     public Chat_GroupVO() {
         super();

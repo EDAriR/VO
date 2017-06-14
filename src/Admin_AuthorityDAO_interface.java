@@ -7,8 +7,6 @@ public interface Admin_AuthorityDAO_interface {
 
     public void insert(Admin_AuthorityVO Admin_AuthorityVO);
 
-    public void update(Admin_AuthorityVO Admin_AuthorityVO);
-
     public void delete(String adm_no,String auth_no);
 
     public Admin_AuthorityVO findByPrimaryKey(String adm_no);

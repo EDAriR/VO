@@ -11,7 +11,7 @@ public class User_ReportVO implements Serializable {
     private String urpt_cnt;      //	Not Null
     private Timestamp urpt_date;  //	Not Null
     private String urpt_rsn;      //	Not Null
-    private String urpt_is_cert;  //	"Not Null0ÔºöÂê¶1ÔºöÊòØ"
+    private String urpt_is_cert;  //	"Not Null0°Gß_1°G¨O"
     private String urpt_unrsn;    //
 
     public User_ReportVO() {

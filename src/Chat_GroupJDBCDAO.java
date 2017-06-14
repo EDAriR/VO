@@ -5,7 +5,7 @@ import java.sql.*;
 public class Chat_GroupJDBCDAO implements Chat_GroupDAO_interface {
     private static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
     private static final String URL = "jdbc:oracle:thin:@localhost:1522:xe";
-//    private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
+    //    private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
     private static final String USER = "ba101g3";
     private static final String PASSWORD = "baby";
     // 新增資料
@@ -30,8 +30,8 @@ public class Chat_GroupJDBCDAO implements Chat_GroupDAO_interface {
 //        	(cg_no, CG_NAME, CG_YEAR, CG_IS_AR, CG_IS_AB, CG_IS_AC, CG_IS_SF, CG_IS_AD, BABY_RD
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
-            String[] cols = { "cg_no" }; // 有使用sequence產生編號的話才要寫
-            pstmt = con.prepareStatement(INSERT_STMT, cols); // 有使用sequence產生編號的話才要寫第二個參數
+            String[] cg = {"cg_no"}; // 有使用sequence產生編號的話才要寫
+            pstmt = con.prepareStatement(INSERT_STMT, cg); // 有使用sequence產生編號的話才要寫第二個參數
             pstmt.setString(1, chat_GroupVO.getCg_name());
             pstmt.setDate(2, chat_GroupVO.getCg_year());
             pstmt.setString(3, chat_GroupVO.getCg_is_ar());
@@ -40,7 +40,6 @@ public class Chat_GroupJDBCDAO implements Chat_GroupDAO_interface {
             pstmt.setString(6, chat_GroupVO.getCg_is_sf());
             pstmt.setString(7, chat_GroupVO.getCg_is_ad());
             pstmt.setString(8, chat_GroupVO.getBaby_rd());
-
             pstmt.executeUpdate();
 
             // Handle any DRIVER errors
@@ -118,7 +117,6 @@ public class Chat_GroupJDBCDAO implements Chat_GroupDAO_interface {
 
     @Override
     public void delete(String cg_no) {
-        int updateCount_PRODUCTs = 0;
 
         Connection con = null;
         PreparedStatement pstmt = null;
@@ -128,23 +126,16 @@ public class Chat_GroupJDBCDAO implements Chat_GroupDAO_interface {
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
 
-            // 1●設定於 pstm.executeUpdate()之前
+            // 1 設定於 pstm.executeUpdate()之前
             con.setAutoCommit(false);
-
-            // 先刪除商品(多) --->尚未建product，因此先註解
-//			pstmt = con.prepareStatement(DELETE_PRODUCTs);
-//			pstmt.setString(1, cg_no);
-//			updateCount_PRODUCTs = pstmt.executeUpdate();
-            // 再刪除商品類別(一)
             pstmt = con.prepareStatement(DELETE_PROC);
             pstmt.setString(1, cg_no);
             pstmt.executeUpdate();
 
-            // 2●設定於 pstm.executeUpdate()之後
+            // 2 設定於 pstm.executeUpdate()之後
             con.commit();
             con.setAutoCommit(true);
-            System.out.println("刪除商品類別編號" + cg_no + "時,共有商品" + updateCount_PRODUCTs
-                    + "個同時被刪除");
+            System.out.println("Delete Chat_Group: " + cg_no);
 
             // Handle any DRIVER errors
         } catch (ClassNotFoundException e) {
@@ -154,7 +145,7 @@ public class Chat_GroupJDBCDAO implements Chat_GroupDAO_interface {
         } catch (SQLException se) {
             if (con != null) {
                 try {
-                    // 3●設定於當有exception發生時之catch區塊內
+                    // 3 設定於當有exception發生時之catch區塊內
                     con.rollback();
                 } catch (SQLException excep) {
                     throw new RuntimeException("rollback error occured. "
@@ -195,9 +186,7 @@ public class Chat_GroupJDBCDAO implements Chat_GroupDAO_interface {
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
             pstmt = con.prepareStatement(GET_ONE_STMT);
-
             pstmt.setString(1, cg_no);
-
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
@@ -302,17 +291,17 @@ public class Chat_GroupJDBCDAO implements Chat_GroupDAO_interface {
     public static void main(String[] args) {
 
         Chat_GroupJDBCDAO dao = new Chat_GroupJDBCDAO();
-        // 測試看看每個指令是否可以使用
+
         // 新增(OK)
 //        Chat_GroupVO chat_GroupVO1 = new Chat_GroupVO();
-//        chat_GroupVO1.setCg_name("財務部回來嚕1");
+//        chat_GroupVO1.setCg_name("群組測試1");
 //        chat_GroupVO1.setCg_year(java.sql.Date.valueOf("2002-02-01"));
 //        chat_GroupVO1.setCg_is_ab("0");
 //        chat_GroupVO1.setCg_is_ac("1");
 //        chat_GroupVO1.setCg_is_sf("0");
 //        chat_GroupVO1.setCg_is_ad("1");
 //        chat_GroupVO1.setCg_is_ar("1");
-//        chat_GroupVO1.setBaby_rd("才");
+//        chat_GroupVO1.setBaby_rd("沒時間睡覺症");
 //        dao.insert(chat_GroupVO1);
 //        System.out.println("insert");
 
@@ -327,18 +316,18 @@ public class Chat_GroupJDBCDAO implements Chat_GroupDAO_interface {
 //		dao.delete("cg001");
 
         // 查詢
-		Chat_GroupVO chat_GroupVO3 = dao.findByPrimaryKey("cg002");
-		System.out.print(chat_GroupVO3.getCg_no() + ",");
-		System.out.println(chat_GroupVO3.getCg_name());
-		System.out.println("---------------------");
+        Chat_GroupVO chat_GroupVO3 = dao.findByPrimaryKey("cg002");
+        System.out.print(chat_GroupVO3.getCg_no() + ",");
+        System.out.println(chat_GroupVO3.getCg_name());
+        System.out.println("---------------------");
 
         // 查詢部門
-		List<Chat_GroupVO> list = dao.getAll();
-		for (Chat_GroupVO proc : list) {
-			System.out.print(proc.getCg_no() + ",");
-			System.out.print(proc.getCg_name());
-			System.out.println();
-		}
+        List<Chat_GroupVO> list = dao.getAll();
+        for (Chat_GroupVO cg : list) {
+            System.out.print(cg.getCg_no() + ",");
+            System.out.print(cg.getCg_name());
+            System.out.println();
+        }
 
     }
 }

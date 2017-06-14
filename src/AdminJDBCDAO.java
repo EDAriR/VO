@@ -29,9 +29,9 @@ public class AdminJDBCDAO implements AdminDAO_interface {
 
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
-            String[] cols = {"adm_no"}; // 有使用sequence產生編號的話才要寫
-            pstmt = con.prepareStatement(INSERT_STMT, cols); // 有使用sequence產生編號的話才要寫第二個參數
-           // pstmt.setString(1, adminVO.getAdm_no());
+            String[] seq = {"adm_no"}; // 有使用sequence產生編號的話才要寫
+            pstmt = con.prepareStatement(INSERT_STMT, seq); // 有使用sequence產生編號的話才要寫第二個參數
+
             pstmt.setString(1, adminVO.getAdm_acct());
             pstmt.setString(2, adminVO.getAdm_pwd());
             pstmt.setString(3, adminVO.getAdm_name());
@@ -39,11 +39,6 @@ public class AdminJDBCDAO implements AdminDAO_interface {
 
             pstmt.executeUpdate();
 
-            // Handle any DRIVER errors
-//        } catch (ClassNotFoundException e) {
-//            throw new RuntimeException("Couldn't load database DRIVER. "
-//                    + e.getMessage());
-//            // Handle any SQL errors
         } catch (Exception se) {
             throw new RuntimeException("A database error occured. "
                     + se.getMessage());
@@ -116,8 +111,6 @@ public class AdminJDBCDAO implements AdminDAO_interface {
     @Override
     public void delete(String adm_no) {
 
-        int updateCount_PRODUCTs = 0;
-
         Connection con = null;
         PreparedStatement pstmt = null;
 
@@ -126,23 +119,17 @@ public class AdminJDBCDAO implements AdminDAO_interface {
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
 
-            // 1●設定於 pstm.executeUpdate()之前
+            // 1 設定於 pstm.executeUpdate()之前
             con.setAutoCommit(false);
 
-            // 先刪除商品(多) --->尚未建product，因此先註解
-//			pstmt = con.prepareStatement(DELETE_PRODUCTs);
-//			pstmt.setString(1, adm_no);
-//			updateCount_PRODUCTs = pstmt.executeUpdate();
-            // 再刪除商品類別(一)
             pstmt = con.prepareStatement(DELETE_PROC);
             pstmt.setString(1, adm_no);
             pstmt.executeUpdate();
 
-            // 2●設定於 pstm.executeUpdate()之後
+            // 2 設定於 pstm.executeUpdate()之後
             con.commit();
             con.setAutoCommit(true);
-            System.out.println("刪除商品類別編號" + adm_no + "時,共有商品" + updateCount_PRODUCTs
-                    + "個同時被刪除");
+            System.out.println("Delete admin" + adm_no );
 
             // Handle any DRIVER errors
         } catch (ClassNotFoundException e) {
@@ -152,7 +139,7 @@ public class AdminJDBCDAO implements AdminDAO_interface {
         } catch (SQLException se) {
             if (con != null) {
                 try {
-                    // 3●設定於當有exception發生時之catch區塊內
+                    // 3 設定於當有exception發生時之catch區塊內
                     con.rollback();
                 } catch (SQLException excep) {
                     throw new RuntimeException("rollback error occured. "
@@ -196,7 +183,6 @@ public class AdminJDBCDAO implements AdminDAO_interface {
             pstmt = con.prepareStatement(GET_ONE_STMT);
 
             pstmt.setString(1, adm_no);
-
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
@@ -245,7 +231,6 @@ public class AdminJDBCDAO implements AdminDAO_interface {
 
         List<AdminVO> list = new ArrayList<AdminVO>();
         AdminVO adminVO = null;
-
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -263,7 +248,6 @@ public class AdminJDBCDAO implements AdminDAO_interface {
                 adminVO.setAdm_name(rs.getString("adm_name"));
                 list.add(adminVO); // Store the row in the list
             }
-
             // Handle any DRIVER errors
         } catch (ClassNotFoundException e) {
             throw new RuntimeException("Couldn't load database DRIVER. "
@@ -301,7 +285,7 @@ public class AdminJDBCDAO implements AdminDAO_interface {
     public static void main(String[] args) {
 
         AdminJDBCDAO dao = new AdminJDBCDAO();
-        // 測試看看每個指令是否可以使用
+
         // 新增
 //        AdminVO adminVO1 = new AdminVO();
 //        adminVO1.setAdm_acct("adtestacct1");
@@ -321,6 +305,7 @@ public class AdminJDBCDAO implements AdminDAO_interface {
 
         // 刪除
         dao.delete("ad007");
+        System.out.println("------刪除---------");
 
         // 查詢
 //        AdminVO adminVO3 = dao.findByPrimaryKey("ad004");
@@ -330,9 +315,9 @@ public class AdminJDBCDAO implements AdminDAO_interface {
 
         // 查詢部門
         List<AdminVO> list = dao.getAll();
-        for (AdminVO proc : list) {
-            System.out.print(proc.getAdm_no() + ",");
-            System.out.print(proc.getAdm_name());
+        for (AdminVO ad : list) {
+            System.out.print(ad.getAdm_no() + ",");
+            System.out.print(ad.getAdm_name());
             System.out.println();
         }
 

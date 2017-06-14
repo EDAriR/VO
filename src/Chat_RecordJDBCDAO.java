@@ -30,13 +30,11 @@ public class Chat_RecordJDBCDAO implements Chat_RecordDAO_interface {
 
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
-            String[] cols = {"cr_no"}; // 有使用sequence產生編號的話才要寫
-            pstmt = con.prepareStatement(INSERT_STMT, cols); // 有使用sequence產生編號的話才要寫第二個參數
+            String[] cr = {"cr_no"}; // 有使用sequence產生編號的話才要寫
+            pstmt = con.prepareStatement(INSERT_STMT, cr); // 有使用sequence產生編號的話才要寫第二個參數
             pstmt.setString(1, chat_RecordVO.getCf_no());
             pstmt.setString(2, chat_RecordVO.getCg_no());
-          //  pstmt.setDate(3, chat_RecordVO.getCr_date());
             pstmt.setString(3, chat_RecordVO.getCr_cnt());
-         
             pstmt.executeUpdate();
 
             // Handle any DRIVER errors
@@ -64,8 +62,6 @@ public class Chat_RecordJDBCDAO implements Chat_RecordDAO_interface {
                 }
             }
         }
-
-
     }
 
     @Override
@@ -79,10 +75,8 @@ public class Chat_RecordJDBCDAO implements Chat_RecordDAO_interface {
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
             pstmt = con.prepareStatement(UPDATE);
-
             pstmt.setString(1, chat_RecordVO.getCr_cnt());
             pstmt.setString(2, chat_RecordVO.getCr_no());
-
             pstmt.executeUpdate();
 
             // Handle any DRIVER errors
@@ -110,13 +104,10 @@ public class Chat_RecordJDBCDAO implements Chat_RecordDAO_interface {
                 }
             }
         }
-
     }
 
     @Override
-    public void delete(String cr_no){
-
-        int updateCount_PRODUCTs = 0;
+    public void delete(String cr_no) {
 
         Connection con = null;
         PreparedStatement pstmt = null;
@@ -126,23 +117,17 @@ public class Chat_RecordJDBCDAO implements Chat_RecordDAO_interface {
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
 
-            // 1●設定於 pstm.executeUpdate()之前
+            // 1 設定於 pstm.executeUpdate()之前
             con.setAutoCommit(false);
 
-            // 先刪除商品(多) --->尚未建product，因此先註解
-//			pstmt = con.prepareStatement(DELETE_PRODUCTs);
-//			pstmt.setString(1, proc_no);
-//			updateCount_PRODUCTs = pstmt.executeUpdate();
-            // 再刪除商品類別(一)
             pstmt = con.prepareStatement(DELETE_PROC);
             pstmt.setString(1, cr_no);
             pstmt.executeUpdate();
 
-            // 2●設定於 pstm.executeUpdate()之後
+            // 2 設定於 pstm.executeUpdate()之後
             con.commit();
             con.setAutoCommit(true);
-            System.out.println("刪除商品類別編號" + cr_no + "時,共有商品" + updateCount_PRODUCTs
-                    + "個同時被刪除");
+            System.out.println("Delete Chat_Record : " + cr_no);
 
             // Handle any DRIVER errors
         } catch (ClassNotFoundException e) {
@@ -152,7 +137,7 @@ public class Chat_RecordJDBCDAO implements Chat_RecordDAO_interface {
         } catch (SQLException se) {
             if (con != null) {
                 try {
-                    // 3●設定於當有exception發生時之catch區塊內
+                    // 3 設定於當有exception發生時之catch區塊內
                     con.rollback();
                 } catch (SQLException excep) {
                     throw new RuntimeException("rollback error occured. "
@@ -182,7 +167,7 @@ public class Chat_RecordJDBCDAO implements Chat_RecordDAO_interface {
     }
 
     @Override
-    public Chat_RecordVO findByPrimaryKey(String cr_no){
+    public Chat_RecordVO findByPrimaryKey(String cr_no) {
 
         Chat_RecordVO chat_RecordVO = null;
         Connection con = null;
@@ -241,11 +226,10 @@ public class Chat_RecordJDBCDAO implements Chat_RecordDAO_interface {
     }
 
     @Override
-    public List<Chat_RecordVO> getAll(){
+    public List<Chat_RecordVO> getAll() {
 
         List<Chat_RecordVO> list = new ArrayList<Chat_RecordVO>();
         Chat_RecordVO chat_RecordVO = null;
-
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -263,7 +247,6 @@ public class Chat_RecordJDBCDAO implements Chat_RecordDAO_interface {
                 chat_RecordVO.setCr_cnt(rs.getString("cr_cnt"));
                 list.add(chat_RecordVO); // Store the row in the list
             }
-
             // Handle any DRIVER errors
         } catch (ClassNotFoundException e) {
             throw new RuntimeException("Couldn't load database DRIVER. "
@@ -301,19 +284,19 @@ public class Chat_RecordJDBCDAO implements Chat_RecordDAO_interface {
     public static void main(String[] args) {
 
         Chat_RecordJDBCDAO dao = new Chat_RecordJDBCDAO();
-        // 測試看看每個指令是否可以使用
+
         // 新增(OK)
 //        Chat_RecordVO chat_RecordVO1 = new Chat_RecordVO();
 //        chat_RecordVO1.setCr_cnt("null");
 //        chat_RecordVO1.setCr_cnt("null");
-//        chat_RecordVO1.setCr_cnt("財務部回來嚕12");
+//        chat_RecordVO1.setCr_cnt("聊天記錄測試*");
 //        dao.insert(chat_RecordVO1);
 //        System.out.println("新增成功");
 
         // 修改
 //		Chat_RecordVO chat_RecordVO2 = new Chat_RecordVO();
 //		chat_RecordVO2.setCr_no("cr0002");
-//		chat_RecordVO2.setCr_cnt("11修改看看");
+//		chat_RecordVO2.setCr_cnt("修改看看");
 //		dao.update(chat_RecordVO2);
 //		System.out.println("update");
 
@@ -329,9 +312,9 @@ public class Chat_RecordJDBCDAO implements Chat_RecordDAO_interface {
 
         // 查詢部門
 //		List<Chat_RecordVO> list = dao.getAll();
-//		for (Chat_RecordVO proc : list) {
-//			System.out.print(proc.getCr_no() + ",");
-//			System.out.print(proc.getCr_cnt());
+//		for (Chat_RecordVO cr : list) {
+//			System.out.print(cr.getCr_no() + ",");
+//			System.out.print(cr.getCr_cnt());
 //			System.out.println();
 //		}
 

@@ -9,7 +9,8 @@ public class Chat_NotebookJDBCDAO implements Chat_NotebookDAO_interface {
     private static final String USER = "ba101g3";
     private static final String PASSWORD = "baby";
     // 新增資料
-    private static final String INSERT_STMT = "INSERT INTO Chat_Notebook (cnb_no, cnb_cnt) VALUES ('cnb'||LPAD(to_char(cnb_no_seq.NEXTVAL),3,'0'), ?)";
+    private static final String INSERT_STMT = "INSERT INTO Chat_Notebook (cnb_no, cnb_cnt) " +
+            "VALUES ('cnb'||LPAD(to_char(cnb_no_seq.NEXTVAL),3,'0'), ?)";
     // 查詢資料
     private static final String GET_ALL_STMT = "SELECT cnb_no , cnb_cnt FROM Chat_Notebook";
     private static final String GET_ONE_STMT = "SELECT cnb_no, cnb_cnt FROM Chat_Notebook where cnb_no = ?";
@@ -28,10 +29,9 @@ public class Chat_NotebookJDBCDAO implements Chat_NotebookDAO_interface {
 
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
-            String[] cols = {"cnb_no"}; // 有使用sequence產生編號的話才要寫
-            pstmt = con.prepareStatement(INSERT_STMT, cols); // 有使用sequence產生編號的話才要寫第二個參數
+            String[] cnb = {"cnb_no"}; // 有使用sequence產生編號的話才要寫
+            pstmt = con.prepareStatement(INSERT_STMT, cnb); // 有使用sequence產生編號的話才要寫第二個參數
             pstmt.setString(1, chat_NotebookVO.getCnb_cnt());
-
             pstmt.executeUpdate();
 
             // Handle any DRIVER errors
@@ -59,8 +59,6 @@ public class Chat_NotebookJDBCDAO implements Chat_NotebookDAO_interface {
                 }
             }
         }
-
-
     }
 
     @Override
@@ -77,10 +75,6 @@ public class Chat_NotebookJDBCDAO implements Chat_NotebookDAO_interface {
 
             pstmt.setString(1, chat_NotebookVO.getCnb_cnt());
             pstmt.setString(2, chat_NotebookVO.getCnb_no());
-           
-            System.out.println(chat_NotebookVO.getCnb_cnt());
-            System.out.println(chat_NotebookVO.getCnb_no());
-
             pstmt.executeUpdate();
 
             // Handle any DRIVER errors
@@ -108,13 +102,10 @@ public class Chat_NotebookJDBCDAO implements Chat_NotebookDAO_interface {
                 }
             }
         }
-
     }
 
     @Override
     public void delete(String cnb_no){
-
-        int updateCount_PRODUCTs = 0;
 
         Connection con = null;
         PreparedStatement pstmt = null;
@@ -124,14 +115,9 @@ public class Chat_NotebookJDBCDAO implements Chat_NotebookDAO_interface {
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
 
-            // 1●設定於 pstm.executeUpdate()之前
+            // 1 設定於 pstm.executeUpdate()之前
             con.setAutoCommit(false);
 
-            // 先刪除商品(多) --->尚未建product，因此先註解
-//			pstmt = con.prepareStatement(DELETE_PRODUCTs);
-//			pstmt.setString(1, cnb_no);
-//			updateCount_PRODUCTs = pstmt.executeUpdate();
-            // 再刪除商品類別(一)
             pstmt = con.prepareStatement(DELETE_PROC);
             pstmt.setString(1, cnb_no);
             pstmt.executeUpdate();
@@ -139,8 +125,7 @@ public class Chat_NotebookJDBCDAO implements Chat_NotebookDAO_interface {
             // 2●設定於 pstm.executeUpdate()之後
             con.commit();
             con.setAutoCommit(true);
-            System.out.println("刪除商品類別編號" + cnb_no + "時,共有商品" + updateCount_PRODUCTs
-                    + "個同時被刪除");
+            System.out.println("Delete" + cnb_no);
 
             // Handle any DRIVER errors
         } catch (ClassNotFoundException e) {
@@ -175,8 +160,6 @@ public class Chat_NotebookJDBCDAO implements Chat_NotebookDAO_interface {
                 }
             }
         }
-
-
     }
 
     @Override
@@ -192,9 +175,7 @@ public class Chat_NotebookJDBCDAO implements Chat_NotebookDAO_interface {
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
             pstmt = con.prepareStatement(GET_ONE_STMT);
-
             pstmt.setString(1, cnb_no);
-
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
@@ -243,7 +224,6 @@ public class Chat_NotebookJDBCDAO implements Chat_NotebookDAO_interface {
 
         List<Chat_NotebookVO> list = new ArrayList<Chat_NotebookVO>();
         Chat_NotebookVO chat_NotebookVO = null;
-
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -299,10 +279,10 @@ public class Chat_NotebookJDBCDAO implements Chat_NotebookDAO_interface {
     public static void main(String[] args) {
 
         Chat_NotebookJDBCDAO dao = new Chat_NotebookJDBCDAO();
-        // 測試看看每個指令是否可以使用
+
         // 新增
 //        Chat_NotebookVO chat_NotebookVO1 = new Chat_NotebookVO();
-//        chat_NotebookVO1.setCnb_cnt("ghdrggrtshdegfmjh,.,bcbftgeartyytjfky");
+//        chat_NotebookVO1.setCnb_cnt("記事本測試https://img.kekeke.cc/t/x8JrPHoAAr.png");
 //        dao.insert(chat_NotebookVO1);
 //        System.out.println("新增完成");
 
@@ -326,9 +306,9 @@ public class Chat_NotebookJDBCDAO implements Chat_NotebookDAO_interface {
 
         // 查詢部門
 		List<Chat_NotebookVO> list = dao.getAll();
-		for (Chat_NotebookVO proc : list) {
-			System.out.print(proc.getCnb_no() + ",");
-			System.out.print(proc.getCnb_cnt());
+		for (Chat_NotebookVO cnb : list) {
+			System.out.print(cnb.getCnb_no() + ",");
+			System.out.print(cnb.getCnb_cnt());
 			System.out.println();
 		}
 
