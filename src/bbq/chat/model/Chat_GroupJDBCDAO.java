@@ -1,40 +1,47 @@
+package bbq.chat.model;
+
 import java.util.*;
 import java.sql.*;
 
 
-public class Chat_RecordJDBCDAO implements Chat_RecordDAO_interface {
+public class Chat_GroupJDBCDAO implements Chat_GroupDAO_interface {
     private static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
     private static final String URL = "jdbc:oracle:thin:@localhost:1522:xe";
-//    private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
+    //    private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
     private static final String USER = "ba101g3";
     private static final String PASSWORD = "baby";
     // 新增資料
-    private static final String INSERT_STMT = "INSERT INTO Chat_Record " +
-            "(cr_no, CR_DATE, CF_NO, CG_NO, cr_cnt) " +
-            "VALUES ('cr'||LPAD(to_char(ADM_NO_SEQ.nextval),4,'0'), CURRENT_TIMESTAMP, ?, ?, ?)";
+    private static final String INSERT_STMT = "INSERT INTO Chat_Group " +
+            "(cg_no, CG_NAME, CG_YEAR, CG_IS_AR, CG_IS_AB, CG_IS_AC, CG_IS_SF, CG_IS_AD, CG_BABY_RD) " +
+            "VALUES ('cg'||LPAD(to_char(CG_NO_SEQ.nextval),3,'0'), ?, ?, ?, ?, ?, ?, ?, ?)";
     // 查詢資料
-    private static final String GET_ALL_STMT = "SELECT cr_no, CR_DATE, cr_cnt FROM Chat_Record";
-    private static final String GET_ONE_STMT = "SELECT cr_no, CR_DATE, cr_cnt FROM Chat_Record where cr_no = ?";
+    private static final String GET_ALL_STMT = "SELECT cg_no , cg_name FROM Chat_Group";
+    private static final String GET_ONE_STMT = "SELECT cg_no, cg_name FROM Chat_Group where cg_no = ?";
     // 刪除資料
-    private static final String DELETE_PROC = "DELETE FROM Chat_Record where cr_no = ?";
+    private static final String DELETE_PROC = "DELETE FROM Chat_Group where cg_no = ?";
     // 修改資料
-    private static final String UPDATE = "UPDATE Chat_Record set cr_cnt=? where cr_no = ?";
-
+    private static final String UPDATE = "UPDATE Chat_Group set cg_name=? where cg_no = ?";
 
     @Override
-    public void insert(Chat_RecordVO chat_RecordVO) {
+    public void insert(Chat_GroupVO chat_GroupVO) {
+
         Connection con = null;
         PreparedStatement pstmt = null;
 
         try {
-
+//        	(cg_no, CG_NAME, CG_YEAR, CG_IS_AR, CG_IS_AB, CG_IS_AC, CG_IS_SF, CG_IS_AD, BABY_RD
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
-            String[] cr = {"cr_no"}; // 有使用sequence產生編號的話才要寫
-            pstmt = con.prepareStatement(INSERT_STMT, cr); // 有使用sequence產生編號的話才要寫第二個參數
-            pstmt.setString(1, chat_RecordVO.getCf_no());
-            pstmt.setString(2, chat_RecordVO.getCg_no());
-            pstmt.setString(3, chat_RecordVO.getCr_cnt());
+            String[] cg = {"cg_no"}; // 有使用sequence產生編號的話才要寫
+            pstmt = con.prepareStatement(INSERT_STMT, cg); // 有使用sequence產生編號的話才要寫第二個參數
+            pstmt.setString(1, chat_GroupVO.getCg_name());
+            pstmt.setDate(2, chat_GroupVO.getCg_year());
+            pstmt.setString(3, chat_GroupVO.getCg_is_ar());
+            pstmt.setString(4, chat_GroupVO.getCg_is_ab());
+            pstmt.setString(5, chat_GroupVO.getCg_is_ac());
+            pstmt.setString(6, chat_GroupVO.getCg_is_sf());
+            pstmt.setString(7, chat_GroupVO.getCg_is_ad());
+            pstmt.setString(8, chat_GroupVO.getBaby_rd());
             pstmt.executeUpdate();
 
             // Handle any DRIVER errors
@@ -62,10 +69,11 @@ public class Chat_RecordJDBCDAO implements Chat_RecordDAO_interface {
                 }
             }
         }
+
     }
 
     @Override
-    public void update(Chat_RecordVO chat_RecordVO) {
+    public void update(Chat_GroupVO chat_GroupVO) {
 
         Connection con = null;
         PreparedStatement pstmt = null;
@@ -75,8 +83,10 @@ public class Chat_RecordJDBCDAO implements Chat_RecordDAO_interface {
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
             pstmt = con.prepareStatement(UPDATE);
-            pstmt.setString(1, chat_RecordVO.getCr_cnt());
-            pstmt.setString(2, chat_RecordVO.getCr_no());
+
+            pstmt.setString(1, chat_GroupVO.getCg_name());
+            pstmt.setString(2, chat_GroupVO.getCg_no());
+
             pstmt.executeUpdate();
 
             // Handle any DRIVER errors
@@ -104,10 +114,11 @@ public class Chat_RecordJDBCDAO implements Chat_RecordDAO_interface {
                 }
             }
         }
+
     }
 
     @Override
-    public void delete(String cr_no) {
+    public void delete(String cg_no) {
 
         Connection con = null;
         PreparedStatement pstmt = null;
@@ -119,15 +130,14 @@ public class Chat_RecordJDBCDAO implements Chat_RecordDAO_interface {
 
             // 1 設定於 pstm.executeUpdate()之前
             con.setAutoCommit(false);
-
             pstmt = con.prepareStatement(DELETE_PROC);
-            pstmt.setString(1, cr_no);
+            pstmt.setString(1, cg_no);
             pstmt.executeUpdate();
 
             // 2 設定於 pstm.executeUpdate()之後
             con.commit();
             con.setAutoCommit(true);
-            System.out.println("Delete Chat_Record : " + cr_no);
+            System.out.println("Delete Chat_Group: " + cg_no);
 
             // Handle any DRIVER errors
         } catch (ClassNotFoundException e) {
@@ -163,13 +173,12 @@ public class Chat_RecordJDBCDAO implements Chat_RecordDAO_interface {
             }
         }
 
-
     }
 
     @Override
-    public Chat_RecordVO findByPrimaryKey(String cr_no) {
+    public Chat_GroupVO findByPrimaryKey(String cg_no) {
 
-        Chat_RecordVO chat_RecordVO = null;
+        Chat_GroupVO chat_GroupVO = null;
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -179,15 +188,13 @@ public class Chat_RecordJDBCDAO implements Chat_RecordDAO_interface {
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
             pstmt = con.prepareStatement(GET_ONE_STMT);
-
-            pstmt.setString(1, cr_no);
-
+            pstmt.setString(1, cg_no);
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                chat_RecordVO = new Chat_RecordVO();
-                chat_RecordVO.setCr_no(rs.getString("cr_no"));
-                chat_RecordVO.setCr_cnt(rs.getString("cr_cnt"));
+                chat_GroupVO = new Chat_GroupVO();
+                chat_GroupVO.setCg_no(rs.getString("cg_no"));
+                chat_GroupVO.setCg_name(rs.getString("cg_name"));
             }
 
             // Handle any DRIVER errors
@@ -222,14 +229,14 @@ public class Chat_RecordJDBCDAO implements Chat_RecordDAO_interface {
                 }
             }
         }
-        return chat_RecordVO;
+        return chat_GroupVO;
     }
 
     @Override
-    public List<Chat_RecordVO> getAll() {
+    public List<Chat_GroupVO> getAll() {
+        List<Chat_GroupVO> list = new ArrayList<Chat_GroupVO>();
+        Chat_GroupVO chat_GroupVO = null;
 
-        List<Chat_RecordVO> list = new ArrayList<Chat_RecordVO>();
-        Chat_RecordVO chat_RecordVO = null;
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -242,11 +249,12 @@ public class Chat_RecordJDBCDAO implements Chat_RecordDAO_interface {
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                chat_RecordVO = new Chat_RecordVO();
-                chat_RecordVO.setCr_no(rs.getString("cr_no"));
-                chat_RecordVO.setCr_cnt(rs.getString("cr_cnt"));
-                list.add(chat_RecordVO); // Store the row in the list
+                chat_GroupVO = new Chat_GroupVO();
+                chat_GroupVO.setCg_no(rs.getString("cg_no"));
+                chat_GroupVO.setCg_name(rs.getString("cg_name"));
+                list.add(chat_GroupVO); // Store the row in the list
             }
+
             // Handle any DRIVER errors
         } catch (ClassNotFoundException e) {
             throw new RuntimeException("Couldn't load database DRIVER. "
@@ -281,42 +289,47 @@ public class Chat_RecordJDBCDAO implements Chat_RecordDAO_interface {
         return list;
     }
 
+
     public static void main(String[] args) {
 
-        Chat_RecordJDBCDAO dao = new Chat_RecordJDBCDAO();
+        Chat_GroupJDBCDAO dao = new Chat_GroupJDBCDAO();
 
         // 新增(OK)
-//        Chat_RecordVO chat_RecordVO1 = new Chat_RecordVO();
-//        chat_RecordVO1.setCr_cnt("null");
-//        chat_RecordVO1.setCr_cnt("null");
-//        chat_RecordVO1.setCr_cnt("聊天記錄測試*");
-//        dao.insert(chat_RecordVO1);
-//        System.out.println("新增成功");
+//        bbq.chat.model.Chat_GroupVO chat_GroupVO1 = new bbq.chat.model.Chat_GroupVO();
+//        chat_GroupVO1.setCg_name("群組測試1");
+//        chat_GroupVO1.setCg_year(java.sql.Date.valueOf("2002-02-01"));
+//        chat_GroupVO1.setCg_is_ab("0");
+//        chat_GroupVO1.setCg_is_ac("1");
+//        chat_GroupVO1.setCg_is_sf("0");
+//        chat_GroupVO1.setCg_is_ad("1");
+//        chat_GroupVO1.setCg_is_ar("1");
+//        chat_GroupVO1.setBaby_rd("沒時間睡覺症");
+//        dao.insert(chat_GroupVO1);
+//        System.out.println("insert");
 
         // 修改
-//		Chat_RecordVO chat_RecordVO2 = new Chat_RecordVO();
-//		chat_RecordVO2.setCr_no("cr0002");
-//		chat_RecordVO2.setCr_cnt("修改看看");
-//		dao.update(chat_RecordVO2);
+//		bbq.chat.model.Chat_GroupVO chat_GroupVO2 = new bbq.chat.model.Chat_GroupVO();
+//		chat_GroupVO2.setCg_no("cg002");
+//		chat_GroupVO2.setCg_name("11修改看看");
+//		dao.update(chat_GroupVO2);
 //		System.out.println("update");
 
         // 刪除
-//		dao.delete("cr0001");
-//		System.out.println("delete");
+//		dao.delete("cg001");
 
         // 查詢
-//		Chat_RecordVO chat_RecordVO3 = dao.findByPrimaryKey("cr0002");
-//		System.out.print(chat_RecordVO3.getCr_no() + ",");
-//		System.out.println(chat_RecordVO3.getCr_cnt());
-//		System.out.println("---------------------");
+        Chat_GroupVO chat_GroupVO3 = dao.findByPrimaryKey("cg002");
+        System.out.print(chat_GroupVO3.getCg_no() + ",");
+        System.out.println(chat_GroupVO3.getCg_name());
+        System.out.println("---------------------");
 
         // 查詢部門
-//		List<Chat_RecordVO> list = dao.getAll();
-//		for (Chat_RecordVO cr : list) {
-//			System.out.print(cr.getCr_no() + ",");
-//			System.out.print(cr.getCr_cnt());
-//			System.out.println();
-//		}
+        List<Chat_GroupVO> list = dao.getAll();
+        for (Chat_GroupVO cg : list) {
+            System.out.print(cg.getCg_no() + ",");
+            System.out.print(cg.getCg_name());
+            System.out.println();
+        }
 
     }
 }

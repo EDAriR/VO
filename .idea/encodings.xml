@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/src/AdminDAO_interface.java" charset="x-windows-950" />
-    <file url="file://$PROJECT_DIR$/src/AdminJDBCDAO.java" charset="x-windows-950" />
-    <file url="file://$PROJECT_DIR$/src/AdminVO.java" charset="x-windows-950" />
-    <file url="file://$PROJECT_DIR$/src/Admin_AuthorityDAO_interface.java" charset="x-windows-950" />
-    <file url="file://$PROJECT_DIR$/src/Admin_AuthorityJDBCDAO.java" charset="x-windows-950" />
-    <file url="file://$PROJECT_DIR$/src/Admin_AuthorityVO.java" charset="x-windows-950" />
-    <file url="file://$PROJECT_DIR$/src/Authority_FeatureDAO_interface.java" charset="x-windows-950" />
-    <file url="file://$PROJECT_DIR$/src/Authority_FeatureJDBCDAO.java" charset="x-windows-950" />
-    <file url="file://$PROJECT_DIR$/src/Authority_FeatureVO.java" charset="x-windows-950" />
-    <file url="file://$PROJECT_DIR$/src/Chat_FriendDAO_interface.java" charset="x-windows-950" />
-    <file url="file://$PROJECT_DIR$/src/Chat_FriendJDBCDAO.java" charset="x-windows-950" />
-    <file url="file://$PROJECT_DIR$/src/Chat_FriendVO.java" charset="x-windows-950" />
-    <file url="file://$PROJECT_DIR$/src/Chat_GroupDAO_interface.java" charset="x-windows-950" />
-    <file url="file://$PROJECT_DIR$/src/Chat_GroupJDBCDAO.java" charset="x-windows-950" />
-    <file url="file://$PROJECT_DIR$/src/Chat_GroupVO.java" charset="x-windows-950" />
-    <file url="file://$PROJECT_DIR$/src/Chat_Group_ItemDAO_interface.java" charset="x-windows-950" />
-    <file url="file://$PROJECT_DIR$/src/Chat_Group_ItemJDBCDAO.java" charset="x-windows-950" />
-    <file url="file://$PROJECT_DIR$/src/Chat_NotebookDAO_interface.java" charset="x-windows-950" />
-    <file url="file://$PROJECT_DIR$/src/Chat_NotebookJDBCDAO.java" charset="x-windows-950" />
-    <file url="file://$PROJECT_DIR$/src/Chat_RecordDAO_interface.java" charset="x-windows-950" />
-    <file url="file://$PROJECT_DIR$/src/Chat_RecordJDBCDAO.java" charset="x-windows-950" />
-    <file url="file://$PROJECT_DIR$/src/Chat_RecordVO.java" charset="x-windows-950" />
     <file url="file://$PROJECT_DIR$/src/NewsDAO_interface.java" charset="x-windows-950" />
     <file url="file://$PROJECT_DIR$/src/NewsJDBCDAO.java" charset="x-windows-950" />
     <file url="file://$PROJECT_DIR$/src/NewsVO.java" charset="x-windows-950" />
-    <file url="file://$PROJECT_DIR$/src/User_ReportDAO_interface.java" charset="x-windows-950" />
-    <file url="file://$PROJECT_DIR$/src/User_ReportJDBCDAO.java" charset="x-windows-950" />
-    <file url="file://$PROJECT_DIR$/src/User_ReportVO.java" charset="x-windows-950" />
+    <file url="file://$PROJECT_DIR$/src/bbq/admin/model/AdminDAO_interface.java" charset="x-windows-950" />
+    <file url="file://$PROJECT_DIR$/src/bbq/admin/model/AdminJDBCDAO.java" charset="x-windows-950" />
+    <file url="file://$PROJECT_DIR$/src/bbq/admin/model/AdminVO.java" charset="x-windows-950" />
+    <file url="file://$PROJECT_DIR$/src/bbq/admin/model/Admin_AuthorityDAO_interface.java" charset="x-windows-950" />
+    <file url="file://$PROJECT_DIR$/src/bbq/admin/model/Admin_AuthorityJDBCDAO.java" charset="x-windows-950" />
+    <file url="file://$PROJECT_DIR$/src/bbq/admin/model/Admin_AuthorityVO.java" charset="x-windows-950" />
+    <file url="file://$PROJECT_DIR$/src/bbq/admin/model/Authority_FeatureDAO_interface.java" charset="x-windows-950" />
+    <file url="file://$PROJECT_DIR$/src/bbq/admin/model/Authority_FeatureJDBCDAO.java" charset="x-windows-950" />
+    <file url="file://$PROJECT_DIR$/src/bbq/admin/model/Authority_FeatureVO.java" charset="x-windows-950" />
+    <file url="file://$PROJECT_DIR$/src/bbq/chat/model/Chat_FriendDAO_interface.java" charset="x-windows-950" />
+    <file url="file://$PROJECT_DIR$/src/bbq/chat/model/Chat_FriendJDBCDAO.java" charset="x-windows-950" />
+    <file url="file://$PROJECT_DIR$/src/bbq/chat/model/Chat_FriendVO.java" charset="x-windows-950" />
+    <file url="file://$PROJECT_DIR$/src/bbq/chat/model/Chat_GroupDAO_interface.java" charset="x-windows-950" />
+    <file url="file://$PROJECT_DIR$/src/bbq/chat/model/Chat_GroupJDBCDAO.java" charset="x-windows-950" />
+    <file url="file://$PROJECT_DIR$/src/bbq/chat/model/Chat_GroupVO.java" charset="x-windows-950" />
+    <file url="file://$PROJECT_DIR$/src/bbq/chat/model/Chat_Group_ItemDAO_interface.java" charset="x-windows-950" />
+    <file url="file://$PROJECT_DIR$/src/bbq/chat/model/Chat_Group_ItemJDBCDAO.java" charset="x-windows-950" />
+    <file url="file://$PROJECT_DIR$/src/bbq/chat/model/Chat_NotebookDAO_interface.java" charset="x-windows-950" />
+    <file url="file://$PROJECT_DIR$/src/bbq/chat/model/Chat_NotebookJDBCDAO.java" charset="x-windows-950" />
+    <file url="file://$PROJECT_DIR$/src/bbq/chat/model/Chat_RecordDAO_interface.java" charset="x-windows-950" />
+    <file url="file://$PROJECT_DIR$/src/bbq/chat/model/Chat_RecordJDBCDAO.java" charset="x-windows-950" />
+    <file url="file://$PROJECT_DIR$/src/bbq/chat/model/Chat_RecordVO.java" charset="x-windows-950" />
+    <file url="file://$PROJECT_DIR$/src/bbq/chat/model/User_ReportDAO_interface.java" charset="x-windows-950" />
+    <file url="file://$PROJECT_DIR$/src/bbq/chat/model/User_ReportJDBCDAO.java" charset="x-windows-950" />
+    <file url="file://$PROJECT_DIR$/src/bbq/chat/model/User_ReportVO.java" charset="x-windows-950" />
   </component>
 </project>

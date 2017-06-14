@@ -1,3 +1,5 @@
+package bbq.chat.model;
+
 import java.util.*;
 import java.sql.*;
 
@@ -237,7 +239,7 @@ public class Chat_Group_ItemJDBCDAO implements Chat_Group_ItemDAO_interface {
         Chat_Group_ItemJDBCDAO dao = new Chat_Group_ItemJDBCDAO();
 
         // 新增
-//        Chat_Group_ItemVO chat_Group_ItemVO1 = new Chat_Group_ItemVO();
+//        bbq.chat.model.Chat_Group_ItemVO chat_Group_ItemVO1 = new bbq.chat.model.Chat_Group_ItemVO();
 //        chat_Group_ItemVO1.setCg_no("cg002");
 //        chat_Group_ItemVO1.setMem_no("M0000003");
 //        dao.insert(chat_Group_ItemVO1);
@@ -256,8 +258,8 @@ public class Chat_Group_ItemJDBCDAO implements Chat_Group_ItemDAO_interface {
         System.out.println("---------------------");
 
         // 查詢部門
-//		List<Chat_Group_ItemVO> list = dao.getAll();
-//		for (Chat_Group_ItemVO cgi : list) {
+//		List<bbq.chat.model.Chat_Group_ItemVO> list = dao.getAll();
+//		for (bbq.chat.model.Chat_Group_ItemVO cgi : list) {
 //			System.out.print(cgi.getCg_no() + ",");
 //			System.out.print(cgi.getMem_no());
 //			System.out.println();

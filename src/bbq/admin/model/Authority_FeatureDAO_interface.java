@@ -1,3 +1,5 @@
+package bbq.admin.model;
+
 import java.util.List;
 
 /**

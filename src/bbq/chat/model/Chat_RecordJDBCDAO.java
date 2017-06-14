@@ -1,24 +1,30 @@
+package bbq.chat.model;
+
 import java.util.*;
 import java.sql.*;
 
 
-public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
+public class Chat_RecordJDBCDAO implements Chat_RecordDAO_interface {
     private static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
     private static final String URL = "jdbc:oracle:thin:@localhost:1522:xe";
 //    private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
     private static final String USER = "ba101g3";
     private static final String PASSWORD = "baby";
     // 新增資料
-    private static final String INSERT_STMT = "INSERT INTO Admin_Authority (adm_no, auth_no) VALUES (?, ?)";
+    private static final String INSERT_STMT = "INSERT INTO Chat_Record " +
+            "(cr_no, CR_DATE, CF_NO, CG_NO, cr_cnt) " +
+            "VALUES ('cr'||LPAD(to_char(ADM_NO_SEQ.nextval),4,'0'), CURRENT_TIMESTAMP, ?, ?, ?)";
     // 查詢資料
-    private static final String GET_ALL_STMT = "SELECT adm_no , auth_no FROM Admin_Authority";
-    private static final String GET_ONE_STMT = "SELECT adm_no, auth_no FROM Admin_Authority where adm_no = ?";
+    private static final String GET_ALL_STMT = "SELECT cr_no, CR_DATE, cr_cnt FROM Chat_Record";
+    private static final String GET_ONE_STMT = "SELECT cr_no, CR_DATE, cr_cnt FROM Chat_Record where cr_no = ?";
     // 刪除資料
-    private static final String DELETE_PROC = "DELETE FROM Admin_Authority WHERE auth_no = ? AND adm_no = ?";
+    private static final String DELETE_PROC = "DELETE FROM Chat_Record where cr_no = ?";
+    // 修改資料
+    private static final String UPDATE = "UPDATE Chat_Record set cr_cnt=? where cr_no = ?";
 
 
     @Override
-    public void insert(Admin_AuthorityVO admin_AuthorityVO) {
+    public void insert(Chat_RecordVO chat_RecordVO) {
         Connection con = null;
         PreparedStatement pstmt = null;
 
@@ -26,10 +32,11 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
 
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
-
-            pstmt = con.prepareStatement(INSERT_STMT);
-            pstmt.setString(1, admin_AuthorityVO.getAdm_no());
-            pstmt.setString(2, admin_AuthorityVO.getAuth_no());
+            String[] cr = {"cr_no"}; // 有使用sequence產生編號的話才要寫
+            pstmt = con.prepareStatement(INSERT_STMT, cr); // 有使用sequence產生編號的話才要寫第二個參數
+            pstmt.setString(1, chat_RecordVO.getCf_no());
+            pstmt.setString(2, chat_RecordVO.getCg_no());
+            pstmt.setString(3, chat_RecordVO.getCr_cnt());
             pstmt.executeUpdate();
 
             // Handle any DRIVER errors
@@ -57,14 +64,52 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
                 }
             }
         }
-
-
     }
 
     @Override
-    public void delete(String adm_no,String auth_no){
+    public void update(Chat_RecordVO chat_RecordVO) {
 
-        int updateCount_PRODUCTs = 0;
+        Connection con = null;
+        PreparedStatement pstmt = null;
+
+        try {
+
+            Class.forName(DRIVER);
+            con = DriverManager.getConnection(URL, USER, PASSWORD);
+            pstmt = con.prepareStatement(UPDATE);
+            pstmt.setString(1, chat_RecordVO.getCr_cnt());
+            pstmt.setString(2, chat_RecordVO.getCr_no());
+            pstmt.executeUpdate();
+
+            // Handle any DRIVER errors
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException("Couldn't load database DRIVER. "
+                    + e.getMessage());
+            // Handle any SQL errors
+        } catch (SQLException se) {
+            throw new RuntimeException("A database error occured. "
+                    + se.getMessage());
+            // Clean up JDBC resources
+        } finally {
+            if (pstmt != null) {
+                try {
+                    pstmt.close();
+                } catch (SQLException se) {
+                    se.printStackTrace(System.err);
+                }
+            }
+            if (con != null) {
+                try {
+                    con.close();
+                } catch (Exception e) {
+                    e.printStackTrace(System.err);
+                }
+            }
+        }
+    }
+
+    @Override
+    public void delete(String cr_no) {
 
         Connection con = null;
         PreparedStatement pstmt = null;
@@ -74,12 +119,17 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
 
+            // 1 設定於 pstm.executeUpdate()之前
+            con.setAutoCommit(false);
+
             pstmt = con.prepareStatement(DELETE_PROC);
-            pstmt.setString(1, auth_no);
-            pstmt.setString(2, adm_no);
+            pstmt.setString(1, cr_no);
             pstmt.executeUpdate();
 
-            System.out.println("Delete Admin Authority:" + adm_no +" and "+ auth_no);
+            // 2 設定於 pstm.executeUpdate()之後
+            con.commit();
+            con.setAutoCommit(true);
+            System.out.println("Delete Chat_Record : " + cr_no);
 
             // Handle any DRIVER errors
         } catch (ClassNotFoundException e) {
@@ -89,6 +139,7 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
         } catch (SQLException se) {
             if (con != null) {
                 try {
+                    // 3 設定於當有exception發生時之catch區塊內
                     con.rollback();
                 } catch (SQLException excep) {
                     throw new RuntimeException("rollback error occured. "
@@ -117,9 +168,10 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
 
     }
 
-    public Admin_AuthorityVO findByPrimaryKey(String adm_no){
+    @Override
+    public Chat_RecordVO findByPrimaryKey(String cr_no) {
 
-        Admin_AuthorityVO admin_AuthorityVO = null;
+        Chat_RecordVO chat_RecordVO = null;
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -130,13 +182,14 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
             con = DriverManager.getConnection(URL, USER, PASSWORD);
             pstmt = con.prepareStatement(GET_ONE_STMT);
 
-            pstmt.setString(1, adm_no);
+            pstmt.setString(1, cr_no);
+
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                admin_AuthorityVO = new Admin_AuthorityVO();
-                admin_AuthorityVO.setAdm_no(rs.getString("adm_no"));
-                admin_AuthorityVO.setAuth_no(rs.getString("auth_no"));
+                chat_RecordVO = new Chat_RecordVO();
+                chat_RecordVO.setCr_no(rs.getString("cr_no"));
+                chat_RecordVO.setCr_cnt(rs.getString("cr_cnt"));
             }
 
             // Handle any DRIVER errors
@@ -171,14 +224,14 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
                 }
             }
         }
-        return admin_AuthorityVO;
+        return chat_RecordVO;
     }
 
-    public List<Admin_AuthorityVO> getAll(){
+    @Override
+    public List<Chat_RecordVO> getAll() {
 
-        List<Admin_AuthorityVO> list = new ArrayList<Admin_AuthorityVO>();
-        Admin_AuthorityVO admin_AuthorityVO = null;
-
+        List<Chat_RecordVO> list = new ArrayList<Chat_RecordVO>();
+        Chat_RecordVO chat_RecordVO = null;
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -191,12 +244,11 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                admin_AuthorityVO = new Admin_AuthorityVO();
-                admin_AuthorityVO.setAdm_no(rs.getString("adm_no"));
-                admin_AuthorityVO.setAuth_no(rs.getString("auth_no"));
-                list.add(admin_AuthorityVO); // Store the row in the list
+                chat_RecordVO = new Chat_RecordVO();
+                chat_RecordVO.setCr_no(rs.getString("cr_no"));
+                chat_RecordVO.setCr_cnt(rs.getString("cr_cnt"));
+                list.add(chat_RecordVO); // Store the row in the list
             }
-
             // Handle any DRIVER errors
         } catch (ClassNotFoundException e) {
             throw new RuntimeException("Couldn't load database DRIVER. "
@@ -233,32 +285,40 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
 
     public static void main(String[] args) {
 
-        Admin_AuthorityJDBCDAO dao = new Admin_AuthorityJDBCDAO();
+        Chat_RecordJDBCDAO dao = new Chat_RecordJDBCDAO();
 
-        // 新增
-//        Admin_AuthorityVO admin_AuthorityVO1 = new Admin_AuthorityVO();
-//        admin_AuthorityVO1.setAuth_no("an1");
-//        admin_AuthorityVO1.setAdm_no("ad006");
-//        dao.insert(admin_AuthorityVO1);
-//        System.out.println("新增!");
+        // 新增(OK)
+//        bbq.chat.model.Chat_RecordVO chat_RecordVO1 = new bbq.chat.model.Chat_RecordVO();
+//        chat_RecordVO1.setCr_cnt("null");
+//        chat_RecordVO1.setCr_cnt("null");
+//        chat_RecordVO1.setCr_cnt("聊天記錄測試*");
+//        dao.insert(chat_RecordVO1);
+//        System.out.println("新增成功");
 
-//         刪除(OK)
-//		dao.delete("ad007","an4");
+        // 修改
+//		bbq.chat.model.Chat_RecordVO chat_RecordVO2 = new bbq.chat.model.Chat_RecordVO();
+//		chat_RecordVO2.setCr_no("cr0002");
+//		chat_RecordVO2.setCr_cnt("修改看看");
+//		dao.update(chat_RecordVO2);
+//		System.out.println("update");
+
+        // 刪除
+//		dao.delete("cr0001");
 //		System.out.println("delete");
 
-//         查詢
-		Admin_AuthorityVO admin_AuthorityVO3 = dao.findByPrimaryKey("ad005");
-		System.out.print(admin_AuthorityVO3.getAdm_no() + ",");
-		System.out.println(admin_AuthorityVO3.getAdm_no());
-		System.out.println("---------------------");
+        // 查詢
+//		bbq.chat.model.Chat_RecordVO chat_RecordVO3 = dao.findByPrimaryKey("cr0002");
+//		System.out.print(chat_RecordVO3.getCr_no() + ",");
+//		System.out.println(chat_RecordVO3.getCr_cnt());
+//		System.out.println("---------------------");
 
-//         查詢部門
-		List<Admin_AuthorityVO> list = dao.getAll();
-		for (Admin_AuthorityVO aa : list) {
-			System.out.print(aa.getAdm_no() + ",");
-			System.out.print(aa.getAuth_no());
-			System.out.println();
-		}
+        // 查詢部門
+//		List<bbq.chat.model.Chat_RecordVO> list = dao.getAll();
+//		for (bbq.chat.model.Chat_RecordVO cr : list) {
+//			System.out.print(cr.getCr_no() + ",");
+//			System.out.print(cr.getCr_cnt());
+//			System.out.println();
+//		}
 
     }
 }

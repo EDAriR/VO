@@ -1,3 +1,5 @@
+package bbq.chat.model;
+
 import java.util.*;
 import java.sql.*;
 
@@ -286,7 +288,7 @@ public class User_ReportJDBCDAO implements User_ReportDAO_interface {
         // (MEM_NO_ED, MEM_NO_ING, URPT_CNT, URPT_DATE,
         // URPT_RSN, URPT_IS_CERT,URPT_UNRSN)
 
-//		User_ReportVO user_ReportVO1 = new User_ReportVO();
+//		bbq.chat.model.User_ReportVO user_ReportVO1 = new bbq.chat.model.User_ReportVO();
 //		user_ReportVO1.setMem_no_ed("M0000001");
 //		user_ReportVO1.setMem_no_ing("M0000009");
 //		user_ReportVO1.setUrpt_cnt("787846sas回");
@@ -309,14 +311,14 @@ public class User_ReportJDBCDAO implements User_ReportDAO_interface {
 //         System.out.println("delete");
 
         // 查詢
-//		 User_ReportVO user_ReportVO3 = dao.findByPrimaryKey("M0000001");
+//		 bbq.chat.model.User_ReportVO user_ReportVO3 = dao.findByPrimaryKey("M0000001");
 //		 System.out.print(user_ReportVO3.getMem_no_ed() + ",");
 //		 System.out.println(user_ReportVO3.getUrpt_is_cert());
 //		 System.out.println("---------------------");
 
         // 查詢部門
-//		 List<User_ReportVO> list = dao.getAll();
-//		 for (User_ReportVO up : list) {
+//		 List<bbq.chat.model.User_ReportVO> list = dao.getAll();
+//		 for (bbq.chat.model.User_ReportVO up : list) {
 //		 System.out.print(up.getMem_no_ed() + ",");
 //		 System.out.print(up.getUrpt_cnt());
 //		 System.out.print(up.getUrpt_rsn());

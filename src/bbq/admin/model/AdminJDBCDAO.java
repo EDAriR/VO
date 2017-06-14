@@ -1,26 +1,29 @@
+package bbq.admin.model;
+
 import java.util.*;
 import java.sql.*;
 
 
-public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
-    private static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
+public class AdminJDBCDAO implements AdminDAO_interface {
+	private static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
     private static final String URL = "jdbc:oracle:thin:@localhost:1522:xe";
-    //    private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
+    //  private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
     private static final String USER = "ba101g3";
     private static final String PASSWORD = "baby";
     // 新增資料
-    private static final String INSERT_STMT = "INSERT INTO Chat_Friend (CF_NO, MEM_NO_S, MEM_NO_O, CF_IS_DEL) VALUES ('cf'||LPAD(to_char(CF_NO_SEQ.nextval),3,'0'), ?, ?, ?)";
+    private static final String INSERT_STMT = "INSERT INTO Admin (adm_no, adm_acct,adm_pwd, adm_name, adm_mail) " +
+            "VALUES ('ad'||LPAD(to_char(ADM_NO_SEQ.nextval),3,'0'), ?, ?, ?, ?)";
     // 查詢資料
-    private static final String GET_ALL_STMT = "SELECT CF_NO, MEM_NO_S, MEM_NO_O, CF_IS_DEL FROM Chat_Friend";
-    private static final String GET_ONE_STMT = "SELECT CF_NO, MEM_NO_S, MEM_NO_O, CF_IS_DEL FROM Chat_Friend where cf_no = ?";
+    private static final String GET_ALL_STMT = "SELECT adm_no , adm_name FROM Admin";
+    private static final String GET_ONE_STMT = "SELECT adm_no, adm_name FROM Admin where adm_no = ?";
     // 刪除資料
-    private static final String DELETE_PROC = "DELETE FROM Chat_Friend where cf_no = ?";
+    private static final String DELETE_PROC = "DELETE FROM Admin where adm_no = ?";
     // 修改資料
-    private static final String UPDATE = "UPDATE Chat_Friend set cf_is_del=? where cf_no = ? ";
+    private static final String UPDATE = "UPDATE Admin set adm_name=? where adm_no = ?";
 
 
     @Override
-    public void insert(Chat_FriendVO chat_FriendVO) {
+    public void insert(AdminVO adminVO) {
         Connection con = null;
         PreparedStatement pstmt = null;
 
@@ -28,19 +31,17 @@ public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
 
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
-            String[] cf = {"cf_no"}; // 有使用sequence產生編號的話才要寫
-            pstmt = con.prepareStatement(INSERT_STMT, cf); // 有使用sequence產生編號的話才要寫第二個參數
-            pstmt.setString(1, chat_FriendVO.getMem_no_s());
-            pstmt.setString(2, chat_FriendVO.getMem_no_o());
-            pstmt.setString(3, chat_FriendVO.getCf_is_del());
+            String[] seq = {"adm_no"}; // 有使用sequence產生編號的話才要寫
+            pstmt = con.prepareStatement(INSERT_STMT, seq); // 有使用sequence產生編號的話才要寫第二個參數
+
+            pstmt.setString(1, adminVO.getAdm_acct());
+            pstmt.setString(2, adminVO.getAdm_pwd());
+            pstmt.setString(3, adminVO.getAdm_name());
+            pstmt.setString(4, adminVO.getAdm_mail());
+
             pstmt.executeUpdate();
 
-            // Handle any DRIVER errors
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException("Couldn't load database DRIVER. "
-                    + e.getMessage());
-            // Handle any SQL errors
-        } catch (SQLException se) {
+        } catch (Exception se) {
             throw new RuntimeException("A database error occured. "
                     + se.getMessage());
             // Clean up JDBC resources
@@ -65,7 +66,7 @@ public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
     }
 
     @Override
-    public void update(Chat_FriendVO chat_FriendVO) {
+    public void update(AdminVO adminVO) {
 
         Connection con = null;
         PreparedStatement pstmt = null;
@@ -75,8 +76,10 @@ public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
             pstmt = con.prepareStatement(UPDATE);
-            pstmt.setString(1, chat_FriendVO.getCf_is_del());
-            pstmt.setString(2, chat_FriendVO.getCf_no());
+
+            pstmt.setString(1, adminVO.getAdm_name());
+            pstmt.setString(2, adminVO.getAdm_no());
+
             pstmt.executeUpdate();
 
             // Handle any DRIVER errors
@@ -108,7 +111,7 @@ public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
     }
 
     @Override
-    public void delete(String cf_no) {
+    public void delete(String adm_no) {
 
         Connection con = null;
         PreparedStatement pstmt = null;
@@ -122,13 +125,13 @@ public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
             con.setAutoCommit(false);
 
             pstmt = con.prepareStatement(DELETE_PROC);
-            pstmt.setString(1, cf_no);
+            pstmt.setString(1, adm_no);
             pstmt.executeUpdate();
 
             // 2 設定於 pstm.executeUpdate()之後
             con.commit();
             con.setAutoCommit(true);
-            System.out.println("Delete Chat Friend :" + cf_no);
+            System.out.println("Delete admin" + adm_no );
 
             // Handle any DRIVER errors
         } catch (ClassNotFoundException e) {
@@ -163,12 +166,14 @@ public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
                 }
             }
         }
+
+
     }
 
     @Override
-    public Chat_FriendVO findByPrimaryKey(String cf_no) {
+    public AdminVO findByPrimaryKey(String adm_no) {
 
-        Chat_FriendVO chat_FriendVO = null;
+        AdminVO adminVO = null;
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -179,14 +184,13 @@ public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
             con = DriverManager.getConnection(URL, USER, PASSWORD);
             pstmt = con.prepareStatement(GET_ONE_STMT);
 
-            pstmt.setString(1, cf_no);
-
+            pstmt.setString(1, adm_no);
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                chat_FriendVO = new Chat_FriendVO();
-                chat_FriendVO.setCf_no(rs.getString("cf_no"));
-                chat_FriendVO.setMem_no_o(rs.getString("mem_no_o"));
+                adminVO = new AdminVO();
+                adminVO.setAdm_no(rs.getString("adm_no"));
+                adminVO.setAdm_name(rs.getString("adm_name"));
             }
 
             // Handle any DRIVER errors
@@ -221,14 +225,14 @@ public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
                 }
             }
         }
-        return chat_FriendVO;
+        return adminVO;
     }
 
     @Override
-    public List<Chat_FriendVO> getAll() {
+    public List<AdminVO> getAll() {
 
-        List<Chat_FriendVO> list = new ArrayList<Chat_FriendVO>();
-        Chat_FriendVO chat_FriendVO = null;
+        List<AdminVO> list = new ArrayList<AdminVO>();
+        AdminVO adminVO = null;
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -241,12 +245,11 @@ public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                chat_FriendVO = new Chat_FriendVO();
-                chat_FriendVO.setCf_no(rs.getString("cf_no"));
-                chat_FriendVO.setMem_no_o(rs.getString("mem_no_o"));
-                list.add(chat_FriendVO); // Store the row in the list
+                adminVO = new AdminVO();
+                adminVO.setAdm_no(rs.getString("adm_no"));
+                adminVO.setAdm_name(rs.getString("adm_name"));
+                list.add(adminVO); // Store the row in the list
             }
-
             // Handle any DRIVER errors
         } catch (ClassNotFoundException e) {
             throw new RuntimeException("Couldn't load database DRIVER. "
@@ -283,40 +286,42 @@ public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
 
     public static void main(String[] args) {
 
-        Chat_FriendJDBCDAO dao = new Chat_FriendJDBCDAO();
-        // 測試看看每個指令是否可以使用
-        // 新增(OK)
-//        Chat_FriendVO chat_FriendVO1 = new Chat_FriendVO();
-//        chat_FriendVO1.setMem_no_s("M0000001");
-//        chat_FriendVO1.setMem_no_o("M0000007");
-//        chat_FriendVO1.setCf_is_del("0");
-//        dao.insert(chat_FriendVO1);
-//        System.out.println("新增成功");
+        AdminJDBCDAO dao = new AdminJDBCDAO();
 
+        // 新增
+//        bbq.admin.model.AdminVO adminVO1 = new bbq.admin.model.AdminVO();
+//        adminVO1.setAdm_acct("adtestacct1");
+//        adminVO1.setAdm_pwd("adtestpwd1");
+//        adminVO1.setAdm_name("adtestname1");
+//        adminVO1.setAdm_mail("adtestmail1");        
+//        dao.insert(adminVO1);
+//        System.out.println("新增OK");
+       
         // 修改
-        Chat_FriendVO chat_FriendVO2 = new Chat_FriendVO();
-        chat_FriendVO2.setCf_no("cf002");
-        chat_FriendVO2.setCf_is_del("1");
-        dao.update(chat_FriendVO2);
-        
-        System.out.println("update");
+//        bbq.admin.model.AdminVO adminVO2 = new bbq.admin.model.AdminVO();
+//        adminVO2.setAdm_no("ad006");
+//        adminVO2.setAdm_name("nametest2");
+//       adminVO2.setAdm_mail("mail222"); 
+//        dao.update(adminVO2);
+//        System.out.println("------修改---------");
 
         // 刪除
-//        dao.delete("cf003");
-//        System.out.println("delete");
+        dao.delete("ad007");
+        System.out.println("------刪除---------");
 
         // 查詢
-        Chat_FriendVO chat_FriendVO3 = dao.findByPrimaryKey("cf001");
-        System.out.print(chat_FriendVO3.getCf_no() + ",");
-        System.out.println(chat_FriendVO3.getMem_no_o());
-        System.out.println("---------------------");
+//        bbq.admin.model.AdminVO adminVO3 = dao.findByPrimaryKey("ad004");
+//        System.out.print(adminVO3.getAdm_no() + ",");
+//        System.out.println(adminVO3.getAdm_name());
+//        System.out.println("---------------------");
 
         // 查詢部門
-        List<Chat_FriendVO> list = dao.getAll();
-        for (Chat_FriendVO cf : list) {
-            System.out.print(cf.getCf_no() + ",");
-            System.out.print(cf.getMem_no_o());
+        List<AdminVO> list = dao.getAll();
+        for (AdminVO ad : list) {
+            System.out.print(ad.getAdm_no() + ",");
+            System.out.print(ad.getAdm_name());
             System.out.println();
         }
+
     }
 }

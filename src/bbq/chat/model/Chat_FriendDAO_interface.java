@@ -1,3 +1,5 @@
+package bbq.chat.model;
+
 import java.util.List;
 
 /**

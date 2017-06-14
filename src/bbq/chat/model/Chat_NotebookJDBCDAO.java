@@ -1,27 +1,29 @@
+package bbq.chat.model;
+
 import java.util.*;
 import java.sql.*;
 
 
-public class AdminJDBCDAO implements AdminDAO_interface {
-	private static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
+public class Chat_NotebookJDBCDAO implements Chat_NotebookDAO_interface {
+    private static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
     private static final String URL = "jdbc:oracle:thin:@localhost:1522:xe";
-    //  private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
+//    private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
     private static final String USER = "ba101g3";
     private static final String PASSWORD = "baby";
     // 新增資料
-    private static final String INSERT_STMT = "INSERT INTO Admin (adm_no, adm_acct,adm_pwd, adm_name, adm_mail) " +
-            "VALUES ('ad'||LPAD(to_char(ADM_NO_SEQ.nextval),3,'0'), ?, ?, ?, ?)";
+    private static final String INSERT_STMT = "INSERT INTO Chat_Notebook (cnb_no, cnb_cnt) " +
+            "VALUES ('cnb'||LPAD(to_char(cnb_no_seq.NEXTVAL),3,'0'), ?)";
     // 查詢資料
-    private static final String GET_ALL_STMT = "SELECT adm_no , adm_name FROM Admin";
-    private static final String GET_ONE_STMT = "SELECT adm_no, adm_name FROM Admin where adm_no = ?";
+    private static final String GET_ALL_STMT = "SELECT cnb_no , cnb_cnt FROM Chat_Notebook";
+    private static final String GET_ONE_STMT = "SELECT cnb_no, cnb_cnt FROM Chat_Notebook where cnb_no = ?";
     // 刪除資料
-    private static final String DELETE_PROC = "DELETE FROM Admin where adm_no = ?";
+    private static final String DELETE_PROC = "DELETE FROM Chat_Notebook where cnb_no = ?";
     // 修改資料
-    private static final String UPDATE = "UPDATE Admin set adm_name=? where adm_no = ?";
+    private static final String UPDATE = "UPDATE Chat_Notebook set Cnb_CNT=? where cnb_no = ?";
 
 
     @Override
-    public void insert(AdminVO adminVO) {
+    public void insert(Chat_NotebookVO chat_NotebookVO) {
         Connection con = null;
         PreparedStatement pstmt = null;
 
@@ -29,55 +31,9 @@ public class AdminJDBCDAO implements AdminDAO_interface {
 
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
-            String[] seq = {"adm_no"}; // 有使用sequence產生編號的話才要寫
-            pstmt = con.prepareStatement(INSERT_STMT, seq); // 有使用sequence產生編號的話才要寫第二個參數
-
-            pstmt.setString(1, adminVO.getAdm_acct());
-            pstmt.setString(2, adminVO.getAdm_pwd());
-            pstmt.setString(3, adminVO.getAdm_name());
-            pstmt.setString(4, adminVO.getAdm_mail());
-
-            pstmt.executeUpdate();
-
-        } catch (Exception se) {
-            throw new RuntimeException("A database error occured. "
-                    + se.getMessage());
-            // Clean up JDBC resources
-        } finally {
-            if (pstmt != null) {
-                try {
-                    pstmt.close();
-                } catch (SQLException se) {
-                    se.printStackTrace(System.err);
-                }
-            }
-            if (con != null) {
-                try {
-                    con.close();
-                } catch (Exception e) {
-                    e.printStackTrace(System.err);
-                }
-            }
-        }
-
-
-    }
-
-    @Override
-    public void update(AdminVO adminVO) {
-
-        Connection con = null;
-        PreparedStatement pstmt = null;
-
-        try {
-
-            Class.forName(DRIVER);
-            con = DriverManager.getConnection(URL, USER, PASSWORD);
-            pstmt = con.prepareStatement(UPDATE);
-
-            pstmt.setString(1, adminVO.getAdm_name());
-            pstmt.setString(2, adminVO.getAdm_no());
-
+            String[] cnb = {"cnb_no"}; // 有使用sequence產生編號的話才要寫
+            pstmt = con.prepareStatement(INSERT_STMT, cnb); // 有使用sequence產生編號的話才要寫第二個參數
+            pstmt.setString(1, chat_NotebookVO.getCnb_cnt());
             pstmt.executeUpdate();
 
             // Handle any DRIVER errors
@@ -105,11 +61,53 @@ public class AdminJDBCDAO implements AdminDAO_interface {
                 }
             }
         }
-
     }
 
     @Override
-    public void delete(String adm_no) {
+    public void update(Chat_NotebookVO chat_NotebookVO) {
+
+        Connection con = null;
+        PreparedStatement pstmt = null;
+
+        try {
+
+            Class.forName(DRIVER);
+            con = DriverManager.getConnection(URL, USER, PASSWORD);
+            pstmt = con.prepareStatement(UPDATE);
+
+            pstmt.setString(1, chat_NotebookVO.getCnb_cnt());
+            pstmt.setString(2, chat_NotebookVO.getCnb_no());
+            pstmt.executeUpdate();
+
+            // Handle any DRIVER errors
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException("Couldn't load database DRIVER. "
+                    + e.getMessage());
+            // Handle any SQL errors
+        } catch (SQLException se) {
+            throw new RuntimeException("A database error occured. "
+                    + se.getMessage());
+            // Clean up JDBC resources
+        } finally {
+            if (pstmt != null) {
+                try {
+                    pstmt.close();
+                } catch (SQLException se) {
+                    se.printStackTrace(System.err);
+                }
+            }
+            if (con != null) {
+                try {
+                    con.close();
+                } catch (Exception e) {
+                    e.printStackTrace(System.err);
+                }
+            }
+        }
+    }
+
+    @Override
+    public void delete(String cnb_no){
 
         Connection con = null;
         PreparedStatement pstmt = null;
@@ -123,13 +121,13 @@ public class AdminJDBCDAO implements AdminDAO_interface {
             con.setAutoCommit(false);
 
             pstmt = con.prepareStatement(DELETE_PROC);
-            pstmt.setString(1, adm_no);
+            pstmt.setString(1, cnb_no);
             pstmt.executeUpdate();
 
-            // 2 設定於 pstm.executeUpdate()之後
+            // 2●設定於 pstm.executeUpdate()之後
             con.commit();
             con.setAutoCommit(true);
-            System.out.println("Delete admin" + adm_no );
+            System.out.println("Delete" + cnb_no);
 
             // Handle any DRIVER errors
         } catch (ClassNotFoundException e) {
@@ -139,7 +137,7 @@ public class AdminJDBCDAO implements AdminDAO_interface {
         } catch (SQLException se) {
             if (con != null) {
                 try {
-                    // 3 設定於當有exception發生時之catch區塊內
+                    // 3●設定於當有exception發生時之catch區塊內
                     con.rollback();
                 } catch (SQLException excep) {
                     throw new RuntimeException("rollback error occured. "
@@ -164,14 +162,12 @@ public class AdminJDBCDAO implements AdminDAO_interface {
                 }
             }
         }
-
-
     }
 
     @Override
-    public AdminVO findByPrimaryKey(String adm_no) {
+    public Chat_NotebookVO findByPrimaryKey(String cnb_no){
 
-        AdminVO adminVO = null;
+        Chat_NotebookVO chat_NotebookVO = null;
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -181,14 +177,13 @@ public class AdminJDBCDAO implements AdminDAO_interface {
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
             pstmt = con.prepareStatement(GET_ONE_STMT);
-
-            pstmt.setString(1, adm_no);
+            pstmt.setString(1, cnb_no);
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                adminVO = new AdminVO();
-                adminVO.setAdm_no(rs.getString("adm_no"));
-                adminVO.setAdm_name(rs.getString("adm_name"));
+                chat_NotebookVO = new Chat_NotebookVO();
+                chat_NotebookVO.setCnb_no(rs.getString("cnb_no"));
+                chat_NotebookVO.setCnb_cnt(rs.getString("cnb_cnt"));
             }
 
             // Handle any DRIVER errors
@@ -223,14 +218,14 @@ public class AdminJDBCDAO implements AdminDAO_interface {
                 }
             }
         }
-        return adminVO;
+        return chat_NotebookVO;
     }
 
     @Override
-    public List<AdminVO> getAll() {
+    public List<Chat_NotebookVO> getAll(){
 
-        List<AdminVO> list = new ArrayList<AdminVO>();
-        AdminVO adminVO = null;
+        List<Chat_NotebookVO> list = new ArrayList<Chat_NotebookVO>();
+        Chat_NotebookVO chat_NotebookVO = null;
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -243,11 +238,12 @@ public class AdminJDBCDAO implements AdminDAO_interface {
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                adminVO = new AdminVO();
-                adminVO.setAdm_no(rs.getString("adm_no"));
-                adminVO.setAdm_name(rs.getString("adm_name"));
-                list.add(adminVO); // Store the row in the list
+                chat_NotebookVO = new Chat_NotebookVO();
+                chat_NotebookVO.setCnb_no(rs.getString("cnb_no"));
+                chat_NotebookVO.setCnb_cnt(rs.getString("cnb_cnt"));
+                list.add(chat_NotebookVO); // Store the row in the list
             }
+
             // Handle any DRIVER errors
         } catch (ClassNotFoundException e) {
             throw new RuntimeException("Couldn't load database DRIVER. "
@@ -284,42 +280,39 @@ public class AdminJDBCDAO implements AdminDAO_interface {
 
     public static void main(String[] args) {
 
-        AdminJDBCDAO dao = new AdminJDBCDAO();
+        Chat_NotebookJDBCDAO dao = new Chat_NotebookJDBCDAO();
 
         // 新增
-//        AdminVO adminVO1 = new AdminVO();
-//        adminVO1.setAdm_acct("adtestacct1");
-//        adminVO1.setAdm_pwd("adtestpwd1");
-//        adminVO1.setAdm_name("adtestname1");
-//        adminVO1.setAdm_mail("adtestmail1");        
-//        dao.insert(adminVO1);
-//        System.out.println("新增OK");
-       
+//        bbq.chat.model.Chat_NotebookVO chat_NotebookVO1 = new bbq.chat.model.Chat_NotebookVO();
+//        chat_NotebookVO1.setCnb_cnt("記事本測試https://img.kekeke.cc/t/x8JrPHoAAr.png");
+//        dao.insert(chat_NotebookVO1);
+//        System.out.println("新增完成");
+
         // 修改
-//        AdminVO adminVO2 = new AdminVO();
-//        adminVO2.setAdm_no("ad006");
-//        adminVO2.setAdm_name("nametest2");
-//       adminVO2.setAdm_mail("mail222"); 
-//        dao.update(adminVO2);
-//        System.out.println("------修改---------");
+//		bbq.chat.model.Chat_NotebookVO chat_NotebookVO2 = new bbq.chat.model.Chat_NotebookVO();
+//		chat_NotebookVO2.setCnb_no("cnb003");
+//		chat_NotebookVO2.setCnb_cnt("--------");
+//		System.out.println("修改完成");
+//		dao.update(chat_NotebookVO2);
+//		System.out.println("修改完成--");
 
         // 刪除
-        dao.delete("ad007");
-        System.out.println("------刪除---------");
+//		dao.delete("cnb003");
+//		System.out.println("刪除完成");
 
         // 查詢
-//        AdminVO adminVO3 = dao.findByPrimaryKey("ad004");
-//        System.out.print(adminVO3.getAdm_no() + ",");
-//        System.out.println(adminVO3.getAdm_name());
-//        System.out.println("---------------------");
+		Chat_NotebookVO chat_NotebookVO3 = dao.findByPrimaryKey("cnb002");
+		System.out.print(chat_NotebookVO3.getCnb_no() + ",");
+		System.out.println(chat_NotebookVO3.getCnb_cnt());
+		System.out.println("---------------------");
 
         // 查詢部門
-        List<AdminVO> list = dao.getAll();
-        for (AdminVO ad : list) {
-            System.out.print(ad.getAdm_no() + ",");
-            System.out.print(ad.getAdm_name());
-            System.out.println();
-        }
+		List<Chat_NotebookVO> list = dao.getAll();
+		for (Chat_NotebookVO cnb : list) {
+			System.out.print(cnb.getCnb_no() + ",");
+			System.out.print(cnb.getCnb_cnt());
+			System.out.println();
+		}
 
     }
 }

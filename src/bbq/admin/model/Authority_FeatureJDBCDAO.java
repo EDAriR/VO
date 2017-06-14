@@ -1,3 +1,5 @@
+package bbq.admin.model;
+
 import java.util.*;
 import java.sql.*;
 
@@ -283,13 +285,13 @@ public class Authority_FeatureJDBCDAO implements Authority_FeatureDAO_interface 
         Authority_FeatureJDBCDAO dao = new Authority_FeatureJDBCDAO();
         // 測試看看每個指令是否可以使用
         // 新增(OK)
-//        Authority_FeatureVO authority_FeatureVO1 = new Authority_FeatureVO();
+//        bbq.admin.model.Authority_FeatureVO authority_FeatureVO1 = new bbq.admin.model.Authority_FeatureVO();
 //        authority_FeatureVO1.setAuth_name("T^Q");
 //        dao.insert(authority_FeatureVO1);
 //        System.out.println("新增");
 
         // 修改
-//        Authority_FeatureVO authority_FeatureVO2 = new Authority_FeatureVO();
+//        bbq.admin.model.Authority_FeatureVO authority_FeatureVO2 = new bbq.admin.model.Authority_FeatureVO();
 //        authority_FeatureVO2.setAuth_no("an1");
 //        authority_FeatureVO2.setAuth_name("hi");
 //		dao.update(authority_FeatureVO2);
