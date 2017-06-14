@@ -307,30 +307,30 @@ public class Chat_NotebookJDBCDAO implements Chat_NotebookDAO_interface {
 //        System.out.println("新增完成");
 
         // 修改
-		Chat_NotebookVO chat_NotebookVO2 = new Chat_NotebookVO();
-		chat_NotebookVO2.setCnb_no("cnb003");
-		chat_NotebookVO2.setCnb_cnt("--------");
-		System.out.println("修改完成");
-		dao.update(chat_NotebookVO2);
-		System.out.println("修改完成--");
+//		Chat_NotebookVO chat_NotebookVO2 = new Chat_NotebookVO();
+//		chat_NotebookVO2.setCnb_no("cnb003");
+//		chat_NotebookVO2.setCnb_cnt("--------");
+//		System.out.println("修改完成");
+//		dao.update(chat_NotebookVO2);
+//		System.out.println("修改完成--");
 
         // 刪除
 //		dao.delete("cnb003");
 //		System.out.println("刪除完成");
 
         // 查詢
-//		Chat_NotebookVO chat_NotebookVO3 = dao.findByPrimaryKey("cnb003");
-//		System.out.print(chat_NotebookVO3.getCnb_no() + ",");
-//		System.out.println(chat_NotebookVO3.getCnb_cnt());
-//		System.out.println("---------------------");
+		Chat_NotebookVO chat_NotebookVO3 = dao.findByPrimaryKey("cnb002");
+		System.out.print(chat_NotebookVO3.getCnb_no() + ",");
+		System.out.println(chat_NotebookVO3.getCnb_cnt());
+		System.out.println("---------------------");
 
         // 查詢部門
-//		List<Chat_NotebookVO> list = dao.getAll();
-//		for (Chat_NotebookVO proc : list) {
-//			System.out.print(proc.getCnb_no() + ",");
-//			System.out.print(proc.getCnb_cnt());
-//			System.out.println();
-//		}
+		List<Chat_NotebookVO> list = dao.getAll();
+		for (Chat_NotebookVO proc : list) {
+			System.out.print(proc.getCnb_no() + ",");
+			System.out.print(proc.getCnb_cnt());
+			System.out.println();
+		}
 
     }
 }

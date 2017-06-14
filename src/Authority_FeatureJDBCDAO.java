@@ -299,33 +299,35 @@ public class Authority_FeatureJDBCDAO implements Authority_FeatureDAO_interface 
         Authority_FeatureJDBCDAO dao = new Authority_FeatureJDBCDAO();
         // 代刚–琌ㄏノ
         // 穝糤(OK)
-        Authority_FeatureVO authority_FeatureVO1 = new Authority_FeatureVO();
-        authority_FeatureVO1.setAuth_name("T^Q");
-        dao.insert(authority_FeatureVO1);
-        System.out.println("穝糤");
+//        Authority_FeatureVO authority_FeatureVO1 = new Authority_FeatureVO();
+//        authority_FeatureVO1.setAuth_name("T^Q");
+//        dao.insert(authority_FeatureVO1);
+//        System.out.println("穝糤");
 
         // э
 //        Authority_FeatureVO authority_FeatureVO2 = new Authority_FeatureVO();
-//        authority_FeatureVO2.setAuth_no("1");
+//        authority_FeatureVO2.setAuth_no("an1");
 //        authority_FeatureVO2.setAuth_name("hi");
 //		dao.update(authority_FeatureVO2);
+//		System.out.println("update");
 
         // 埃
 //		dao.delete("an2");
+//		System.out.println("delete");
 
         // 琩高
-//        Authority_FeatureVO authority_FeatureVO3 = dao.findByPrimaryKey("an1");
-//		System.out.print(authority_FeatureVO3.getAuth_no() + ",");
-//		System.out.println(authority_FeatureVO3.getAuth_name());
-//		System.out.println("---------------------");
+        Authority_FeatureVO authority_FeatureVO3 = dao.findByPrimaryKey("an1");
+		System.out.print(authority_FeatureVO3.getAuth_no() + ",");
+		System.out.println(authority_FeatureVO3.getAuth_name());
+		System.out.println("---------------------");
 
         // 琩高场
-//		List<Authority_FeatureVO> list = dao.getAll();
-//		for (Authority_FeatureVO proc : list) {
-//			System.out.print(proc.getAuth_no() + ",");
-//			System.out.print(proc.getAuth_name());
-//			System.out.println();
-//		}
+		List<Authority_FeatureVO> list = dao.getAll();
+		for (Authority_FeatureVO proc : list) {
+			System.out.print(proc.getAuth_no() + ",");
+			System.out.print(proc.getAuth_name());
+			System.out.println();
+		}
 
     }
 

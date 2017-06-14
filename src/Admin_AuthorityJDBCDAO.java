@@ -301,33 +301,30 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
         // 新增
 //        Admin_AuthorityVO admin_AuthorityVO1 = new Admin_AuthorityVO();
 //        admin_AuthorityVO1.setAuth_no("an1");
-//        admin_AuthorityVO1.setAdm_no("ad004");
+//        admin_AuthorityVO1.setAdm_no("ad006");
 //        dao.insert(admin_AuthorityVO1);
 //        System.out.println("新增!");
 
-        // 修改
-//		Admin_AuthorityVO admin_AuthorityVO2 = new Admin_AuthorityVO();
-//        admin_AuthorityVO2.setAdm_no("2");
-//        admin_AuthorityVO2.setAuth_no("修改看看");
-//		dao.update(admin_AuthorityVO2);
+        // 無法修改
+
 
 //         刪除(OK)
-		dao.delete("ad007","an4");
-		System.out.println("delete");
+//		dao.delete("ad007","an4");
+//		System.out.println("delete");
 
 //         查詢
-//		Admin_AuthorityVO admin_AuthorityVO3 = dao.findByPrimaryKey("1");
-//		System.out.print(admin_AuthorityVO3.getAdm_no() + ",");
-//		System.out.println(admin_AuthorityVO3.getAdm_no());
-//		System.out.println("---------------------");
+		Admin_AuthorityVO admin_AuthorityVO3 = dao.findByPrimaryKey("ad005");
+		System.out.print(admin_AuthorityVO3.getAdm_no() + ",");
+		System.out.println(admin_AuthorityVO3.getAdm_no());
+		System.out.println("---------------------");
 
 //         查詢部門
-//		List<Admin_AuthorityVO> list = dao.getAll();
-//		for (Admin_AuthorityVO proc : list) {
-//			System.out.print(proc.getAdm_no() + ",");
-//			System.out.print(proc.getAuth_no());
-//			System.out.println();
-//		}
+		List<Admin_AuthorityVO> list = dao.getAll();
+		for (Admin_AuthorityVO proc : list) {
+			System.out.print(proc.getAdm_no() + ",");
+			System.out.print(proc.getAuth_no());
+			System.out.println();
+		}
 
     }
 }

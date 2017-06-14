@@ -85,7 +85,8 @@ public class User_ReportJDBCDAO implements User_ReportDAO_interface {
 			pstmt = con.prepareStatement(UPDATE);
 
 			pstmt.setString(1, user_ReportVO.getMem_no_ed());
-			pstmt.setString(2, user_ReportVO.getUrpt_cnt());
+			pstmt.setString(2, user_ReportVO.getMem_no_ing());
+			pstmt.setString(3, user_ReportVO.getUrpt_is_cert());
 
 			pstmt.executeUpdate();
 
@@ -255,10 +256,11 @@ public class User_ReportJDBCDAO implements User_ReportDAO_interface {
 			while (rs.next()) {
 				user_ReportVO = new User_ReportVO();
 				user_ReportVO.setMem_no_ed(rs.getString("mem_no_ed"));
-				user_ReportVO.setMem_no_ing(rs.getString("mem_no_ing"));
 				user_ReportVO.setUrpt_cnt(rs.getString("urpt_cnt"));
+				user_ReportVO.setUrpt_rsn(rs.getString("urpt_rsn"));
 				list.add(user_ReportVO); // Store the row in the list
 			}
+//			 mem_no_ed, URPT_CNT, URPT_RSN, 
 
 			// Handle any DRIVER errors
 		} catch (ClassNotFoundException e) {
@@ -299,37 +301,43 @@ public class User_ReportJDBCDAO implements User_ReportDAO_interface {
 		// 穝糤(OK)
 		// (MEM_NO_ED, MEM_NO_ING, URPT_CNT, URPT_DATE, URPT_RSN, URPT_IS_CERT,
 		// URPT_UNRSN)
-		User_ReportVO user_ReportVO1 = new User_ReportVO();
-		user_ReportVO1.setMem_no_ed("M0000001");
-		user_ReportVO1.setMem_no_ing("M0000002");
-		user_ReportVO1.setUrpt_cnt("787846sas");
-		user_ReportVO1.setUrpt_date(new Timestamp(System.currentTimeMillis()));
-		user_ReportVO1.setUrpt_rsn("癩叭场ㄓ翽");
-		user_ReportVO1.setUrpt_is_cert("1");
-		user_ReportVO1.setUrpt_unrsn("癩叭场ㄓ翽");
-		dao.insert(user_ReportVO1);
+//		User_ReportVO user_ReportVO1 = new User_ReportVO();
+//		user_ReportVO1.setMem_no_ed("M0000001");
+//		user_ReportVO1.setMem_no_ing("M0000009");
+//		user_ReportVO1.setUrpt_cnt("787846sas");
+//		user_ReportVO1.setUrpt_date(new Timestamp(System.currentTimeMillis()));
+//		user_ReportVO1.setUrpt_rsn("癩叭场ㄓ翽");
+//		user_ReportVO1.setUrpt_is_cert("0");
+//		user_ReportVO1.setUrpt_unrsn("癩叭场ㄓ翽");
+//		dao.insert(user_ReportVO1);
+//		System.out.println("insert OK");
 
 		// э
-		// User_ReportVO user_ReportVO2 = new User_ReportVO();
-		// user_ReportVO2.setMem_no_ing("n0007");
-		// user_ReportVO2.setUrpt_cnt("э");
-		// dao.update(user_ReportVO2);
+		 User_ReportVO user_ReportVO2 = new User_ReportVO();
+		 user_ReportVO2.setMem_no_ed("M0000001");
+		 user_ReportVO2.setMem_no_ing("M0000009");
+		 user_ReportVO2.setUrpt_is_cert("1");
+		 dao.update(user_ReportVO2);
 
 		// 埃
 		// dao.delete("1");
 
 		// 琩高
-		// User_ReportVO user_ReportVO3 = dao.findByPrimaryKey("1");
-		// System.out.print(user_ReportVO3.getMem_no_ed() + ",");
-		// System.out.println(user_ReportVO3.getUrpt_is_cert());
-		// System.out.println("---------------------");
+//		 User_ReportVO user_ReportVO3 = dao.findByPrimaryKey("M0000001");
+//		 System.out.print(user_ReportVO3.getMem_no_ed() + ",");
+//		 System.out.println(user_ReportVO3.getUrpt_is_cert());
+//		 System.out.println("---------------------");
+//		 M0000001,787846sas癩叭场ㄓ翽
 
 		// 琩高场
-		// List<User_ReportVO> list = dao.getAll();
-		// for (User_ReportVO proc : list) {
-		// System.out.print(proc.getMem_no_ing() + ",");
-		// System.out.print(proc.getUrpt_cnt());
-		// System.out.println();
+//		 List<User_ReportVO> list = dao.getAll();
+//		 for (User_ReportVO proc : list) {
+//		 System.out.print(proc.getMem_no_ed() + ",");
+//		 System.out.print(proc.getUrpt_cnt());
+//		 System.out.print(proc.getUrpt_rsn());
+//		 System.out.println();
+//		 } 
+//		 mem_no_ed, URPT_CNT, URPT_RSN,
 
 	}
 }

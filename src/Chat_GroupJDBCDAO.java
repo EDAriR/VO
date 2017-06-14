@@ -304,39 +304,41 @@ public class Chat_GroupJDBCDAO implements Chat_GroupDAO_interface {
         Chat_GroupJDBCDAO dao = new Chat_GroupJDBCDAO();
         // 代刚–琌ㄏノ
         // 穝糤(OK)
-        Chat_GroupVO chat_GroupVO1 = new Chat_GroupVO();
-        chat_GroupVO1.setCg_name("癩叭场ㄓ翽");
-        chat_GroupVO1.setCg_year(java.sql.Date.valueOf("2002-01-01"));
-        chat_GroupVO1.setCg_is_ab("1");
-        chat_GroupVO1.setCg_is_ac("1");
-        chat_GroupVO1.setCg_is_sf("0");
-        chat_GroupVO1.setCg_is_ad("1");
-        chat_GroupVO1.setCg_is_ar("1");
-        chat_GroupVO1.setBaby_rd("");
-        dao.insert(chat_GroupVO1);
+//        Chat_GroupVO chat_GroupVO1 = new Chat_GroupVO();
+//        chat_GroupVO1.setCg_name("癩叭场ㄓ翽1");
+//        chat_GroupVO1.setCg_year(java.sql.Date.valueOf("2002-02-01"));
+//        chat_GroupVO1.setCg_is_ab("0");
+//        chat_GroupVO1.setCg_is_ac("1");
+//        chat_GroupVO1.setCg_is_sf("0");
+//        chat_GroupVO1.setCg_is_ad("1");
+//        chat_GroupVO1.setCg_is_ar("1");
+//        chat_GroupVO1.setBaby_rd("");
+//        dao.insert(chat_GroupVO1);
+//        System.out.println("insert");
 
         // э
 //		Chat_GroupVO chat_GroupVO2 = new Chat_GroupVO();
-//		chat_GroupVO2.setCg_no("2");
-//		chat_GroupVO2.setCg_name("э");
+//		chat_GroupVO2.setCg_no("cg002");
+//		chat_GroupVO2.setCg_name("11э");
 //		dao.update(chat_GroupVO2);
+//		System.out.println("update");
 
         // 埃
-//		dao.delete("1");
+//		dao.delete("cg001");
 
         // 琩高
-//		Chat_GroupVO chat_GroupVO3 = dao.findByPrimaryKey("1");
-//		System.out.print(chat_GroupVO3.getCg_no() + ",");
-//		System.out.println(chat_GroupVO3.getCg_name());
-//		System.out.println("---------------------");
+		Chat_GroupVO chat_GroupVO3 = dao.findByPrimaryKey("cg002");
+		System.out.print(chat_GroupVO3.getCg_no() + ",");
+		System.out.println(chat_GroupVO3.getCg_name());
+		System.out.println("---------------------");
 
         // 琩高场
-//		List<Chat_GroupVO> list = dao.getAll();
-//		for (Chat_GroupVO proc : list) {
-//			System.out.print(proc.getCg_no() + ",");
-//			System.out.print(proc.getCg_name());
-//			System.out.println();
-//		}
+		List<Chat_GroupVO> list = dao.getAll();
+		for (Chat_GroupVO proc : list) {
+			System.out.print(proc.getCg_no() + ",");
+			System.out.print(proc.getCg_name());
+			System.out.println();
+		}
 
     }
 }

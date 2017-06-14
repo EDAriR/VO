@@ -16,7 +16,7 @@ public class Chat_Group_ItemJDBCDAO implements Chat_Group_ItemDAO_interface {
     private static final String GET_ONE_STMT = "SELECT cg_no, mem_no FROM Chat_Group_Item where cg_no = ?";
     // 刪除資料
     private static final String DELETE_PROC = "DELETE FROM Chat_Group_Item where cg_no = ?";
-    // 修改資料
+    // 無法修改資料
     private static final String UPDATE = "UPDATE Chat_Group_Item set mem_no=? where cg_no = ?";
 
 
@@ -300,25 +300,23 @@ public class Chat_Group_ItemJDBCDAO implements Chat_Group_ItemDAO_interface {
         Chat_Group_ItemJDBCDAO dao = new Chat_Group_ItemJDBCDAO();
         // 測試看看每個指令是否可以使用
         // 新增
-        Chat_Group_ItemVO chat_Group_ItemVO1 = new Chat_Group_ItemVO();
-        chat_Group_ItemVO1.setCg_no("cg001");
-        chat_Group_ItemVO1.setMem_no("M0000002");
-        dao.insert(chat_Group_ItemVO1);
-        System.out.println("新增成功");
-        // 修改
-//		Chat_Group_ItemVO chat_Group_ItemVO2 = new Chat_Group_ItemVO();
-//		chat_Group_ItemVO2.setCg_no("2");
-//		chat_Group_ItemVO2.setMem_no("修改看看");
-//		dao.update(chat_Group_ItemVO2);
+//        Chat_Group_ItemVO chat_Group_ItemVO1 = new Chat_Group_ItemVO();
+//        chat_Group_ItemVO1.setCg_no("cg002");
+//        chat_Group_ItemVO1.setMem_no("M0000003");
+//        dao.insert(chat_Group_ItemVO1);
+//        System.out.println("新增成功");
+        
+        // 無法修改
 
         // 刪除
-//		dao.delete("1");
+//		dao.delete("cg002","M0000003");
+//		System.out.println("delete");
 
         // 查詢
-//		Chat_Group_ItemVO chat_Group_ItemVO3 = dao.findByPrimaryKey("1");
-//		System.out.print(chat_Group_ItemVO3.getCg_no() + ",");
-//		System.out.println(chat_Group_ItemVO3.getMem_no());
-//		System.out.println("---------------------");
+		Chat_Group_ItemVO chat_Group_ItemVO3 = dao.findByPrimaryKey("cg002","M0000003");
+		System.out.print(chat_Group_ItemVO3.getCg_no() + ",");
+		System.out.println(chat_Group_ItemVO3.getMem_no());
+		System.out.println("---------------------");
 
         // 查詢部門
 //		List<Chat_Group_ItemVO> list = dao.getAll();

@@ -313,14 +313,14 @@ public class AdminJDBCDAO implements AdminDAO_interface {
        
         // 修改
 //        AdminVO adminVO2 = new AdminVO();
-//        adminVO2.setAdm_no("ad004");
+//        adminVO2.setAdm_no("ad006");
 //        adminVO2.setAdm_name("nametest2");
-////        adminVO2.setAdm_mail("mail222"); 
+//       adminVO2.setAdm_mail("mail222"); 
 //        dao.update(adminVO2);
 //        System.out.println("------修改---------");
 
         // 刪除
-//        dao.delete("ad009");
+        dao.delete("ad007");
 
         // 查詢
 //        AdminVO adminVO3 = dao.findByPrimaryKey("ad004");

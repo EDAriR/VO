@@ -305,36 +305,38 @@ public class NewsJDBCDAO implements NewsDAO_interface {
         NewsJDBCDAO dao = new NewsJDBCDAO();
         // 代刚–琌ㄏノ
         // 穝糤
-        NewsVO newsVO1 = new NewsVO();
-        newsVO1.setNew_date(new Timestamp(System.currentTimeMillis()));
-        newsVO1.setNew_title("иㄓぃの腳腳场ㄓ翽");
-        newsVO1.setNew_cnt("癩叭场ㄓ翽");
-        dao.insert(newsVO1);
-        System.out.print("insert success");
+//        NewsVO newsVO1 = new NewsVO();
+//        newsVO1.setNew_date(new Timestamp(System.currentTimeMillis()));
+//        newsVO1.setNew_title("иㄓぃの腳腳场ㄓ翽");
+//        newsVO1.setNew_cnt("癩叭场ㄓ翽");
+//        dao.insert(newsVO1);
+//        System.out.print("insert success");
         
 
         // э
 //        NewsVO newsVO2 = new NewsVO();
-//        newsVO2.setNew_no("n0021");
+//        newsVO2.setNew_no("n0001");
 //        newsVO2.setNew_title("э");
 //		dao.update(newsVO2);
+//		System.out.println("update");
 
         // 埃
-//		dao.delete("1");
+//		dao.delete("n0001");
+//		System.out.println("delete");
 
         // 琩高
-//        NewsVO newsVO3 = dao.findByPrimaryKey("n0021");
-//		System.out.print(newsVO3.getNew_no() + ",");
-//		System.out.println(newsVO3.getNew_title());
-//		System.out.println("---------------------");
+        NewsVO newsVO3 = dao.findByPrimaryKey("n0002");
+		System.out.print(newsVO3.getNew_no() + ",");
+		System.out.println(newsVO3.getNew_title());
+		System.out.println("---------------------");
 
         // 琩高场
-//		List<NewsVO> list = dao.getAll();
-//		for (NewsVO proc : list) {
-//			System.out.print(proc.getNew_no() + ",");
-//			System.out.print(proc.getNew_title());
-//			System.out.println();
-//		}
+		List<NewsVO> list = dao.getAll();
+		for (NewsVO proc : list) {
+			System.out.print(proc.getNew_no() + ",");
+			System.out.print(proc.getNew_title());
+			System.out.println();
+		}
 
     }
 }

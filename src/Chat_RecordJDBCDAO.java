@@ -303,24 +303,26 @@ public class Chat_RecordJDBCDAO implements Chat_RecordDAO_interface {
         Chat_RecordJDBCDAO dao = new Chat_RecordJDBCDAO();
         // 代刚–琌ㄏノ
         // 穝糤(OK)
-        Chat_RecordVO chat_RecordVO1 = new Chat_RecordVO();
-        chat_RecordVO1.setCr_cnt("null");
-        chat_RecordVO1.setCr_cnt("null");
-        chat_RecordVO1.setCr_cnt("癩叭场ㄓ翽");
-        dao.insert(chat_RecordVO1);
-        System.out.println("穝糤Θ");
+//        Chat_RecordVO chat_RecordVO1 = new Chat_RecordVO();
+//        chat_RecordVO1.setCr_cnt("null");
+//        chat_RecordVO1.setCr_cnt("null");
+//        chat_RecordVO1.setCr_cnt("癩叭场ㄓ翽12");
+//        dao.insert(chat_RecordVO1);
+//        System.out.println("穝糤Θ");
 
         // э
 //		Chat_RecordVO chat_RecordVO2 = new Chat_RecordVO();
-//		chat_RecordVO2.setCr_no("2");
-//		chat_RecordVO2.setCr_cnt("э");
+//		chat_RecordVO2.setCr_no("cr0002");
+//		chat_RecordVO2.setCr_cnt("11э");
 //		dao.update(chat_RecordVO2);
+//		System.out.println("update");
 
         // 埃
-//		dao.delete("1");
+//		dao.delete("cr0001");
+//		System.out.println("delete");
 
         // 琩高
-//		Chat_RecordVO chat_RecordVO3 = dao.findByPrimaryKey("1");
+//		Chat_RecordVO chat_RecordVO3 = dao.findByPrimaryKey("cr0002");
 //		System.out.print(chat_RecordVO3.getCr_no() + ",");
 //		System.out.println(chat_RecordVO3.getCr_cnt());
 //		System.out.println("---------------------");

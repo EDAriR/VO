@@ -16,7 +16,7 @@ public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
     // 刪除資料
     private static final String DELETE_PROC = "DELETE FROM Chat_Friend where cf_no = ?";
     // 修改資料
-    private static final String UPDATE = "UPDATE Chat_Friend set cf_is_del=? where cf_no = ?";
+    private static final String UPDATE = "UPDATE Chat_Friend set cf_is_del=? where cf_no = ? ";
 
 
     @Override
@@ -76,8 +76,7 @@ public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
             pstmt = con.prepareStatement(UPDATE);
-
-            pstmt.setString(1, chat_FriendVO.getCf_no());
+            pstmt.setString(1, chat_FriendVO.getCf_is_del());
             pstmt.setString(2, chat_FriendVO.getCf_no());
 
             pstmt.executeUpdate();
@@ -300,34 +299,37 @@ public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
         Chat_FriendJDBCDAO dao = new Chat_FriendJDBCDAO();
         // 測試看看每個指令是否可以使用
         // 新增(OK)
-        Chat_FriendVO chat_FriendVO1 = new Chat_FriendVO();
-        chat_FriendVO1.setMem_no_s("M0000001");
-        chat_FriendVO1.setMem_no_o("M0000005");
-        chat_FriendVO1.setCf_is_del("0");
-        dao.insert(chat_FriendVO1);
-        System.out.println("新增成功");
+//        Chat_FriendVO chat_FriendVO1 = new Chat_FriendVO();
+//        chat_FriendVO1.setMem_no_s("M0000001");
+//        chat_FriendVO1.setMem_no_o("M0000007");
+//        chat_FriendVO1.setCf_is_del("0");
+//        dao.insert(chat_FriendVO1);
+//        System.out.println("新增成功");
 
         // 修改
-//        Chat_FriendVO chat_FriendVO2 = new Chat_FriendVO();
-//        chat_FriendVO2.setCf_no("2");
-//        chat_FriendVO2.setMem_no_o("修改看看");
-//        dao.update(chat_FriendVO2);
+        Chat_FriendVO chat_FriendVO2 = new Chat_FriendVO();
+        chat_FriendVO2.setCf_no("cf002");
+        chat_FriendVO2.setCf_is_del("1");
+        dao.update(chat_FriendVO2);
+        
+        System.out.println("update");
 
         // 刪除
-//        dao.delete("1");
+//        dao.delete("cf003");
+//        System.out.println("delete");
 
         // 查詢
-//        Chat_FriendVO chat_FriendVO3 = dao.findByPrimaryKey("1");
-//        System.out.print(chat_FriendVO3.getCf_no() + ",");
-//        System.out.println(chat_FriendVO3.getMem_no_o());
-//        System.out.println("---------------------");
+        Chat_FriendVO chat_FriendVO3 = dao.findByPrimaryKey("cf001");
+        System.out.print(chat_FriendVO3.getCf_no() + ",");
+        System.out.println(chat_FriendVO3.getMem_no_o());
+        System.out.println("---------------------");
 
         // 查詢部門
-//        List<Chat_FriendVO> list = dao.getAll();
-//        for (Chat_FriendVO proc : list) {
-//            System.out.print(proc.getCf_no() + ",");
-//            System.out.print(proc.getMem_no_o());
-//            System.out.println();
-//        }
+        List<Chat_FriendVO> list = dao.getAll();
+        for (Chat_FriendVO proc : list) {
+            System.out.print(proc.getCf_no() + ",");
+            System.out.print(proc.getMem_no_o());
+            System.out.println();
+        }
     }
 }
