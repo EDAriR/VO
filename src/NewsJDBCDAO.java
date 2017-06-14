@@ -31,7 +31,7 @@ public class NewsJDBCDAO implements NewsDAO_interface {
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
             String[] cols = {"new_no"}; // 有使用sequence產生編號的話才要寫
-            java.util.Date today = new java.util.Date();
+//            java.util.Date today = new java.util.Date();
         	
             pstmt = con.prepareStatement(INSERT_STMT, cols); // 有使用sequence產生編號的話才要寫第二個參數
             

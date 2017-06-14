@@ -9,7 +9,8 @@ public class Chat_Group_ItemJDBCDAO implements Chat_Group_ItemDAO_interface {
     private static final String USER = "ba101g3";
     private static final String PASSWORD = "baby";
     // 新增資料
-    private static final String INSERT_STMT = "INSERT INTO Chat_Group_Item (cg_no, mem_no) VALUES (cg_no_seq.NEXTVAL, ?)";
+    private static final String INSERT_STMT = "INSERT INTO Chat_Group_Item (cg_no, mem_no) " +
+            "VALUES (?, ?)";
     // 查詢資料
     private static final String GET_ALL_STMT = "SELECT cg_no , mem_no FROM Chat_Group_Item";
     private static final String GET_ONE_STMT = "SELECT cg_no, mem_no FROM Chat_Group_Item where cg_no = ?";
@@ -30,7 +31,9 @@ public class Chat_Group_ItemJDBCDAO implements Chat_Group_ItemDAO_interface {
             con = DriverManager.getConnection(URL, USER, PASSWORD);
 //            String[] cols = {"proc_no"}; // 有使用sequence產生編號的話才要寫
 //            pstmt = con.prepareStatement(INSERT_STMT, cols); // 有使用sequence產生編號的話才要寫第二個參數
+            pstmt = con.prepareStatement(INSERT_STMT);
             pstmt.setString(1, chat_Group_ItemVO.getCg_no());
+            pstmt.setString(2, chat_Group_ItemVO.getMem_no());
 
             pstmt.executeUpdate();
 
@@ -298,9 +301,10 @@ public class Chat_Group_ItemJDBCDAO implements Chat_Group_ItemDAO_interface {
         // 測試看看每個指令是否可以使用
         // 新增
         Chat_Group_ItemVO chat_Group_ItemVO1 = new Chat_Group_ItemVO();
-        chat_Group_ItemVO1.setMem_no("財務部回來嚕");
+        chat_Group_ItemVO1.setCg_no("cg001");
+        chat_Group_ItemVO1.setMem_no("M0000002");
         dao.insert(chat_Group_ItemVO1);
-
+        System.out.println("新增成功");
         // 修改
 //		Chat_Group_ItemVO chat_Group_ItemVO2 = new Chat_Group_ItemVO();
 //		chat_Group_ItemVO2.setCg_no("2");

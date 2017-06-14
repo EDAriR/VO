@@ -298,10 +298,11 @@ public class Authority_FeatureJDBCDAO implements Authority_FeatureDAO_interface 
 
         Authority_FeatureJDBCDAO dao = new Authority_FeatureJDBCDAO();
         // 測試看看每個指令是否可以使用
-        // 新增
-//        Authority_FeatureVO authority_FeatureVO1 = new Authority_FeatureVO();
-//        authority_FeatureVO1.setAuth_name("T^Q");
-//        dao.insert(authority_FeatureVO1);
+        // 新增(OK)
+        Authority_FeatureVO authority_FeatureVO1 = new Authority_FeatureVO();
+        authority_FeatureVO1.setAuth_name("T^Q");
+        dao.insert(authority_FeatureVO1);
+        System.out.println("新增");
 
         // 修改
 //        Authority_FeatureVO authority_FeatureVO2 = new Authority_FeatureVO();
@@ -310,7 +311,7 @@ public class Authority_FeatureJDBCDAO implements Authority_FeatureDAO_interface 
 //		dao.update(authority_FeatureVO2);
 
         // 刪除
-		dao.delete("an2");
+//		dao.delete("an2");
 
         // 查詢
 //        Authority_FeatureVO authority_FeatureVO3 = dao.findByPrimaryKey("an1");

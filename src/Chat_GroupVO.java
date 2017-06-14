@@ -9,10 +9,12 @@ public class Chat_GroupVO implements Serializable {
     private String cg_name;     //	Not Null
     private Date cg_year;       //	Not Null
     private String cg_is_aa;    //	"Not Null0：否1：是"
+    private String cg_is_ar;    //	"Not Null0：否1：是"
     private String cg_is_ab;    //	"Not Null0：否1：是"
     private String cg_is_ac;    //	"Not Null0：否1：是"
     private String cg_is_sf;    //	"Not Null1：是"
     private String cg_is_ad;    //	"Not Null0：否1：是"
+    private String baby_rd;    //	"Not Null0：否1：是"
 
     public Chat_GroupVO() {
         super();
@@ -80,5 +82,21 @@ public class Chat_GroupVO implements Serializable {
 
     public void setCg_is_ad(String cg_is_ad) {
         this.cg_is_ad = cg_is_ad;
+    }
+
+    public String getCg_is_ar() {
+        return cg_is_ar;
+    }
+
+    public void setCg_is_ar(String cg_is_ar) {
+        this.cg_is_ar = cg_is_ar;
+    }
+
+    public String getBaby_rd() {
+        return baby_rd;
+    }
+
+    public void setBaby_rd(String baby_rd) {
+        this.baby_rd = baby_rd;
     }
 }

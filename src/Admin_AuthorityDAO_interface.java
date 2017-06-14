@@ -9,7 +9,7 @@ public interface Admin_AuthorityDAO_interface {
 
     public void update(Admin_AuthorityVO Admin_AuthorityVO);
 
-    public void delete(String adm_no);
+    public void delete(String adm_no,String auth_no);
 
     public Admin_AuthorityVO findByPrimaryKey(String adm_no);
 

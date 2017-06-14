@@ -9,7 +9,7 @@ public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
     private static final String USER = "ba101g3";
     private static final String PASSWORD = "baby";
     // 新增資料
-    private static final String INSERT_STMT = "INSERT INTO Chat_Friend (CF_NO, MEM_NO_S, MEM_NO_O, CF_IS_DEL) VALUES (cf_no_seq.NEXTVAL, ?)";
+    private static final String INSERT_STMT = "INSERT INTO Chat_Friend (CF_NO, MEM_NO_S, MEM_NO_O, CF_IS_DEL) VALUES ('cf'||LPAD(to_char(CF_NO_SEQ.nextval),3,'0'), ?, ?, ?)";
     // 查詢資料
     private static final String GET_ALL_STMT = "SELECT CF_NO, MEM_NO_S, MEM_NO_O, CF_IS_DEL FROM Chat_Friend";
     private static final String GET_ONE_STMT = "SELECT CF_NO, MEM_NO_S, MEM_NO_O, CF_IS_DEL FROM Chat_Friend where cf_no = ?";
@@ -30,7 +30,9 @@ public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
             con = DriverManager.getConnection(URL, USER, PASSWORD);
             String[] cols = {"cf_no"}; // 有使用sequence產生編號的話才要寫
             pstmt = con.prepareStatement(INSERT_STMT, cols); // 有使用sequence產生編號的話才要寫第二個參數
-            pstmt.setString(1, chat_FriendVO.getCf_no());
+            pstmt.setString(1, chat_FriendVO.getMem_no_s());
+            pstmt.setString(2, chat_FriendVO.getMem_no_o());
+            pstmt.setString(3, chat_FriendVO.getCf_is_del());
 
             pstmt.executeUpdate();
 
@@ -297,32 +299,35 @@ public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
 
         Chat_FriendJDBCDAO dao = new Chat_FriendJDBCDAO();
         // 測試看看每個指令是否可以使用
-        // 新增
+        // 新增(OK)
         Chat_FriendVO chat_FriendVO1 = new Chat_FriendVO();
-        chat_FriendVO1.setMem_no_o("財務部回來嚕");
+        chat_FriendVO1.setMem_no_s("M0000001");
+        chat_FriendVO1.setMem_no_o("M0000005");
+        chat_FriendVO1.setCf_is_del("0");
         dao.insert(chat_FriendVO1);
+        System.out.println("新增成功");
 
         // 修改
-        Chat_FriendVO chat_FriendVO2 = new Chat_FriendVO();
-        chat_FriendVO2.setCf_no("2");
-        chat_FriendVO2.setMem_no_o("修改看看");
-        dao.update(chat_FriendVO2);
+//        Chat_FriendVO chat_FriendVO2 = new Chat_FriendVO();
+//        chat_FriendVO2.setCf_no("2");
+//        chat_FriendVO2.setMem_no_o("修改看看");
+//        dao.update(chat_FriendVO2);
 
         // 刪除
-        dao.delete("1");
+//        dao.delete("1");
 
         // 查詢
-        Chat_FriendVO chat_FriendVO3 = dao.findByPrimaryKey("1");
-        System.out.print(chat_FriendVO3.getCf_no() + ",");
-        System.out.println(chat_FriendVO3.getMem_no_o());
-        System.out.println("---------------------");
+//        Chat_FriendVO chat_FriendVO3 = dao.findByPrimaryKey("1");
+//        System.out.print(chat_FriendVO3.getCf_no() + ",");
+//        System.out.println(chat_FriendVO3.getMem_no_o());
+//        System.out.println("---------------------");
 
         // 查詢部門
-        List<Chat_FriendVO> list = dao.getAll();
-        for (Chat_FriendVO proc : list) {
-            System.out.print(proc.getCf_no() + ",");
-            System.out.print(proc.getMem_no_o());
-            System.out.println();
-        }
+//        List<Chat_FriendVO> list = dao.getAll();
+//        for (Chat_FriendVO proc : list) {
+//            System.out.print(proc.getCf_no() + ",");
+//            System.out.print(proc.getMem_no_o());
+//            System.out.println();
+//        }
     }
 }

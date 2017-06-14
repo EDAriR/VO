@@ -9,7 +9,9 @@ public class Chat_GroupJDBCDAO implements Chat_GroupDAO_interface {
     private static final String USER = "ba101g3";
     private static final String PASSWORD = "baby";
     // 新增資料
-    private static final String INSERT_STMT = "INSERT INTO Chat_Group (cg_no, proc_name) VALUES (cg_no_seq.NEXTVAL, ?)";
+    private static final String INSERT_STMT = "INSERT INTO Chat_Group " +
+            "(cg_no, CG_NAME, CG_YEAR, CG_IS_AR, CG_IS_AB, CG_IS_AC, CG_IS_SF, CG_IS_AD, CG_BABY_RD) " +
+            "VALUES ('cg'||LPAD(to_char(CG_NO_SEQ.nextval),3,'0'), ?, ?, ?, ?, ?, ?, ?, ?)";
     // 查詢資料
     private static final String GET_ALL_STMT = "SELECT cg_no , cg_name FROM Chat_Group";
     private static final String GET_ONE_STMT = "SELECT cg_no, cg_name FROM Chat_Group where cg_no = ?";
@@ -25,12 +27,19 @@ public class Chat_GroupJDBCDAO implements Chat_GroupDAO_interface {
         PreparedStatement pstmt = null;
 
         try {
-
+//        	(cg_no, CG_NAME, CG_YEAR, CG_IS_AR, CG_IS_AB, CG_IS_AC, CG_IS_SF, CG_IS_AD, BABY_RD
             Class.forName(DRIVER);
             con = DriverManager.getConnection(URL, USER, PASSWORD);
             String[] cols = { "cg_no" }; // 有使用sequence產生編號的話才要寫
             pstmt = con.prepareStatement(INSERT_STMT, cols); // 有使用sequence產生編號的話才要寫第二個參數
             pstmt.setString(1, chat_GroupVO.getCg_name());
+            pstmt.setDate(2, chat_GroupVO.getCg_year());
+            pstmt.setString(3, chat_GroupVO.getCg_is_ar());
+            pstmt.setString(4, chat_GroupVO.getCg_is_ab());
+            pstmt.setString(5, chat_GroupVO.getCg_is_ac());
+            pstmt.setString(6, chat_GroupVO.getCg_is_sf());
+            pstmt.setString(7, chat_GroupVO.getCg_is_ad());
+            pstmt.setString(8, chat_GroupVO.getBaby_rd());
 
             pstmt.executeUpdate();
 
@@ -294,9 +303,16 @@ public class Chat_GroupJDBCDAO implements Chat_GroupDAO_interface {
 
         Chat_GroupJDBCDAO dao = new Chat_GroupJDBCDAO();
         // 測試看看每個指令是否可以使用
-        // 新增
+        // 新增(OK)
         Chat_GroupVO chat_GroupVO1 = new Chat_GroupVO();
         chat_GroupVO1.setCg_name("財務部回來嚕");
+        chat_GroupVO1.setCg_year(java.sql.Date.valueOf("2002-01-01"));
+        chat_GroupVO1.setCg_is_ab("1");
+        chat_GroupVO1.setCg_is_ac("1");
+        chat_GroupVO1.setCg_is_sf("0");
+        chat_GroupVO1.setCg_is_ad("1");
+        chat_GroupVO1.setCg_is_ar("1");
+        chat_GroupVO1.setBaby_rd("才");
         dao.insert(chat_GroupVO1);
 
         // 修改

@@ -32,8 +32,11 @@ public class Chat_RecordJDBCDAO implements Chat_RecordDAO_interface {
             con = DriverManager.getConnection(URL, USER, PASSWORD);
             String[] cols = {"cr_no"}; // 有使用sequence產生編號的話才要寫
             pstmt = con.prepareStatement(INSERT_STMT, cols); // 有使用sequence產生編號的話才要寫第二個參數
-            pstmt.setString(1, chat_RecordVO.getCr_cnt());
-
+            pstmt.setString(1, chat_RecordVO.getCf_no());
+            pstmt.setString(2, chat_RecordVO.getCg_no());
+          //  pstmt.setDate(3, chat_RecordVO.getCr_date());
+            pstmt.setString(3, chat_RecordVO.getCr_cnt());
+         
             pstmt.executeUpdate();
 
             // Handle any DRIVER errors
@@ -299,10 +302,13 @@ public class Chat_RecordJDBCDAO implements Chat_RecordDAO_interface {
 
         Chat_RecordJDBCDAO dao = new Chat_RecordJDBCDAO();
         // 測試看看每個指令是否可以使用
-        // 新增
+        // 新增(OK)
         Chat_RecordVO chat_RecordVO1 = new Chat_RecordVO();
+        chat_RecordVO1.setCr_cnt("null");
+        chat_RecordVO1.setCr_cnt("null");
         chat_RecordVO1.setCr_cnt("財務部回來嚕");
         dao.insert(chat_RecordVO1);
+        System.out.println("新增成功");
 
         // 修改
 //		Chat_RecordVO chat_RecordVO2 = new Chat_RecordVO();

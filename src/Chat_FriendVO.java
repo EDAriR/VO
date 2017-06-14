@@ -7,7 +7,7 @@ public class Chat_FriendVO implements Serializable {
     private String cf_no;       //	Not Null (PK)
     private String mem_no_s;    //	(FK)
     private String mem_no_o;    //	(FK)
-    private String cf_is_del;   //	"Not Null0ÔºöÂê¶ (È†êË®≠)1ÔºöÊòØ"
+    private String cf_is_del;   //	"Not Null0°Gß_ (πw≥])1°G¨O"
 
     public Chat_FriendVO() {
         super();

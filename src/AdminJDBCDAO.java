@@ -80,7 +80,7 @@ public class AdminJDBCDAO implements AdminDAO_interface {
             con = DriverManager.getConnection(URL, USER, PASSWORD);
             pstmt = con.prepareStatement(UPDATE);
 
-            pstmt.setString(1, adminVO.getAdm_no());
+            pstmt.setString(1, adminVO.getAdm_name());
             pstmt.setString(2, adminVO.getAdm_no());
 
             pstmt.executeUpdate();
@@ -303,35 +303,38 @@ public class AdminJDBCDAO implements AdminDAO_interface {
         AdminJDBCDAO dao = new AdminJDBCDAO();
         // 代刚–琌ㄏノ
         // 穝糤
-        AdminVO adminVO1 = new AdminVO();
-        adminVO1.setAdm_acct("adtestacct1");
-        adminVO1.setAdm_pwd("adtestpwd1");
-        adminVO1.setAdm_name("adtestname1");
-        adminVO1.setAdm_mail("adtestmail1");        
-        dao.insert(adminVO1);
-
+//        AdminVO adminVO1 = new AdminVO();
+//        adminVO1.setAdm_acct("adtestacct1");
+//        adminVO1.setAdm_pwd("adtestpwd1");
+//        adminVO1.setAdm_name("adtestname1");
+//        adminVO1.setAdm_mail("adtestmail1");        
+//        dao.insert(adminVO1);
+//        System.out.println("穝糤OK");
+       
         // э
 //        AdminVO adminVO2 = new AdminVO();
-//        adminVO2.setAdm_no("ad0004");
-//        adminVO2.setAdm_name("э");
+//        adminVO2.setAdm_no("ad004");
+//        adminVO2.setAdm_name("nametest2");
+////        adminVO2.setAdm_mail("mail222"); 
 //        dao.update(adminVO2);
+//        System.out.println("------э---------");
 
         // 埃
-//        dao.delete("1");
+//        dao.delete("ad009");
 
         // 琩高
-//        AdminVO adminVO3 = dao.findByPrimaryKey("ad0004");
+//        AdminVO adminVO3 = dao.findByPrimaryKey("ad004");
 //        System.out.print(adminVO3.getAdm_no() + ",");
 //        System.out.println(adminVO3.getAdm_name());
 //        System.out.println("---------------------");
 
         // 琩高场
-//        List<AdminVO> list = dao.getAll();
-//        for (AdminVO proc : list) {
-//            System.out.print(proc.getAdm_no() + ",");
-//            System.out.print(proc.getAdm_name());
-//            System.out.println();
-//        }
+        List<AdminVO> list = dao.getAll();
+        for (AdminVO proc : list) {
+            System.out.print(proc.getAdm_no() + ",");
+            System.out.print(proc.getAdm_name());
+            System.out.println();
+        }
 
     }
 }
