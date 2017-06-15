@@ -12,7 +12,7 @@ public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
     private static final String PASSWORD = "baby";
     // 新增資料
     private static final String INSERT_STMT = "INSERT INTO chat_friend (cf_no, mem_no_s, mem_no_o, cf_is_del) " +
-            "VALUES ('cf'||LPAD(to_char(cf_no_seq.NEXTVAL),3,'0'), ?, ?, ?)";
+            "VALUES ('cf'||LPAD(TO_CHAR(cf_no_seq.NEXTVAL),3,'0'), ?, ?, ?)";
     // 查詢資料
     private static final String GET_ALL_STMT = "SELECT cf_no, mem_no_s, mem_no_o, cf_is_del FROM chat_friend";
     private static final String GET_ONE_STMT = "SELECT cf_no, mem_no_s, mem_no_o, cf_is_del FROM chat_friend WHERE cf_no = ?";
