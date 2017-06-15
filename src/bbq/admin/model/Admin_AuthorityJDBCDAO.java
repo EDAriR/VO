@@ -11,12 +11,12 @@ public class Admin_AuthorityJDBCDAO implements Admin_AuthorityDAO_interface {
     private static final String USER = "ba101g3";
     private static final String PASSWORD = "baby";
     // 新增資料
-    private static final String INSERT_STMT = "INSERT INTO Admin_Authority (adm_no, auth_no) VALUES (?, ?)";
+    private static final String INSERT_STMT = "INSERT INTO admin_authority (adm_no, auth_no) VALUES (?, ?)";
     // 查詢資料
-    private static final String GET_ALL_STMT = "SELECT adm_no , auth_no FROM Admin_Authority";
-    private static final String GET_ONE_STMT = "SELECT adm_no, auth_no FROM Admin_Authority where adm_no = ?";
+    private static final String GET_ALL_STMT = "SELECT adm_no , auth_no FROM admin_authority";
+    private static final String GET_ONE_STMT = "SELECT adm_no, auth_no FROM admin_authority WHERE adm_no = ?";
     // 刪除資料
-    private static final String DELETE_PROC = "DELETE FROM Admin_Authority WHERE auth_no = ? AND adm_no = ?";
+    private static final String DELETE_PROC = "DELETE FROM admin_authority WHERE auth_no = ? AND adm_no = ?";
 
 
     @Override

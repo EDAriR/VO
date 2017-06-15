@@ -12,15 +12,15 @@ public class Chat_GroupJDBCDAO implements Chat_GroupDAO_interface {
     private static final String PASSWORD = "baby";
     // 新增資料
     private static final String INSERT_STMT = "INSERT INTO Chat_Group " +
-            "(cg_no, CG_NAME, CG_YEAR, CG_IS_AR, CG_IS_AB, CG_IS_AC, CG_IS_SF, CG_IS_AD, CG_BABY_RD) " +
-            "VALUES ('cg'||LPAD(to_char(CG_NO_SEQ.nextval),3,'0'), ?, ?, ?, ?, ?, ?, ?, ?)";
+            "(cg_no, cg_name, cg_year, cg_is_ar, cg_is_ab, cg_is_ac, cg_is_sf, cg_is_ad, cg_baby_rd) " +
+            "VALUES ('cg'||LPAD(to_char(cg_no_seq.NEXTVAL),3,'0'), ?, ?, ?, ?, ?, ?, ?, ?)";
     // 查詢資料
-    private static final String GET_ALL_STMT = "SELECT cg_no , cg_name FROM Chat_Group";
-    private static final String GET_ONE_STMT = "SELECT cg_no, cg_name FROM Chat_Group where cg_no = ?";
+    private static final String GET_ALL_STMT = "SELECT cg_no , cg_name FROM chat_group";
+    private static final String GET_ONE_STMT = "SELECT cg_no, cg_name FROM chat_group WHERE cg_no = ?";
     // 刪除資料
-    private static final String DELETE_PROC = "DELETE FROM Chat_Group where cg_no = ?";
+    private static final String DELETE_PROC = "DELETE FROM chat_group WHERE cg_no = ?";
     // 修改資料
-    private static final String UPDATE = "UPDATE Chat_Group set cg_name=? where cg_no = ?";
+    private static final String UPDATE = "UPDATE chat_group SET cg_name=? WHERE cg_no = ?";
 
     @Override
     public void insert(Chat_GroupVO chat_GroupVO) {

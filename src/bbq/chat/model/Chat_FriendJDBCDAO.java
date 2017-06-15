@@ -11,14 +11,15 @@ public class Chat_FriendJDBCDAO implements Chat_FriendDAO_interface {
     private static final String USER = "ba101g3";
     private static final String PASSWORD = "baby";
     // 新增資料
-    private static final String INSERT_STMT = "INSERT INTO Chat_Friend (CF_NO, MEM_NO_S, MEM_NO_O, CF_IS_DEL) VALUES ('cf'||LPAD(to_char(CF_NO_SEQ.nextval),3,'0'), ?, ?, ?)";
+    private static final String INSERT_STMT = "INSERT INTO chat_friend (cf_no, mem_no_s, mem_no_o, cf_is_del) " +
+            "VALUES ('cf'||LPAD(to_char(cf_no_seq.NEXTVAL),3,'0'), ?, ?, ?)";
     // 查詢資料
-    private static final String GET_ALL_STMT = "SELECT CF_NO, MEM_NO_S, MEM_NO_O, CF_IS_DEL FROM Chat_Friend";
-    private static final String GET_ONE_STMT = "SELECT CF_NO, MEM_NO_S, MEM_NO_O, CF_IS_DEL FROM Chat_Friend where cf_no = ?";
+    private static final String GET_ALL_STMT = "SELECT cf_no, mem_no_s, mem_no_o, cf_is_del FROM chat_friend";
+    private static final String GET_ONE_STMT = "SELECT cf_no, mem_no_s, mem_no_o, cf_is_del FROM chat_friend WHERE cf_no = ?";
     // 刪除資料
-    private static final String DELETE_PROC = "DELETE FROM Chat_Friend where cf_no = ?";
+    private static final String DELETE_PROC = "DELETE FROM chat_friend WHERE cf_no = ?";
     // 修改資料
-    private static final String UPDATE = "UPDATE Chat_Friend set cf_is_del=? where cf_no = ? ";
+    private static final String UPDATE = "UPDATE chat_friend SET cf_is_del=? WHERE cf_no = ? ";
 
 
     @Override

@@ -10,17 +10,17 @@ public class User_ReportJDBCDAO implements User_ReportDAO_interface {
     private static final String USER = "ba101g3";
     private static final String PASSWORD = "baby";
     // 新增資料
-    private static final String INSERT_STMT = "INSERT INTO User_Report "
-            + "(MEM_NO_ED, MEM_NO_ING, URPT_CNT, URPT_DATE, URPT_RSN, URPT_IS_CERT, URPT_UNRSN) "
-            + "VALUES (?, ?, ?, CURRENT_TIMESTAMP, ?, ?, ?)";
+    private static final String INSERT_STMT = "INSERT INTO user_report "
+            + "(mem_no_ed, mem_no_ing, urpt_cnt, urpt_date, urpt_rsn, urpt_is_cert, urpt_unrsn) "
+            + "VALUES (?, ?, ?, current_timestamp, ?, ?, ?)";
     // 查詢資料
-    private static final String GET_ALL_STMT = "SELECT mem_no_ed, URPT_CNT, URPT_RSN, URPT_IS_CERT FROM User_Report";
-    private static final String GET_ONE_STMT = "SELECT mem_no_ed, URPT_CNT, URPT_RSN, URPT_IS_CERT "
-            + "FROM User_Report where mem_no_ed = ?";
+    private static final String GET_ALL_STMT = "SELECT mem_no_ed, urpt_cnt, urpt_rsn, urpt_is_cert FROM user_report";
+    private static final String GET_ONE_STMT = "SELECT mem_no_ed, urpt_cnt, urpt_rsn, urpt_is_cert "
+            + "FROM User_Report WHERE mem_no_ed = ?";
     // 刪除資料
-    private static final String DELETE_NEWS = "DELETE FROM User_Report where mem_no_ed = ? and mem_no_ing =?";
+    private static final String DELETE_NEWS = "DELETE FROM User_Report WHERE mem_no_ed = ? AND mem_no_ing =?";
     // 修改資料
-    private static final String UPDATE = "UPDATE User_Report set URPT_IS_CERT=? where mem_no_ed = ? and mem_no_ing =?";
+    private static final String UPDATE = "UPDATE User_Report SET URPT_IS_CERT=? WHERE mem_no_ed = ? AND mem_no_ing =?";
 
     @Override
     public void insert(User_ReportVO user_ReportVO) {

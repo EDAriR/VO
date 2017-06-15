@@ -11,16 +11,16 @@ public class Chat_RecordJDBCDAO implements Chat_RecordDAO_interface {
     private static final String USER = "ba101g3";
     private static final String PASSWORD = "baby";
     // 新增資料
-    private static final String INSERT_STMT = "INSERT INTO Chat_Record " +
-            "(cr_no, CR_DATE, CF_NO, CG_NO, cr_cnt) " +
-            "VALUES ('cr'||LPAD(to_char(ADM_NO_SEQ.nextval),4,'0'), CURRENT_TIMESTAMP, ?, ?, ?)";
+    private static final String INSERT_STMT = "INSERT INTO chat_record " +
+            "(cr_no, cr_date, cf_no, cg_no, cr_cnt) " +
+            "VALUES ('cr'||LPAD(TO_CHAR(adm_no_seq.NEXTVAL),4,'0'), CURRENT_TIMESTAMP, ?, ?, ?)";
     // 查詢資料
-    private static final String GET_ALL_STMT = "SELECT cr_no, CR_DATE, cr_cnt FROM Chat_Record";
-    private static final String GET_ONE_STMT = "SELECT cr_no, CR_DATE, cr_cnt FROM Chat_Record where cr_no = ?";
+    private static final String GET_ALL_STMT = "SELECT cr_no, cr_date, cr_cnt FROM chat_record";
+    private static final String GET_ONE_STMT = "SELECT cr_no, cr_date, cr_cnt FROM chat_record WHERE cr_no = ?";
     // 刪除資料
-    private static final String DELETE_PROC = "DELETE FROM Chat_Record where cr_no = ?";
+    private static final String DELETE_PROC = "DELETE FROM chat_record WHERE cr_no = ?";
     // 修改資料
-    private static final String UPDATE = "UPDATE Chat_Record set cr_cnt=? where cr_no = ?";
+    private static final String UPDATE = "UPDATE chat_record SET cr_cnt=? WHERE cr_no = ?";
 
 
     @Override

@@ -11,15 +11,15 @@ public class Chat_NotebookJDBCDAO implements Chat_NotebookDAO_interface {
     private static final String USER = "ba101g3";
     private static final String PASSWORD = "baby";
     // 新增資料
-    private static final String INSERT_STMT = "INSERT INTO Chat_Notebook (cnb_no, cnb_cnt) " +
+    private static final String INSERT_STMT = "INSERT INTO chat_notebook (cnb_no, cnb_cnt) " +
             "VALUES ('cnb'||LPAD(to_char(cnb_no_seq.NEXTVAL),3,'0'), ?)";
     // 查詢資料
-    private static final String GET_ALL_STMT = "SELECT cnb_no , cnb_cnt FROM Chat_Notebook";
-    private static final String GET_ONE_STMT = "SELECT cnb_no, cnb_cnt FROM Chat_Notebook where cnb_no = ?";
+    private static final String GET_ALL_STMT = "SELECT cnb_no , cnb_cnt FROM chat_notebook";
+    private static final String GET_ONE_STMT = "SELECT cnb_no, cnb_cnt FROM chat_notebook WHERE cnb_no = ?";
     // 刪除資料
-    private static final String DELETE_PROC = "DELETE FROM Chat_Notebook where cnb_no = ?";
+    private static final String DELETE_PROC = "DELETE FROM chat_notebook WHERE cnb_no = ?";
     // 修改資料
-    private static final String UPDATE = "UPDATE Chat_Notebook set Cnb_CNT=? where cnb_no = ?";
+    private static final String UPDATE = "UPDATE chat_notebook SET cnb_cnt=? WHERE cnb_no = ?";
 
 
     @Override

@@ -11,13 +11,13 @@ public class Chat_Group_ItemJDBCDAO implements Chat_Group_ItemDAO_interface {
     private static final String USER = "ba101g3";
     private static final String PASSWORD = "baby";
     // 新增資料
-    private static final String INSERT_STMT = "INSERT INTO Chat_Group_Item (cg_no, mem_no) " +
+    private static final String INSERT_STMT = "INSERT INTO chat_group_item (cg_no, mem_no) " +
             "VALUES (?, ?)";
     // 查詢資料
-    private static final String GET_ALL_STMT = "SELECT cg_no , mem_no FROM Chat_Group_Item";
-    private static final String GET_ONE_STMT = "SELECT cg_no, mem_no FROM Chat_Group_Item where cg_no = ?";
+    private static final String GET_ALL_STMT = "SELECT cg_no , mem_no FROM chat_group_item";
+    private static final String GET_ONE_STMT = "SELECT cg_no, mem_no FROM chat_group_item WHERE cg_no = ?";
     // 刪除資料
-    private static final String DELETE_PROC = "DELETE FROM Chat_Group_Item where cg_no = ?";
+    private static final String DELETE_PROC = "DELETE FROM chat_group_item WHERE cg_no = ?";
 
 
     @Override

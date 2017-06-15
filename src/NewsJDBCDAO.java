@@ -9,16 +9,16 @@ public class NewsJDBCDAO implements NewsDAO_interface {
     private static final String USER = "ba101g3";
     private static final String PASSWORD = "baby";
     // 新增資料
-    private static final String INSERT_STMT = "INSERT INTO News (NEW_NO, NEW_DATE, NEW_TITLE, NEW_CNT) "
-            + "VALUES ('n'||LPAD(to_char(NEW_NO_SEQ.nextval),4,'0'),"
+    private static final String INSERT_STMT = "INSERT INTO news (new_no, new_date, new_title, new_cnt) "
+            + "VALUES ('n'||LPAD(TO_CHAR(new_no_seq.NEXTVAL),4,'0'),"
             + " CURRENT_TIMESTAMP, ?, ?)";
     // 查詢資料
     private static final String GET_ALL_STMT = "SELECT new_no , new_title FROM News";
-    private static final String GET_ONE_STMT = "SELECT new_no, new_title FROM News where new_no = ?";
+    private static final String GET_ONE_STMT = "SELECT new_no, new_title FROM News WHERE new_no = ?";
     // 刪除資料
-    private static final String DELETE_NEWS = "DELETE FROM News where new_no = ?";
+    private static final String DELETE_NEWS = "DELETE FROM News WHERE new_no = ?";
     // 修改資料
-    private static final String UPDATE = "UPDATE News set new_title=? where new_no = ?";
+    private static final String UPDATE = "UPDATE News SET new_title=? WHERE new_no = ?";
 
 
     @Override

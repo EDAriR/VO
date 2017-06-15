@@ -11,16 +11,16 @@ public class Authority_FeatureJDBCDAO implements Authority_FeatureDAO_interface 
     private static final String USER = "ba101g3";
     private static final String PASSWORD = "baby";
     // 新增資料
-    private static final String INSERT_STMT = "INSERT INTO Authority_Feature (auth_no, auth_name) " +
-            "VALUES ('an'||LPAD(to_char(AUTH_NO_SEQ.nextval),1,'0'), ?)";
+    private static final String INSERT_STMT = "INSERT INTO authority_feature (auth_no, auth_name) " +
+            "VALUES ('an'||LPAD(TO_CHAR(auth_no_seq.NEXTVAL),1,'0'), ?)";
     // 查詢資料
-    private static final String GET_ALL_STMT = "SELECT auth_no , auth_name FROM Authority_Feature";
-    private static final String GET_ONE_STMT = "SELECT auth_no, auth_name FROM Authority_Feature " +
+    private static final String GET_ALL_STMT = "SELECT auth_no , auth_name FROM authority_feature";
+    private static final String GET_ONE_STMT = "SELECT auth_no, auth_name FROM authority_feature " +
             "where auth_no = ?";
     // 刪除資料
-    private static final String DELETE_PROC = "DELETE FROM Authority_Feature where auth_no = ?";
+    private static final String DELETE_PROC = "DELETE FROM authority_feature WHERE auth_no = ?";
     // 修改資料
-    private static final String UPDATE = "UPDATE Authority_Feature set auth_name=? where auth_no = ?";
+    private static final String UPDATE = "UPDATE authority_feature SET auth_name=? WHERE auth_no = ?";
 
 
     @Override
