@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://C:/BA101_WebApp/eclipse_WTP_WorkSpace1/IBM_emp_0403MVC_Associations3_CompositeQuery2/src/com/emp/controller/EmpServlet.java" charset="x-windows-950" />
+    <file url="file://$PROJECT_DIR$/src/NewsDAO.java" charset="x-windows-950" />
     <file url="file://$PROJECT_DIR$/src/NewsDAO_interface.java" charset="x-windows-950" />
     <file url="file://$PROJECT_DIR$/src/NewsJDBCDAO.java" charset="x-windows-950" />
+    <file url="file://$PROJECT_DIR$/src/NewsService.java" charset="x-windows-950" />
     <file url="file://$PROJECT_DIR$/src/NewsVO.java" charset="x-windows-950" />
     <file url="file://$PROJECT_DIR$/src/bbq/admin/model/AdminDAO_interface.java" charset="x-windows-950" />
     <file url="file://$PROJECT_DIR$/src/bbq/admin/model/AdminJDBCDAO.java" charset="x-windows-950" />
