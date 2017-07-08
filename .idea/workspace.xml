@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5781e1ff-6202-4dd6-a3da-854f7a9d8a80" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/NewsDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/NewsService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/bbq/chat/model/Chat_FriendService.class" afterPath="$PROJECT_DIR$/bin/bbq/chat/model/Chat_FriendService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -114,8 +110,8 @@
       <file leaf-file-name="NewsService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/NewsService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+            <state relative-caret-position="504">
+              <caret line="21" column="27" lean-forward="true" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -745,7 +741,7 @@
       <workItem from="1497414199583" duration="5131000" />
       <workItem from="1497577466817" duration="1216000" />
       <workItem from="1497768599449" duration="123000" />
-      <workItem from="1497783590441" duration="1337000" />
+      <workItem from="1497783590441" duration="1370000" />
     </task>
     <task id="LOCAL-00001" summary="commit from intellij">
       <created>1497372145207</created>
@@ -754,11 +750,18 @@
       <option name="project" value="LOCAL" />
       <updated>1497372145207</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fix bug">
+      <created>1497790672131</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1497790672131</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24725000" />
+    <option name="totallyTimeSpent" value="24758000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -832,7 +835,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit from intellij" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit from intellij" />
+    <MESSAGE value="fix bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1277,8 +1281,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/NewsService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+        <state relative-caret-position="504">
+          <caret line="21" column="27" lean-forward="true" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
           <folding />
         </state>
       </provider>
